@@ -1,0 +1,9 @@
+problem with TransactioalTopologyBuilder using storm-analytics environment vs. pom.xml in storm-test4
+
+debug simpler case here
+
+the correct jars arent registering? 
+
+no such method error when using integer parameters in setBolt() method of TransactionalTopologyBuilder. Works when parallelism degree is removed
+
+
