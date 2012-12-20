@@ -15,9 +15,9 @@ public class FailTest {
 		builder.setSpout("transactions-spout",
 				new test4.demo.spouts.TransactionsSpouts());
 
-		builder.setBolt("random-failure-bolt",
-				new test4.demo.bolts.RandomFailureBolt()).shuffleGrouping(
-				"transactions-spout");
+//		builder.setBolt("random-failure-bolt",
+//				new test4.demo.bolts.RandomFailureBolt()).shuffleGrouping(
+//				"transactions-spout");
 
 		LocalCluster cluster = new LocalCluster();
 		Config conf = new Config();

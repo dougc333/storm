@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry excluding="test4/demo/bolts/" kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/java/test4/demo/bolts"/>
+	<classpathentry kind="lib" path="target/stormtest4-0.0.1-jar-with-dependencies.jar"/>
+	<classpathentry kind="lib" path="target/stormtest4-0.0.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/home/dc/storm/storm-0.8.1/storm-0.8.1.jar"/>
+	<classpathentry kind="lib" path="/home/dc/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

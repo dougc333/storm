@@ -20,7 +20,7 @@ public class TestTrans {
 					"TestTrans", "spout", new PacketTransSpout());
 
 			PacketSplitterBolt ps = new PacketSplitterBolt();
-			tt.setBolt("packetspliltter", ps).shuffleGrouping("spout");
+			tt.setBolt("packetspliltter", ps,1).shuffleGrouping("spout");
 			LocalCluster cluster = new LocalCluster();
 			Config config = new Config();
 			config.setDebug(true);

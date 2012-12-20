@@ -6,6 +6,7 @@ import backtype.storm.LocalCluster;
 import backtype.storm.task.OutputCollector;
 import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.*;
+import backtype.storm.topology.base.BaseRichBolt;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
@@ -28,8 +29,8 @@ public class TestStorm1 {
 		public void execute(Tuple tuple) {
 			// this has anchoring, the difference is on the failure, will replay
 			// to the root
-			_collector.emit(tuple, new Values(tuple.getString(0) + "!!!"));
-			_collector.ack(tuple);
+			collector.emit(tuple, new Values(tuple.getString(0) + "!!!"));
+			collector.ack(tuple);
 		}
 
 		@Override
@@ -50,7 +51,7 @@ public class TestStorm1 {
 
 			LocalCluster cluster = new LocalCluster();
 
-			cluster.submitTopology(arg0, arg1, arg2);
+			//cluster.submitTopology(arg0, arg1, arg2);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
