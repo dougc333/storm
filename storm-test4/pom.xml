@@ -11,7 +11,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-		<repositories>
+	<repositories>
 		<repository>
 		  <id>Codehaus</id>
 		  <url>http://repository.codehaus.org</url>
@@ -98,7 +98,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass></mainClass>
+                            <mainClass>Test</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
