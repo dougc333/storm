@@ -9,7 +9,11 @@ public class MakeMoreData {
 		try {
 			Jedis jedis = new Jedis("localhost");
 			BufferedReader br = new BufferedReader(new FileReader(
+<<<<<<< HEAD
+					"/home/dc/storm/storm/TestRedis/src/packetdata"));
+=======
 					"/home/dc/workspace/TestRedis/src/packetdata"));
+>>>>>>> ae3bf7f97e32c0989340b3007e0f7ca754fa5b8d
 			String fileLine = null;
 			while ((fileLine = br.readLine()) != null) {
 				jedis.watch("PACKETS");

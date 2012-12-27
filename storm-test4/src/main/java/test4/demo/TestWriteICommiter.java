@@ -3,11 +3,16 @@ package test4.demo;
 import java.util.Map;
 
 import backtype.storm.coordination.BatchOutputCollector;
+import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.OutputFieldsDeclarer;
+import backtype.storm.topology.TopologyBuilder;
+import backtype.storm.topology.base.BaseRichSpout;
 import backtype.storm.topology.base.BaseTransactionalBolt;
+import backtype.storm.topology.base.BaseTransactionalSpout;
 import backtype.storm.transactional.ICommitter;
 import backtype.storm.transactional.TransactionAttempt;
+import backtype.storm.transactional.TransactionalTopologyBuilder;
 import backtype.storm.tuple.Tuple;
 
 // test ICommitter interface, write into redis
@@ -55,9 +60,37 @@ public class TestWriteICommiter {
 
 	}
 
+	// we need a modification of memory transactional spout for redis
+	static class TestSpout extends BaseTransactionalSpout {
+
+		@Override
+		public Coordinator getCoordinator(Map conf, TopologyContext context) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public Emitter getEmitter(Map conf, TopologyContext context) {
+			// TODO Auto-generated method stub
+			return null;
+		}
+
+		@Override
+		public void declareOutputFields(OutputFieldsDeclarer declarer) {
+			// TODO Auto-generated method stub
+
+		}
+
+	}
+
 	public static void main(String[] args) {
 
 		try {
+			TestSpout spout = new TestSpout();
+			TransactionalTopologyBuilder top = new TransactionalTopologyBuilder(
+					"test", "spout", spout);
+
+			top.setBolt("first", new TestBolt(), 1);
 
 		} catch (Exception e) {
 			e.printStackTrace();

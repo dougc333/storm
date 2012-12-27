@@ -15,6 +15,7 @@ import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.*;
 import backtype.storm.topology.base.BaseRichBolt;
 import backtype.storm.topology.base.BaseRichSpout;
+
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
@@ -37,7 +38,7 @@ public class TestStorm1 {
 	private static Jedis jedis;
 	private static Logger LOG = Logger.getLogger("TestStorm1");
 
-	// Tuplesa are list of fields, fields are list of Java Objects or Strings or
+	// Tuples are list of fields, fields are list of Java Objects or Strings or
 	// Integers. Field has iterator interface.
 	// http://nathanmarz.github.com/storm/doc/backtype/storm/tuple/Fields.html
 	//
@@ -140,7 +141,6 @@ public class TestStorm1 {
 		@Override
 		public void execute(Tuple tuple) {
 			// this has anchoring, the difference is on the failure, will replay
-			// to the root. Is this a list? a string(0) and !!!
 			collector.emit(tuple, new Values(tuple.getString(0) + "!!!"));
 			collector.ack(tuple);
 		}
@@ -169,10 +169,12 @@ public class TestStorm1 {
 			conf.setDebug(true);
 
 			LocalCluster cluster = new LocalCluster();
+
 			cluster.submitTopology("TestStorm1", conf, top.createTopology());
 			Utils.sleep(10000);
 			cluster.killTopology("TestStorm1");
 			cluster.shutdown();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

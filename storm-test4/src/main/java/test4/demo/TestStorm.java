@@ -48,12 +48,12 @@ public class TestStorm {
 			TopologyBuilder builder = new TopologyBuilder();
 
 			// builder.setSpout("word", new FileSpout());
-			// builder.setBolt("id1", new TestBolt(),
-			// 3).shuffleGrouping("word");
-			// builder.setBolt("id2", new TestBolt(), 2).shuffleGrouping("id1");
+			 builder.setBolt("id1", new TestBolt(),
+			 3).shuffleGrouping("word");
+			 builder.setBolt("id2", new TestBolt(), 2).shuffleGrouping("id1");
 
-			builder.setSpout("testspout", new FileSpout());
-			builder.setBolt("firstBolt", new TestBolt());
+			//builder.setSpout("testspout", new FileSpout());
+			//builder.setBolt("firstBolt", new TestBolt());
 
 			Config conf = new Config();
 			conf.setDebug(true);
