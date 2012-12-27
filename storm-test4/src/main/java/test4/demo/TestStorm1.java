@@ -9,13 +9,16 @@ import java.util.Set;
 import redis.clients.jedis.Jedis;
 
 import backtype.storm.LocalCluster;
+import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.OutputCollector;
 import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.*;
 import backtype.storm.topology.base.BaseRichBolt;
+import backtype.storm.topology.base.BaseRichSpout;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
+import backtype.storm.utils.Utils;
 import backtype.storm.*;
 
 import java.util.List;
@@ -25,6 +28,11 @@ import java.util.List;
 import org.apache.log4j.*;
 import com.google.common.base.Joiner;
 
+// test jedis in spout
+// test tuples from spout to bolt.
+// test writing to jedis, requires ICommitter bolt interface
+// test fields/all grouping how to direct tuples to specific bolt? 
+// test bolt join, important for parallelism
 public class TestStorm1 {
 	private static Jedis jedis;
 	private static Logger LOG = Logger.getLogger("TestStorm1");
@@ -59,14 +67,11 @@ public class TestStorm1 {
 		}
 	};
 
-	//spout to read from redis
-	public static class TestSpout extends {
-		
-		
-	}
-	
-	public static class TestBolt extends BaseRichBolt {
-		private OutputCollector collector;
+	// spout to read from redis
+	public static class TestSpout extends BaseRichSpout {
+		private Integer readKey = 0;
+		SpoutOutputCollector collector;
+		Jedis jedis;
 
 		// test if data in redis
 		public void initRedis() {
@@ -86,24 +91,56 @@ public class TestStorm1 {
 		}
 
 		@Override
-		public void prepare(Map conf, TopologyContext context,
-				OutputCollector collector) {
+		public void open(Map conf, TopologyContext context,
+				SpoutOutputCollector collector) {
+			// TODO Auto-generated method stub
+			LOG.info("CALLING TESTSPOUT OPEN!!!!!!!!!!!!! SAME AS BOLT PREPARE????");
 			this.collector = collector;
 			jedis = new Jedis("localhost");
 			jedis.connect();
-
 			if (jedis.get("a") == null) {
 				// test read into redis, not true on null connection string
 				initRedis();
 			} else {
 				LOG.info("redis get 2000:" + jedis.get("2000"));
 			}
+
+		}
+
+		@Override
+		public void nextTuple() {
+			// TODO Auto-generated method stub
+			if (readKey == 0) {
+				readKey = 2000;
+			} else if (readKey == 2003) {
+				readKey = 2000;
+			}
+			String output = jedis.get(readKey.toString());
+			readKey++;
+			// emit list of values, how does this turn from joiner to splitter?
+			collector.emit(new Values(output));
+		}
+
+		@Override
+		public void declareOutputFields(OutputFieldsDeclarer declarer) {
+			// TODO Auto-generated method stub
+			declarer.declare(new Fields("words"));
+		}
+	}
+
+	public static class TestBolt extends BaseRichBolt {
+		private OutputCollector collector;
+
+		@Override
+		public void prepare(Map conf, TopologyContext context,
+				OutputCollector collector) {
+			this.collector = collector;
 		}
 
 		@Override
 		public void execute(Tuple tuple) {
 			// this has anchoring, the difference is on the failure, will replay
-			// to the root
+			// to the root. Is this a list? a string(0) and !!!
 			collector.emit(tuple, new Values(tuple.getString(0) + "!!!"));
 			collector.ack(tuple);
 		}
@@ -116,37 +153,13 @@ public class TestStorm1 {
 
 	}
 
-	// baserich bolt is for emitting tuple for each input tuple from spout
-	public static class JedisBolt extends BaseRichBolt {
-		OutputCollector collector;
-
-		@Override
-		public void prepare(Map stormConf, TopologyContext context,
-				OutputCollector collector) {
-			// TODO Auto-generated method stub
-			this.collector = collector;
-
-		}
-
-		@Override
-		public void execute(Tuple input) {
-			// TODO Auto-generated method stub
-
-		}
-
-		@Override
-		public void declareOutputFields(OutputFieldsDeclarer declarer) {
-			// TODO Auto-generated method stub
-
-		}
-
-	}
-
 	public static void main(String[] args) {
 		try {
 			TopologyBuilder top = new TopologyBuilder();
+			top.setSpout("words", new TestSpout(), 1);
 			// the shuffle grouping has to match declarer.declare from TestBolt
-			top.setBolt("firstbolt", new TestBolt(), 2).shuffleGrouping("word");
+			top.setBolt("firstbolt", new TestBolt(), 2)
+					.shuffleGrouping("words");
 			// the second bolt matches the first bolt output. A shuffle grouping
 			// renames output?
 			top.setBolt("secondbolt", new TestBolt(), 2).shuffleGrouping(
@@ -154,11 +167,12 @@ public class TestStorm1 {
 
 			Config conf = new Config();
 			conf.setDebug(true);
-			// settings for slots vs. executors/tasks
 
 			LocalCluster cluster = new LocalCluster();
-
-			cluster.submitTopology(arg0, arg1, arg2);
+			cluster.submitTopology("TestStorm1", conf, top.createTopology());
+			Utils.sleep(10000);
+			cluster.killTopology("TestStorm1");
+			cluster.shutdown();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
