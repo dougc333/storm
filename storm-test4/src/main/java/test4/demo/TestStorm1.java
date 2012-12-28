@@ -29,7 +29,8 @@ import java.util.List;
 import org.apache.log4j.*;
 import com.google.common.base.Joiner;
 
-// test jedis in spout
+// we should add a test before this w/o jedis 
+//test jedis in spout
 // test tuples from spout to bolt.
 // test writing to jedis, requires ICommitter bolt interface
 // test fields/all grouping how to direct tuples to specific bolt? 
