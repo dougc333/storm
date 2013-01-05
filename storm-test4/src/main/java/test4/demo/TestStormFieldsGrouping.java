@@ -17,13 +17,7 @@ import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 
-// test fields grouping and global grouping to 
-// parallelize tasks then merge into single bolt
-// need this for global count and transactional words,
-// using noneGrouping and fieldsGrouping
-// create 2 hash maps, read them into redis and create 2 streams from them
-//
-// we used 2 spouts and 2 bolts, we can combine into 1 spout. What is difference? 
+// 2 streams merge into single bolt
 //
 //
 public class TestStormFieldsGrouping {
@@ -100,7 +94,7 @@ public class TestStormFieldsGrouping {
 			// TODO Auto-generated method stub
 			if (nextRead < 2003) {
 				String db = jedis.get(nextRead.toString());
-				collector.emit(new Values(db));
+				// collector.emit(new Values(db));
 			} else {
 				nextRead = 2000;
 			}

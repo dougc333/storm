@@ -11,6 +11,7 @@ import backtype.storm.LocalCluster;
 import backtype.storm.StormSubmitter;
 import backtype.storm.task.OutputCollector;
 import backtype.storm.task.TopologyContext;
+import backtype.storm.testing.TestWordSpout;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.topology.TopologyBuilder;
 import backtype.storm.topology.base.BaseRichBolt;
@@ -47,13 +48,12 @@ public class TestStorm {
 		try {
 			TopologyBuilder builder = new TopologyBuilder();
 
-			// builder.setSpout("word", new FileSpout());
-			 builder.setBolt("id1", new TestBolt(),
-			 3).shuffleGrouping("word");
-			 builder.setBolt("id2", new TestBolt(), 2).shuffleGrouping("id1");
+			builder.setSpout("word", new TestWordSpout());
+			builder.setBolt("id1", new TestBolt(), 3).shuffleGrouping("word");
+			builder.setBolt("id2", new TestBolt(), 2).shuffleGrouping("id1");
 
-			//builder.setSpout("testspout", new FileSpout());
-			//builder.setBolt("firstBolt", new TestBolt());
+			// builder.setSpout("testspout", new FileSpout());
+			// builder.setBolt("firstBolt", new TestBolt());
 
 			Config conf = new Config();
 			conf.setDebug(true);

@@ -1,0 +1,103 @@
+0    [main] INFO  backtype.storm.zookeeper  - Starting inprocess zookeeper at port 2000 and dir /tmp/e84b55a7-7147-4f8d-926f-aa75d9a33fcc
+240  [main] INFO  backtype.storm.daemon.nimbus  - Starting Nimbus with conf {"dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.fall.back.on.java.serialization" true, "zmq.linger.millis" 0, "topology.skip.missing.kryo.registrations" true, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "nimbus.monitor.freq.secs" 10, "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib", "topology.executor.send.buffer.size" 1024, "storm.local.dir" "/tmp/6cf13770-f6e1-44db-83d0-ce0f67cd332a", "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "localhost", "storm.zookeeper.port" 2000, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "supervisor.enable" true, "storm.zookeeper.servers" ["localhost"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" 1, "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "supervisor.slots.ports" [6700 6701 6702 6703], "topology.debug" false, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx1024m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.acker.tasks" nil, "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "drpc.invocations.port" 3773, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "local", "topology.optimize" true, "topology.max.task.parallelism" nil}
+246  [main] INFO  backtype.storm.daemon.nimbus  - Using default scheduler
+280  [main] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+373  [main-EventThread] INFO  backtype.storm.zookeeper  - Zookeeper state update: :connected:none
+413  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2000] WARN  org.apache.zookeeper.server.NIOServerCnxn  - EndOfStreamException: Unable to read additional data from client sessionid 0x13bfd1abcc00000, likely client has closed socket
+415  [main] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+501  [main] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+513  [main-EventThread] INFO  backtype.storm.zookeeper  - Zookeeper state update: :connected:none
+520  [main] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+526  [main] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+537  [main-EventThread] INFO  backtype.storm.zookeeper  - Zookeeper state update: :connected:none
+546  [main] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+611  [main] INFO  backtype.storm.daemon.supervisor  - Starting Supervisor with conf {"dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.fall.back.on.java.serialization" true, "zmq.linger.millis" 0, "topology.skip.missing.kryo.registrations" true, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "nimbus.monitor.freq.secs" 10, "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib", "topology.executor.send.buffer.size" 1024, "storm.local.dir" "/tmp/3693ac76-33f1-4a88-9471-9d2df1f8db63", "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "localhost", "storm.zookeeper.port" 2000, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "supervisor.enable" true, "storm.zookeeper.servers" ["localhost"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" 1, "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "supervisor.slots.ports" (1 2 3), "topology.debug" false, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx1024m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.acker.tasks" nil, "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "drpc.invocations.port" 3773, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "local", "topology.optimize" true, "topology.max.task.parallelism" nil}
+633  [main] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+678  [main-EventThread] INFO  backtype.storm.zookeeper  - Zookeeper state update: :connected:none
+686  [main] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+753  [main] INFO  backtype.storm.daemon.supervisor  - Starting supervisor with id 7b5836f7-b040-4b7c-9c7c-3e6c949a161c at host localhost.localdomain
+762  [main] INFO  backtype.storm.daemon.supervisor  - Starting Supervisor with conf {"dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.fall.back.on.java.serialization" true, "zmq.linger.millis" 0, "topology.skip.missing.kryo.registrations" true, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "nimbus.monitor.freq.secs" 10, "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib", "topology.executor.send.buffer.size" 1024, "storm.local.dir" "/tmp/6d784feb-a317-40aa-a5da-735d04b6c614", "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "localhost", "storm.zookeeper.port" 2000, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "supervisor.enable" true, "storm.zookeeper.servers" ["localhost"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" 1, "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "supervisor.slots.ports" (4 5 6), "topology.debug" false, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx1024m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.acker.tasks" nil, "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "drpc.invocations.port" 3773, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "local", "topology.optimize" true, "topology.max.task.parallelism" nil}
+767  [main] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+777  [main-EventThread] INFO  backtype.storm.zookeeper  - Zookeeper state update: :connected:none
+784  [main] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+810  [main] INFO  backtype.storm.daemon.supervisor  - Starting supervisor with id 5ce6bc14-3389-4c4e-994e-eb199d30b2cc at host localhost.localdomain
+911  [main] INFO  backtype.storm.daemon.nimbus  - Received topology submission for TestStorm4 with conf {"topology.max.task.parallelism" nil, "topology.acker.executors" 1, "topology.kryo.register" nil, "topology.kryo.decorators" (), "topology.name" "TestStorm4", "storm.id" "TestStorm4-1-1357161086", "topology.debug" true}
+952  [main] INFO  backtype.storm.daemon.nimbus  - Activating TestStorm4: TestStorm4-1-1357161086
+1102 [main] INFO  backtype.storm.scheduler.EvenScheduler  - Available slots: (["5ce6bc14-3389-4c4e-994e-eb199d30b2cc" 4] ["5ce6bc14-3389-4c4e-994e-eb199d30b2cc" 5] ["5ce6bc14-3389-4c4e-994e-eb199d30b2cc" 6] ["7b5836f7-b040-4b7c-9c7c-3e6c949a161c" 1] ["7b5836f7-b040-4b7c-9c7c-3e6c949a161c" 2] ["7b5836f7-b040-4b7c-9c7c-3e6c949a161c" 3])
+1131 [main] INFO  backtype.storm.daemon.nimbus  - Setting new assignment for topology id TestStorm4-1-1357161086: #backtype.storm.daemon.common.Assignment{:master-code-dir "/tmp/6cf13770-f6e1-44db-83d0-ce0f67cd332a/nimbus/stormdist/TestStorm4-1-1357161086", :node->host {"5ce6bc14-3389-4c4e-994e-eb199d30b2cc" "localhost.localdomain"}, :executor->node+port {[3 3] ["5ce6bc14-3389-4c4e-994e-eb199d30b2cc" 4], [6 6] ["5ce6bc14-3389-4c4e-994e-eb199d30b2cc" 4], [5 5] ["5ce6bc14-3389-4c4e-994e-eb199d30b2cc" 4], [4 4] ["5ce6bc14-3389-4c4e-994e-eb199d30b2cc" 4], [2 2] ["5ce6bc14-3389-4c4e-994e-eb199d30b2cc" 4], [1 1] ["5ce6bc14-3389-4c4e-994e-eb199d30b2cc" 4]}, :executor->start-time-secs {[1 1] 1357161087, [2 2] 1357161087, [4 4] 1357161087, [5 5] 1357161087, [6 6] 1357161087, [3 3] 1357161087}}
+1799 [Thread-8] INFO  backtype.storm.daemon.supervisor  - Downloading code for storm id TestStorm4-1-1357161086 from /tmp/6cf13770-f6e1-44db-83d0-ce0f67cd332a/nimbus/stormdist/TestStorm4-1-1357161086
+2069 [Thread-8] INFO  backtype.storm.daemon.supervisor  - Finished downloading code for storm id TestStorm4-1-1357161086 from /tmp/6cf13770-f6e1-44db-83d0-ce0f67cd332a/nimbus/stormdist/TestStorm4-1-1357161086
+2099 [Thread-9] INFO  backtype.storm.daemon.supervisor  - Launching worker with assignment #backtype.storm.daemon.supervisor.LocalAssignment{:storm-id "TestStorm4-1-1357161086", :executors ([3 3] [6 6] [5 5] [4 4] [2 2] [1 1])} for this supervisor 5ce6bc14-3389-4c4e-994e-eb199d30b2cc on port 4 with id 91e48780-feba-4dc0-9cc8-793b8ddec0c2
+2103 [Thread-9] INFO  backtype.storm.daemon.worker  - Launching worker for TestStorm4-1-1357161086 on 5ce6bc14-3389-4c4e-994e-eb199d30b2cc:4 with id 91e48780-feba-4dc0-9cc8-793b8ddec0c2 and conf {"dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.fall.back.on.java.serialization" true, "zmq.linger.millis" 0, "topology.skip.missing.kryo.registrations" true, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "nimbus.monitor.freq.secs" 10, "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib", "topology.executor.send.buffer.size" 1024, "storm.local.dir" "/tmp/6d784feb-a317-40aa-a5da-735d04b6c614", "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "localhost", "storm.zookeeper.port" 2000, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "supervisor.enable" true, "storm.zookeeper.servers" ["localhost"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" 1, "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "supervisor.slots.ports" (4 5 6), "topology.debug" false, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx1024m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.acker.tasks" nil, "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "drpc.invocations.port" 3773, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "local", "topology.optimize" true, "topology.max.task.parallelism" nil}
+2104 [Thread-9] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+2113 [Thread-9-EventThread] INFO  backtype.storm.zookeeper  - Zookeeper state update: :connected:none
+2122 [Thread-9] INFO  com.netflix.curator.framework.imps.CuratorFrameworkImpl  - Starting
+2337 [Thread-9] INFO  backtype.storm.daemon.executor  - Loading executor bolt:[2 2]
+2344 [Thread-9] INFO  backtype.storm.daemon.task  - Emitting: bolt __system ["startup"]
+2344 [Thread-9] INFO  backtype.storm.daemon.executor  - Loaded executor tasks bolt:[2 2]
+2358 [Thread-9] INFO  backtype.storm.daemon.executor  - Preparing bolt bolt:(2)
+2360 [Thread-9] INFO  backtype.storm.daemon.executor  - Prepared bolt bolt:(2)
+2362 [Thread-9] INFO  backtype.storm.daemon.executor  - Finished loading executor bolt:[2 2]
+2370 [Thread-9] INFO  backtype.storm.daemon.executor  - Loading executor bolt:[3 3]
+2371 [Thread-9] INFO  backtype.storm.daemon.task  - Emitting: bolt __system ["startup"]
+2372 [Thread-9] INFO  backtype.storm.daemon.executor  - Loaded executor tasks bolt:[3 3]
+2373 [Thread-9] INFO  backtype.storm.daemon.executor  - Preparing bolt bolt:(3)
+2373 [Thread-9] INFO  backtype.storm.daemon.executor  - Prepared bolt bolt:(3)
+2374 [Thread-9] INFO  backtype.storm.daemon.executor  - Finished loading executor bolt:[3 3]
+2380 [Thread-9] INFO  backtype.storm.daemon.executor  - Loading executor word:[4 4]
+2381 [Thread-9] INFO  backtype.storm.daemon.task  - Emitting: word __system ["startup"]
+2381 [Thread-9] INFO  backtype.storm.daemon.executor  - Loaded executor tasks word:[4 4]
+2384 [Thread-9] INFO  backtype.storm.daemon.executor  - Opening spout word:(4)
+2385 [Thread-9] INFO  backtype.storm.daemon.executor  - Opened spout word:(4)
+2387 [Thread-9] INFO  backtype.storm.daemon.executor  - Finished loading executor word:[4 4]
+2388 [Thread-20] INFO  backtype.storm.daemon.executor  - Activating spout word:(4)
+2392 [Thread-20] ERROR backtype.storm.util  - Async loop died!
+java.lang.NullPointerException
+	at backtype.storm.task.GeneralTopologyContext.getComponentOutputFields(GeneralTopologyContext.java:94)
+	at backtype.storm.tuple.TupleImpl.<init>(TupleImpl.java:36)
+	at backtype.storm.tuple.TupleImpl.<init>(TupleImpl.java:46)
+	at test4.demo.TestStorm4$TestSpout1.nextTuple(TestStorm4.java:192)
+	at backtype.storm.daemon.executor$fn__3976$fn__4017$fn__4018.invoke(executor.clj:447)
+	at backtype.storm.util$async_loop$fn__465.invoke(util.clj:377)
+	at clojure.lang.AFn.run(AFn.java:24)
+	at java.lang.Thread.run(Thread.java:679)
+2393 [Thread-20] ERROR backtype.storm.daemon.executor  - 
+java.lang.NullPointerException
+	at backtype.storm.task.GeneralTopologyContext.getComponentOutputFields(GeneralTopologyContext.java:94)
+	at backtype.storm.tuple.TupleImpl.<init>(TupleImpl.java:36)
+	at backtype.storm.tuple.TupleImpl.<init>(TupleImpl.java:46)
+	at test4.demo.TestStorm4$TestSpout1.nextTuple(TestStorm4.java:192)
+	at backtype.storm.daemon.executor$fn__3976$fn__4017$fn__4018.invoke(executor.clj:447)
+	at backtype.storm.util$async_loop$fn__465.invoke(util.clj:377)
+	at clojure.lang.AFn.run(AFn.java:24)
+	at java.lang.Thread.run(Thread.java:679)
+2394 [Thread-9] INFO  backtype.storm.daemon.executor  - Loading executor word:[5 5]
+2395 [Thread-9] INFO  backtype.storm.daemon.task  - Emitting: word __system ["startup"]
+2396 [Thread-9] INFO  backtype.storm.daemon.executor  - Loaded executor tasks word:[5 5]
+2398 [Thread-9] INFO  backtype.storm.daemon.executor  - Opening spout word:(5)
+2398 [Thread-9] INFO  backtype.storm.daemon.executor  - Opened spout word:(5)
+2399 [Thread-9] INFO  backtype.storm.daemon.executor  - Finished loading executor word:[5 5]
+2400 [Thread-22] INFO  backtype.storm.daemon.executor  - Activating spout word:(5)
+2400 [Thread-22] ERROR backtype.storm.util  - Async loop died!
+java.lang.NullPointerException
+	at backtype.storm.task.GeneralTopologyContext.getComponentOutputFields(GeneralTopologyContext.java:94)
+	at backtype.storm.tuple.TupleImpl.<init>(TupleImpl.java:36)
+	at backtype.storm.tuple.TupleImpl.<init>(TupleImpl.java:46)
+	at test4.demo.TestStorm4$TestSpout1.nextTuple(TestStorm4.java:192)
+	at backtype.storm.daemon.executor$fn__3976$fn__4017$fn__4018.invoke(executor.clj:447)
+	at backtype.storm.util$async_loop$fn__465.invoke(util.clj:377)
+	at clojure.lang.AFn.run(AFn.java:24)
+	at java.lang.Thread.run(Thread.java:679)
+2400 [Thread-22] ERROR backtype.storm.daemon.executor  - 
+java.lang.NullPointerException
+	at backtype.storm.task.GeneralTopologyContext.getComponentOutputFields(GeneralTopologyContext.java:94)
+	at backtype.storm.tuple.TupleImpl.<init>(TupleImpl.java:36)
+	at backtype.storm.tuple.TupleImpl.<init>(TupleImpl.java:46)
+	at test4.demo.TestStorm4$TestSpout1.nextTuple(TestStorm4.java:192)
+	at backtype.storm.daemon.executor$fn__3976$fn__4017$fn__4018.invoke(executor.clj:447)
+	at backtype.storm.util$async_loop$fn__465.invoke(util.clj:377)
+	at clojure.lang.AFn.run(AFn.java:24)
+	at java.lang.Thread.run(Thread.java:679)
+2438 [Thread-9] INFO  backtype.storm.daemon.executor  - Loading executor word:[6 6]
+2439 [Thread-9] INFO  backtype.storm.daemon.task  - Emitting: word __system ["startup"]
+2451 [Thread-20] INFO  backtype.storm.util  - Halting process: ("Worker died")

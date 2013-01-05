@@ -2,10 +2,14 @@ package test4.demo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
-import org.mortbay.jetty.webapp.Configuration;
+import org.apache.log4j.Logger;
+
+import redis.clients.jedis.Jedis;
 
 import com.google.common.base.Joiner;
 
@@ -23,153 +27,156 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
-//try using an iterator
-//
+//test using Redis/Jedis. Write data into jedis
+//dont add more into here, goal is to test configuration
+//if this fails Redis probably not started
 //
 public class TestStorm2 {
-	// represents accountId/list of key/value pairs in String like OS:MSWINDOWS
-	static HashMap<Integer, List<String>> data = new HashMap<Integer, List<String>>() {
+	private static Jedis jedis;
+	private static Logger LOG = Logger.getLogger("TestStorm2");
+
+	// Tuples are list of fields, fields are list of Java Objects or Strings or
+	// Integers. Field has iterator interface.
+	// http://nathanmarz.github.com/storm/doc/backtype/storm/tuple/Fields.html
+	//
+	private static Map<Integer, List<String>> data = new HashMap<Integer, List<String>>() {
 		{
-			put(0, new ArrayList() {
+			put(2000, new ArrayList() {
 				{
-					add("OS:MSWINDOWS");
-					add("DEVICEID:23425426334534534534");
-					add("STOLEN:NO");
-					add("APPS:1000");
-					add("CPU:INTEL");
-					add("SPEED:2.4GHZ");
-					add("NUMCPUS:10");
-					add("MEMORY:10GB");
+					add("a");
+					add("aa");
+					add("aaa");
 				}
-
 			});
-
-			put(1, new ArrayList() {
+			put(2001, new ArrayList() {
 				{
-					add("OS:LINUX");
-					add("DEVICEID:234sfdsfs34534534");
-					add("STOLEN:YES");
-					add("APPS:10");
-					add("CPU:AMD");
-					add("SPEED:4GHZ");
-					add("NUMCPUS:1");
-					add("MEMORY:1GB");
+					add("b");
+					add("bb");
+					add("bbb");
 				}
-
 			});
-
-			put(2, new ArrayList() {
+			put(2002, new ArrayList() {
 				{
-					add("OS:MACOS");
-					add("DEVICEID:67868678686534534");
-					add("STOLEN:NO");
-					add("APPS:34");
-					add("CPU:ARM");
-					add("SPEED:4GHZ");
-					add("NUMCPUS:2");
-					add("MEMORY:1GB");
+					add("c");
+					add("cc");
+					add("ccc");
 				}
-
-			});
-
-			put(3, new ArrayList() {
-				{
-					add("OS:WINDOWS7");
-					add("DEVICEID:0494586534534");
-					add("STOLEN:NO");
-					add("APPS:0");
-					add("CPU:INTEL");
-					add("SPEED:.3GHZ");
-					add("NUMCPUS:1");
-					add("MEMORY:512M");
-				}
-
 			});
 		}
 	};
 
-	// send with accountid/field
-	static class TestSpout extends BaseRichSpout {
-		static Integer next = 0;
-		static Integer numPackets = 0;
+	// spout to read from redis
+	public static class TestSpout extends BaseRichSpout {
+		private Integer readKey = 0;
 		SpoutOutputCollector collector;
+		Jedis jedis;
+
+		// test if data in redis
+		public void initRedis() {
+			try {
+				LOG.info("TestStorm2 initRedis()!!!!!!!!!!!!!!!!!!!!");
+				// init data from maps
+				Set<Integer> s = data.keySet();
+				Iterator<Integer> it = s.iterator();
+				while (it.hasNext()) {
+					Integer key = (Integer) it.next();
+					List<String> li = data.get(key);
+					Joiner joiner = Joiner.on(",").skipNulls();
+
+					String writeMe = joiner.join(li);
+
+					LOG.info("TestStorm2 initReids writing key:"
+							+ key.toString() + " redis value:" + writeMe);
+
+					jedis.set(key.toString(), writeMe);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 
 		@Override
 		public void open(Map conf, TopologyContext context,
 				SpoutOutputCollector collector) {
 			// TODO Auto-generated method stub
+			LOG.info("CALLING TESTSPOUT OPEN!!!!!!!!!!!!! SAME AS BOLT PREPARE????");
 			this.collector = collector;
+			jedis = new Jedis("localhost");
+			jedis.connect();
+			if (jedis.get("a") == null) {
+				// test read into redis, not true on null connection string
+				initRedis();
+			} else {
+				LOG.info("redis get 2000:" + jedis.get("2000"));
+			}
 
 		}
 
 		@Override
 		public void nextTuple() {
-			if (next == 4) {
-				// restart
-				next = 0;
+			// TODO Auto-generated method stub
+			if (readKey == 0) {
+				readKey = 2000;
+			} else if (readKey == 2003) {
+				readKey = 2000;
 			}
-
-			List<String> sendMe = data.get(next);
-			Joiner joiner = Joiner.on(",").skipNulls();
-			String send = joiner.join(sendMe);
-			next++;
-			numPackets++;
-			collector.emit(new Values(send));
-			collector.emit(new Values("numPackets:" + numPackets));
+			String output = jedis.get(readKey.toString());
+			readKey++;
+			// emit list of values, how does this turn from joiner to splitter?
+			collector.emit(new Values(output));
 		}
 
 		@Override
 		public void declareOutputFields(OutputFieldsDeclarer declarer) {
 			// TODO Auto-generated method stub
-			declarer.declare(new Fields("packet"));
+			declarer.declare(new Fields("words"));
 		}
-
 	}
 
-	// parse out the spout fields/values and send reformatted
-	// w/DEVICEESN/field:value
-	// this demonstrates the parallelism
-	static class FormatBolt extends BaseRichBolt {
-		Integer numFields = 0;
+	public static class TestBolt extends BaseRichBolt {
+		private OutputCollector collector;
 
 		@Override
-		public void prepare(Map stormConf, TopologyContext context,
+		public void prepare(Map conf, TopologyContext context,
 				OutputCollector collector) {
-			// TODO Auto-generated method stub
-
+			this.collector = collector;
 		}
 
 		@Override
-		public void execute(Tuple input) {
-
+		public void execute(Tuple tuple) {
+			// this has anchoring, the difference is on the failure, will replay
+			collector.emit(tuple, new Values(tuple.getString(0) + "!!!"));
+			collector.ack(tuple);
 		}
 
-		// problem is how we identify the device?
-		// need deviceid with each field
 		@Override
+		// where does Fields match up with?
 		public void declareOutputFields(OutputFieldsDeclarer declarer) {
-			// TODO Auto-generated method stub
-			declarer.declare(new Fields("devicefields"));
+			declarer.declare(new Fields("word"));
 		}
 
 	}
 
 	public static void main(String[] args) {
 		try {
-
-			TopologyBuilder builder = new TopologyBuilder();
-			TestSpout spout = new TestSpout();
-			builder.setSpout("packet", spout);
-			builder.setBolt("words", new FormatBolt());
+			TopologyBuilder top = new TopologyBuilder();
+			top.setSpout("words", new TestSpout(), 1);
+			// the shuffle grouping has to match declarer.declare from TestBolt
+			top.setBolt("firstbolt", new TestBolt(), 2)
+					.shuffleGrouping("words");
+			// the second bolt matches the first bolt output. A shuffle grouping
+			// renames output?
+			top.setBolt("secondbolt", new TestBolt(), 2).shuffleGrouping(
+					"firstbolt");
 
 			Config conf = new Config();
 			conf.setDebug(true);
+
 			LocalCluster cluster = new LocalCluster();
 
-			cluster.submitTopology("TestStorm2", conf, builder.createTopology());
-			Utils.sleep(30000);
-
-			cluster.deactivate("TestStorm2");
+			cluster.submitTopology("TestStorm2", conf, top.createTopology());
+			Utils.sleep(10000);
+			cluster.killTopology("TestStorm2");
 			cluster.shutdown();
 
 		} catch (Exception e) {
@@ -177,4 +184,5 @@ public class TestStorm2 {
 		}
 
 	}
+
 }
