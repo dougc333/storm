@@ -21,7 +21,11 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
-//test multifields and threads/executors, backtype.storm.daemon.task does the printing? 
+//test multifields 
+//match declarer.declare(new Fields("field1","field2"))
+//with colletor.emit(new Values(next,next+1)
+
+//and threads/executors, backtype.storm.daemon.task does the printing? 
 // what does collector.emit(new Fields("first","second")); do?
 // we should see {1,2},{3,4},{5,6}
 
@@ -110,14 +114,14 @@ public class TestStorm6 {
 			}
 			Values v = new Values();
 			v.add(next);
-			// v.add(next + 1);
+			v.add(next + 1);
 			collector.emit(v);
 		}
 
 		@Override
 		public void declareOutputFields(OutputFieldsDeclarer declarer) {
 			// TODO Auto-generated method stub
-			declarer.declare(new Fields("first,second"));
+			declarer.declare(new Fields("first", "second"));
 		}
 
 	}
@@ -125,6 +129,7 @@ public class TestStorm6 {
 	static class TestBolt1 extends BaseRichBolt {
 		OutputCollector collector;
 		TopologyContext context;
+		Integer numBolt = 0;
 
 		@Override
 		public void prepare(Map stormConf, TopologyContext context,
@@ -139,13 +144,17 @@ public class TestStorm6 {
 		public void execute(Tuple input) {
 			// TODO Auto-generated method stub
 			LOG.info("TESTBOLT1 execute");
-			collector.emit(new Values(input.getString(0)));
+			Values v = new Values();
+			v.add(input.getString(0));
+			v.add("numBolt" + numBolt.toString());
+			collector.emit(v);
+			numBolt++;
 		}
 
 		@Override
 		public void declareOutputFields(OutputFieldsDeclarer declarer) {
 			// TODO Auto-generated method stub
-			declarer.declare(new Fields("Testbolt1output"));
+			declarer.declare(new Fields("first", "second"));
 		}
 
 	}

@@ -1,3 +1,10 @@
+storm/
+storm-local/
+zeromq-2.1.7/
+zeromq-2.1.7.zip
+jzmq/
+temp/
+pomorig.xml
 storm-test2/.classpath
 storm-test2/.project
 storm-test2/bin
