@@ -5,16 +5,27 @@ import com.esotericsoftware.kryo.KryoSerializable;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
 
-public class PerfObject implements KryoSerializable {
-	Integer dummyValue;
-	long timestamp;
+import java.util.*;
 
-	public Integer getDummyValue() {
-		return dummyValue;
+public class PerfObject implements KryoSerializable {
+	Integer msgnum;
+	long timestamp;
+	ArrayList<Object> list;
+
+	public Integer getMsgNum() {
+		return msgnum;
 	}
 
-	public void setDummyValue(Integer dummyValue) {
-		this.dummyValue = dummyValue;
+	public ArrayList<Object> getList() {
+		return list;
+	}
+
+	public void setList(ArrayList<Object> list) {
+		this.list = list;
+	}
+
+	public void setMsgNum(Integer dummyValue) {
+		this.msgnum = dummyValue;
 	}
 
 	public long getTimestamp() {
@@ -25,17 +36,18 @@ public class PerfObject implements KryoSerializable {
 		this.timestamp = timestamp;
 	}
 
+	//
 	@Override
 	public void read(Kryo arg0, Input arg1) {
 		// TODO Auto-generated method stub
-		this.dummyValue = arg1.readInt();
+		this.msgnum = arg1.readInt();
 		this.timestamp = arg1.readLong();
 	}
 
 	@Override
 	public void write(Kryo arg0, Output arg1) {
 		// TODO Auto-generated method stub
-		arg1.writeInt(dummyValue);
+		arg1.writeInt(msgnum);
 		arg1.writeLong(timestamp);
 		arg1.flush();
 	}
