@@ -111,7 +111,7 @@ public class TestStorm1 {
 			LocalCluster cluster = new LocalCluster();
 			cluster.submitTopology("TestStorm1", conf, builder.createTopology());
 
-			Utils.sleep(10000);
+			Utils.sleep(1000000);
 			cluster.deactivate("TestStorm1");
 			cluster.shutdown();
 

@@ -21,15 +21,8 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
-//test multifields 
-//match declarer.declare(new Fields("field1","field2"))
-//with colletor.emit(new Values(next,next+1)
-
-//and threads/executors, backtype.storm.daemon.task does the printing? 
-// what does collector.emit(new Fields("first","second")); do?
-// we should see {1,2},{3,4},{5,6}
-
-//max limit on executors, numExecutors<numTasks
+//Storm config test, print out config of TopologyContext, 
+//etc.. .
 public class TestStorm6 {
 	static Logger LOG = Logger.getLogger("TestStorm6.class");
 

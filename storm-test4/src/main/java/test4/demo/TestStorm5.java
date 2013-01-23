@@ -22,8 +22,7 @@ import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 
-//test measure perf, use outputCollector settime in tuple, 
-//send to bolt, then to another bolt and calculate difference
+//email bolt
 public class TestStorm5 {
 
 	private static final String SMTP_HOST_NAME = "smpt.gmail.com";

@@ -107,11 +107,11 @@ public class TestStorm3 {
 		try {
 			TopologyBuilder builder = new TopologyBuilder();
 			builder.setSpout("spoutID", new TestSpout(), 3);
-			// builder.setBolt("boltID", new TestBolt(), 3).shuffleGrouping(
-			// "spoutID");
+			builder.setBolt("boltID", new TestBolt(), 3).shuffleGrouping(
+					"spoutID");
 
-			builder.setBolt("boltID", new TestBolt(), 3).fieldsGrouping(
-					"spoutID", new Fields("fields1", "fields2"));
+			// builder.setBolt("boltID", new TestBolt(), 3).fieldsGrouping(
+			// "spoutID", new Fields("fields1", "fields2"));
 
 			Config config = new Config();
 			config.setDebug(true);
