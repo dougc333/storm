@@ -107,13 +107,15 @@ public class TestStorm1 {
 
 			Config conf = new Config();
 			conf.setDebug(true);
+			conf.setNumWorkers(10);
+			
+			
+//			LocalCluster cluster = new LocalCluster();
+			StormSubmitter.submitTopology("TestStorm1", conf, builder.createTopology());
 
-			LocalCluster cluster = new LocalCluster();
-			cluster.submitTopology("TestStorm1", conf, builder.createTopology());
-
-			Utils.sleep(1000000);
-			cluster.deactivate("TestStorm1");
-			cluster.shutdown();
+		//Utils.sleep(1000000);
+			//cluster.deactivate("TestStorm1");
+			//cluster.shutdown();
 
 		} catch (Exception e) {
 			e.printStackTrace();

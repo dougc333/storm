@@ -33,7 +33,7 @@ public class TestPerf1 {
 		public void nextTuple() {
 			// TODO Auto-generated method stub
 			PerfObject perf = new PerfObject();
-			perf.setDummyValue(next);
+//			perf.setDummyValue(next);
 			next++;
 			perf.setTimestamp(System.currentTimeMillis());
 			Values val = new Values();
