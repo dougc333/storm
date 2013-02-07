@@ -5,7 +5,7 @@ Summary: Storm Complex Event Processing	Daemon Package
 Group: Applications/Internet
 License: EPLv1
 URL: http://storm-project.net
-Source: 
+Source: https://github.com/acromusashi/storm-install/storm-%{version}.zip
 BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
 Requires: storm
 %description
@@ -49,6 +49,4 @@ echo $(cd %{buildroot} && find . -type l | cut -c 2-) | tr ' ' '\n' >> files.txt
 %files -f files.txt
 %defattr(-,root,root,-)
 
-%changelog
-* Feb 03 2013 dc
-- Initial Packaging
+

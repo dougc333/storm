@@ -50,27 +50,33 @@ public class TestStorm {
 
 			builder.setSpout("word", new TestWordSpout());
 			builder.setBolt("id1", new TestBolt(), 3).shuffleGrouping("word");
-			builder.setBolt("id2", new TestBolt(), 2).shuffleGrouping("id1");
+			builder.setBolt("id2", new TestBolt(), 3).shuffleGrouping("word");
+			builder.setBolt("id3", new TestBolt(), 4).shuffleGrouping("word");
+			builder.setBolt("id4", new TestBolt(), 4).shuffleGrouping("word");
+			builder.setBolt("id5", new TestBolt(), 4).shuffleGrouping("word");
+			builder.setBolt("id6", new TestBolt(), 4).shuffleGrouping("word");
+			builder.setBolt("id7", new TestBolt(), 4).shuffleGrouping("word");
 
 			// builder.setSpout("testspout", new FileSpout());
 			// builder.setBolt("firstBolt", new TestBolt());
 
 			Config conf = new Config();
-			conf.setDebug(true);
+			//conf.setDebug(true);
 
-			if (args != null && args.length > 0) {
-				conf.setNumWorkers(3);
-
-				StormSubmitter.submitTopology(args[0], conf,
+			//if (args != null && args.length > 0) {
+				conf.setNumWorkers(12);
+				conf.setNumAckers(10);
+				conf.setMaxSpoutPending(5000);
+				StormSubmitter.submitTopology("TestStorm", conf,
 						builder.createTopology());
-			} else {
+			//} else {
 
-				LocalCluster cluster = new LocalCluster();
-				cluster.submitTopology("test", conf, builder.createTopology());
-				Utils.sleep(10000);
-				cluster.killTopology("test");
-				cluster.shutdown();
-			}
+			//	LocalCluster cluster = new LocalCluster();
+			//	cluster.submitTopology("test", conf, builder.createTopology());
+				//Utils.sleep(10000);
+				//cluster.killTopology("test");
+				//cluster.shutdown();
+			//}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
