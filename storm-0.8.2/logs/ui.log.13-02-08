@@ -1,0 +1,13 @@
+2013-02-08 09:02:46 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-08 16:45:54 log [INFO] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2013-02-08 16:45:54 log [INFO] jetty-6.1.26
+2013-02-08 16:45:54 log [INFO] Started SocketConnector@0.0.0.0:8080
+2013-02-08 16:57:59 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-08 16:58:13 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-08 16:58:19 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-08 17:23:02 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-08 17:47:19 log [INFO] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2013-02-08 17:47:19 log [INFO] jetty-6.1.26
+2013-02-08 17:47:20 log [INFO] Started SocketConnector@0.0.0.0:8080
+2013-02-08 17:47:43 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-08 17:50:27 thrift [INFO] Connecting to Nimbus at storm0:6627

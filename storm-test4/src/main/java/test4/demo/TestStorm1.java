@@ -60,8 +60,9 @@ public class TestStorm1 {
 			}
 			LOG.info("TestStorm1 SPOUT EMITTING:" + data[next] + " !!!!!!!");
 			LOG.info("TestStorm1 SPOUT next:" + next);
-			//add an ID have to put in. How does this behave? 
-			collector.emit(new Values(data[next]),next);
+			//add an ID have to put in. How does this behave?
+			// look at SS code to duplicate
+			collector.emit(new Values(data[next]));
 			next++;
 		}
 
@@ -86,8 +87,8 @@ public class TestStorm1 {
 		@Override
 		public void execute(Tuple input) {
 			// TODO Auto-generated method stub
-			//LOG.info("TEST BOLT EXECUTE!!!!!!!!");
-			collector.emit(new Values(input.getString(0)));
+			LOG.info("TEST BOLT EXECUTE!!!!!!!!");
+			collector.emit(input,new Values(input.getString(0)));
 			collector.ack(input);
 		}
 
@@ -103,33 +104,33 @@ public class TestStorm1 {
 		try {
 			TopologyBuilder builder = new TopologyBuilder();
 
-			builder.setSpout("letter", new TestStorm1Spout(), 5);
-			//builder.setSpout("secondletter", new TestStorm1Spout(), 5);
-			//builder.setSpout("thirdletter", new TestStorm1Spout(), 5);
+			builder.setSpout("letter", new TestStorm1Spout(), 1);
+			builder.setSpout("secondletter", new TestStorm1Spout(), 5);
+			builder.setSpout("thirdletter", new TestStorm1Spout(), 5);
 			
-			builder.setBolt("id1", new TestStorm1Bolt(), 10).setNumTasks(20).shuffleGrouping(
+			builder.setBolt("id1", new TestStorm1Bolt(), 1).setNumTasks(1).shuffleGrouping(
 					"letter");
 			builder.setBolt("id2", new TestStorm1Bolt(), 10).setNumTasks(20).shuffleGrouping(
 					"letter");
-		//	builder.setBolt("id3", new TestStorm1Bolt(), 10).shuffleGrouping(
-		//			"secondletter");
-		//	builder.setBolt("id4", new TestStorm1Bolt(), 10).shuffleGrouping(
-		//			"secondletter");
-		//	builder.setBolt("id5", new TestStorm1Bolt(), 10).shuffleGrouping(
-		//			"thirdletter");
-		//	builder.setBolt("id6", new TestStorm1Bolt(), 10).shuffleGrouping(
-		//			"thirdletter");
+			builder.setBolt("id3", new TestStorm1Bolt(), 10).shuffleGrouping(
+					"secondletter");
+			builder.setBolt("id4", new TestStorm1Bolt(), 10).shuffleGrouping(
+					"secondletter");
+			builder.setBolt("id5", new TestStorm1Bolt(), 10).shuffleGrouping(
+					"thirdletter");
+			builder.setBolt("id6", new TestStorm1Bolt(), 10).shuffleGrouping(
+					"thirdletter");
 
 			Config conf = new Config();
-			//conf.setDebug(true);
+			conf.setDebug(true);
 			conf.setNumWorkers(10);
 			conf.setNumAckers(10);
 			conf.setMaxSpoutPending(10000);
 			
 //			LocalCluster cluster = new LocalCluster();
 			StormSubmitter.submitTopology("TestStorm1", conf, builder.createTopology());
-
-		//Utils.sleep(1000000);
+			//cluster.submitTopology("TestStorm1", conf, builder.createTopology());
+			//Utils.sleep(1000000);
 			//cluster.deactivate("TestStorm1");
 			//cluster.shutdown();
 

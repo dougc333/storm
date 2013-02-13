@@ -4,11 +4,11 @@
 #     - "server2"
 # 
  nimbus.host: "storm0"
-
+# topology.workers: 10
+# topology.tasks: 20
 #
 #
- java.library.path:
-     - "/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib"
+ java.library.path: "/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib:/usr/lib64"
 # 
 # 
 # ##### These may optionally be filled in:
@@ -22,6 +22,8 @@
 # topology.kryo.decorators:
 #     - org.mycompany.MyDecorator
 #
+ storm.local.dir: "/home/dc/storm/storm-0.8.2"
+
 ## Locations of the drpc servers
 # drpc.servers:
 #     - "server1"

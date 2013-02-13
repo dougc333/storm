@@ -1,59 +1,76 @@
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:zookeeper.version=3.3.3-1073969, built on 02/23/2011 22:27 GMT
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:host.name=storm0
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:java.version=1.6.0_38
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:java.vendor=Sun Microsystems Inc.
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:java.home=/home/dc/jdk1.6.0_38/jre
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:java.class.path=/home/dc/storm/storm-0.8.2/storm-0.8.2.jar:/home/dc/storm/storm-0.8.2/lib/clout-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/tools.macro-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-logging-1.1.1.jar:/home/dc/storm/storm-0.8.2/lib/core.incubator-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-fileupload-1.2.1.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5.jar:/home/dc/storm/storm-0.8.2/lib/snakeyaml-1.9.jar:/home/dc/storm/storm-0.8.2/lib/minlog-1.2.jar:/home/dc/storm/storm-0.8.2/lib/commons-exec-1.1.jar:/home/dc/storm/storm-0.8.2/lib/hiccup-0.3.6.jar:/home/dc/storm/storm-0.8.2/lib/clojure-1.4.0.jar:/home/dc/storm/storm-0.8.2/lib/zookeeper-3.3.3.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5-20081211.jar:/home/dc/storm/storm-0.8.2/lib/compojure-1.1.3.jar:/home/dc/storm/storm-0.8.2/lib/ring-jetty-adapter-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/curator-client-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/ring-servlet-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/carbonite-1.5.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-api-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/kryo-2.17.jar:/home/dc/storm/storm-0.8.2/lib/asm-4.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-codec-1.4.jar:/home/dc/storm/storm-0.8.2/lib/httpcore-4.1.jar:/home/dc/storm/storm-0.8.2/lib/jline-0.9.94.jar:/home/dc/storm/storm-0.8.2/lib/commons-lang-2.5.jar:/home/dc/storm/storm-0.8.2/lib/tools.cli-0.2.2.jar:/home/dc/storm/storm-0.8.2/lib/libthrift7-0.7.0.jar:/home/dc/storm/storm-0.8.2/lib/math.numeric-tower-0.0.1.jar:/home/dc/storm/storm-0.8.2/lib/jetty-util-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/curator-framework-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/junit-3.8.1.jar:/home/dc/storm/storm-0.8.2/lib/clj-time-0.4.1.jar:/home/dc/storm/storm-0.8.2/lib/reflectasm-1.07-shaded.jar:/home/dc/storm/storm-0.8.2/lib/commons-io-1.4.jar:/home/dc/storm/storm-0.8.2/lib/objenesis-1.2.jar:/home/dc/storm/storm-0.8.2/lib/json-simple-1.1.jar:/home/dc/storm/storm-0.8.2/lib/jzmq-2.1.0.jar:/home/dc/storm/storm-0.8.2/lib/jetty-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/guava-13.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-log4j12-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/jgrapht-0.8.3.jar:/home/dc/storm/storm-0.8.2/lib/log4j-1.2.16.jar:/home/dc/storm/storm-0.8.2/lib/tools.logging-0.2.3.jar:/home/dc/storm/storm-0.8.2/lib/httpclient-4.1.1.jar:/home/dc/storm/storm-0.8.2/lib/joda-time-2.0.jar:/home/dc/storm/storm-0.8.2/lib/ring-core-1.1.5.jar:/home/dc/storm/storm-0.8.2/lib/disruptor-2.10.1.jar:/home/dc/storm/storm-0.8.2/log4j:/home/dc/storm/storm-0.8.2/conf
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:java.library.path=[/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib]
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:java.io.tmpdir=/tmp
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:java.compiler=<NA>
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:os.name=Linux
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:os.arch=amd64
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:os.version=2.6.32-279.19.1.el6.x86_64
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:user.name=dc
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:user.home=/home/dc
-2013-02-07 09:29:52 ZooKeeper [INFO] Client environment:user.dir=/home/dc/storm
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:zookeeper.version=3.3.3-1073969, built on 02/23/2011 22:27 GMT
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:host.name=storm0
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:java.version=1.6.0_38
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:java.vendor=Sun Microsystems Inc.
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:java.home=/home/dc/jdk1.6.0_38/jre
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:java.class.path=/home/dc/storm/storm-0.8.2/storm-0.8.2.jar:/home/dc/storm/storm-0.8.2/lib/clout-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/tools.macro-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-logging-1.1.1.jar:/home/dc/storm/storm-0.8.2/lib/core.incubator-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-fileupload-1.2.1.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5.jar:/home/dc/storm/storm-0.8.2/lib/snakeyaml-1.9.jar:/home/dc/storm/storm-0.8.2/lib/minlog-1.2.jar:/home/dc/storm/storm-0.8.2/lib/commons-exec-1.1.jar:/home/dc/storm/storm-0.8.2/lib/hiccup-0.3.6.jar:/home/dc/storm/storm-0.8.2/lib/clojure-1.4.0.jar:/home/dc/storm/storm-0.8.2/lib/zookeeper-3.3.3.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5-20081211.jar:/home/dc/storm/storm-0.8.2/lib/compojure-1.1.3.jar:/home/dc/storm/storm-0.8.2/lib/ring-jetty-adapter-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/curator-client-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/ring-servlet-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/carbonite-1.5.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-api-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/kryo-2.17.jar:/home/dc/storm/storm-0.8.2/lib/asm-4.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-codec-1.4.jar:/home/dc/storm/storm-0.8.2/lib/httpcore-4.1.jar:/home/dc/storm/storm-0.8.2/lib/jline-0.9.94.jar:/home/dc/storm/storm-0.8.2/lib/commons-lang-2.5.jar:/home/dc/storm/storm-0.8.2/lib/tools.cli-0.2.2.jar:/home/dc/storm/storm-0.8.2/lib/libthrift7-0.7.0.jar:/home/dc/storm/storm-0.8.2/lib/math.numeric-tower-0.0.1.jar:/home/dc/storm/storm-0.8.2/lib/jetty-util-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/curator-framework-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/junit-3.8.1.jar:/home/dc/storm/storm-0.8.2/lib/clj-time-0.4.1.jar:/home/dc/storm/storm-0.8.2/lib/reflectasm-1.07-shaded.jar:/home/dc/storm/storm-0.8.2/lib/commons-io-1.4.jar:/home/dc/storm/storm-0.8.2/lib/objenesis-1.2.jar:/home/dc/storm/storm-0.8.2/lib/json-simple-1.1.jar:/home/dc/storm/storm-0.8.2/lib/jzmq-2.1.0.jar:/home/dc/storm/storm-0.8.2/lib/jetty-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/guava-13.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-log4j12-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/jgrapht-0.8.3.jar:/home/dc/storm/storm-0.8.2/lib/log4j-1.2.16.jar:/home/dc/storm/storm-0.8.2/lib/tools.logging-0.2.3.jar:/home/dc/storm/storm-0.8.2/lib/httpclient-4.1.1.jar:/home/dc/storm/storm-0.8.2/lib/joda-time-2.0.jar:/home/dc/storm/storm-0.8.2/lib/ring-core-1.1.5.jar:/home/dc/storm/storm-0.8.2/lib/disruptor-2.10.1.jar:/home/dc/storm/storm-0.8.2/log4j:/home/dc/storm/storm-0.8.2/conf
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:java.library.path=[/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib]
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:java.io.tmpdir=/tmp
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:java.compiler=<NA>
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:os.name=Linux
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:os.arch=amd64
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:os.version=2.6.32-279.19.1.el6.x86_64
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:user.name=dc
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:user.home=/home/dc
-2013-02-07 09:29:52 ZooKeeperServer [INFO] Server environment:user.dir=/home/dc/storm
-2013-02-07 09:29:52 supervisor [INFO] Starting Supervisor with conf {"dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.fall.back.on.java.serialization" true, "topology.max.error.report.per.interval" 5, "zmq.linger.millis" 5000, "topology.skip.missing.kryo.registrations" false, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "topology.trident.batch.emit.interval.millis" 500, "nimbus.monitor.freq.secs" 10, "java.library.path" ["/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib"], "topology.executor.send.buffer.size" 1024, "storm.local.dir" "storm-local", "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "drpc.worker.threads" 64, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "storm0", "storm.zookeeper.port" 2181, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "supervisor.enable" true, "storm.zookeeper.servers" ["storm0"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" 1, "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "drpc.queue.size" 128, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "topology.error.throttle.interval.secs" 10, "zmq.hwm" 0, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "nimbus.topology.validator" "backtype.storm.nimbus.DefaultTopologyValidator", "supervisor.slots.ports" [6700 6701 6702 6703 6704], "topology.debug" false, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx256m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.acker.tasks" nil, "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "topology.kryo.factory" "backtype.storm.serialization.DefaultKryoFactory", "drpc.invocations.port" 3773, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "distributed", "topology.optimize" true, "topology.max.task.parallelism" nil}
-2013-02-07 09:29:52 CuratorFrameworkImpl [INFO] Starting
-2013-02-07 09:29:52 ZooKeeper [INFO] Initiating client connection, connectString=storm0:2181 sessionTimeout=20000 watcher=com.netflix.curator.ConnectionState@2f24614c
-2013-02-07 09:29:52 ClientCnxn [INFO] Opening socket connection to server storm0/127.0.0.1:2181
-2013-02-07 09:29:52 ClientCnxn [INFO] Socket connection established to storm0/127.0.0.1:2181, initiating session
-2013-02-07 09:29:52 ClientCnxn [INFO] Session establishment complete on server storm0/127.0.0.1:2181, sessionid = 0x13cb5ad3a620002, negotiated timeout = 20000
-2013-02-07 09:29:52 zookeeper [INFO] Zookeeper state update: :connected:none
-2013-02-07 09:29:52 ZooKeeper [INFO] Session: 0x13cb5ad3a620002 closed
-2013-02-07 09:29:52 ClientCnxn [INFO] EventThread shut down
-2013-02-07 09:29:52 CuratorFrameworkImpl [INFO] Starting
-2013-02-07 09:29:52 ZooKeeper [INFO] Initiating client connection, connectString=storm0:2181/storm sessionTimeout=20000 watcher=com.netflix.curator.ConnectionState@1633c3e6
-2013-02-07 09:29:52 ClientCnxn [INFO] Opening socket connection to server storm0/127.0.0.1:2181
-2013-02-07 09:29:52 ClientCnxn [INFO] Socket connection established to storm0/127.0.0.1:2181, initiating session
-2013-02-07 09:29:52 ClientCnxn [INFO] Session establishment complete on server storm0/127.0.0.1:2181, sessionid = 0x13cb5ad3a620003, negotiated timeout = 20000
-2013-02-07 09:29:52 supervisor [INFO] Starting supervisor with id 5891c419-8f0b-4f3a-a8f9-78b08b7bb028 at host storm0
-2013-02-07 09:38:14 supervisor [INFO] Downloading code for storm id TestStorm1-1-1360258693 from storm-local/nimbus/stormdist/TestStorm1-1-1360258693
-2013-02-07 09:38:14 util [INFO] Could not extract resources from storm-local/supervisor/tmp/b539e202-b5d0-41c1-8ec9-f98203acd108/stormjar.jar
-2013-02-07 09:38:14 supervisor [INFO] Finished downloading code for storm id TestStorm1-1-1360258693 from storm-local/nimbus/stormdist/TestStorm1-1-1360258693
-2013-02-07 09:38:14 supervisor [INFO] Launching worker with assignment #backtype.storm.daemon.supervisor.LocalAssignment{:storm-id "TestStorm1-1-1360258693", :executors ([6 6] [51 51] [1 1] [41 42] [11 12] [21 22] [31 32])} for this supervisor 5891c419-8f0b-4f3a-a8f9-78b08b7bb028 on port 6704 with id 302fff4e-b690-4cb1-a1ed-94c0a21bca02
-2013-02-07 09:38:14 supervisor [INFO] Launching worker with command: java -server -Xmx768m  -Djava.library.path=["/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib"] -Dlogfile.name=worker-6704.log -Dstorm.home=/home/dc/storm/storm-0.8.2 -Dlog4j.configuration=storm.log.properties -cp /home/dc/storm/storm-0.8.2/storm-0.8.2.jar:/home/dc/storm/storm-0.8.2/lib/clout-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/tools.macro-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-logging-1.1.1.jar:/home/dc/storm/storm-0.8.2/lib/core.incubator-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-fileupload-1.2.1.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5.jar:/home/dc/storm/storm-0.8.2/lib/snakeyaml-1.9.jar:/home/dc/storm/storm-0.8.2/lib/minlog-1.2.jar:/home/dc/storm/storm-0.8.2/lib/commons-exec-1.1.jar:/home/dc/storm/storm-0.8.2/lib/hiccup-0.3.6.jar:/home/dc/storm/storm-0.8.2/lib/clojure-1.4.0.jar:/home/dc/storm/storm-0.8.2/lib/zookeeper-3.3.3.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5-20081211.jar:/home/dc/storm/storm-0.8.2/lib/compojure-1.1.3.jar:/home/dc/storm/storm-0.8.2/lib/ring-jetty-adapter-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/curator-client-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/ring-servlet-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/carbonite-1.5.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-api-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/kryo-2.17.jar:/home/dc/storm/storm-0.8.2/lib/asm-4.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-codec-1.4.jar:/home/dc/storm/storm-0.8.2/lib/httpcore-4.1.jar:/home/dc/storm/storm-0.8.2/lib/jline-0.9.94.jar:/home/dc/storm/storm-0.8.2/lib/commons-lang-2.5.jar:/home/dc/storm/storm-0.8.2/lib/tools.cli-0.2.2.jar:/home/dc/storm/storm-0.8.2/lib/libthrift7-0.7.0.jar:/home/dc/storm/storm-0.8.2/lib/math.numeric-tower-0.0.1.jar:/home/dc/storm/storm-0.8.2/lib/jetty-util-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/curator-framework-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/junit-3.8.1.jar:/home/dc/storm/storm-0.8.2/lib/clj-time-0.4.1.jar:/home/dc/storm/storm-0.8.2/lib/reflectasm-1.07-shaded.jar:/home/dc/storm/storm-0.8.2/lib/commons-io-1.4.jar:/home/dc/storm/storm-0.8.2/lib/objenesis-1.2.jar:/home/dc/storm/storm-0.8.2/lib/json-simple-1.1.jar:/home/dc/storm/storm-0.8.2/lib/jzmq-2.1.0.jar:/home/dc/storm/storm-0.8.2/lib/jetty-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/guava-13.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-log4j12-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/jgrapht-0.8.3.jar:/home/dc/storm/storm-0.8.2/lib/log4j-1.2.16.jar:/home/dc/storm/storm-0.8.2/lib/tools.logging-0.2.3.jar:/home/dc/storm/storm-0.8.2/lib/httpclient-4.1.1.jar:/home/dc/storm/storm-0.8.2/lib/joda-time-2.0.jar:/home/dc/storm/storm-0.8.2/lib/ring-core-1.1.5.jar:/home/dc/storm/storm-0.8.2/lib/disruptor-2.10.1.jar:/home/dc/storm/storm-0.8.2/log4j:/home/dc/storm/storm-0.8.2/conf:storm-local/supervisor/stormdist/TestStorm1-1-1360258693/stormjar.jar backtype.storm.daemon.worker TestStorm1-1-1360258693 5891c419-8f0b-4f3a-a8f9-78b08b7bb028 6704 302fff4e-b690-4cb1-a1ed-94c0a21bca02
-2013-02-07 09:38:14 event [ERROR] Error when processing event
-java.lang.ClassCastException: clojure.lang.PersistentVector cannot be cast to java.lang.String
-	at java.lang.ProcessEnvironment$StringEnvironment.put(ProcessEnvironment.java:203)
-	at backtype.storm.util$launch_process.doInvoke(util.clj:348)
-	at clojure.lang.RestFn.invoke(RestFn.java:439)
-	at backtype.storm.daemon.supervisor$fn__4793.invoke(supervisor.clj:429)
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:zookeeper.version=3.3.3-1073969, built on 02/23/2011 22:27 GMT
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:host.name=localhost.localdomain
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:java.version=1.6.0_38
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:java.vendor=Sun Microsystems Inc.
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:java.home=/home/dc/jdk1.6.0_38/jre
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:java.class.path=/home/dc/storm/storm-0.8.2/storm-0.8.2.jar:/home/dc/storm/storm-0.8.2/lib/clout-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/tools.macro-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-logging-1.1.1.jar:/home/dc/storm/storm-0.8.2/lib/core.incubator-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-fileupload-1.2.1.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5.jar:/home/dc/storm/storm-0.8.2/lib/snakeyaml-1.9.jar:/home/dc/storm/storm-0.8.2/lib/minlog-1.2.jar:/home/dc/storm/storm-0.8.2/lib/commons-exec-1.1.jar:/home/dc/storm/storm-0.8.2/lib/hiccup-0.3.6.jar:/home/dc/storm/storm-0.8.2/lib/clojure-1.4.0.jar:/home/dc/storm/storm-0.8.2/lib/zookeeper-3.3.3.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5-20081211.jar:/home/dc/storm/storm-0.8.2/lib/compojure-1.1.3.jar:/home/dc/storm/storm-0.8.2/lib/ring-jetty-adapter-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/curator-client-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/ring-servlet-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/carbonite-1.5.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-api-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/kryo-2.17.jar:/home/dc/storm/storm-0.8.2/lib/asm-4.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-codec-1.4.jar:/home/dc/storm/storm-0.8.2/lib/httpcore-4.1.jar:/home/dc/storm/storm-0.8.2/lib/jline-0.9.94.jar:/home/dc/storm/storm-0.8.2/lib/commons-lang-2.5.jar:/home/dc/storm/storm-0.8.2/lib/tools.cli-0.2.2.jar:/home/dc/storm/storm-0.8.2/lib/libthrift7-0.7.0.jar:/home/dc/storm/storm-0.8.2/lib/math.numeric-tower-0.0.1.jar:/home/dc/storm/storm-0.8.2/lib/jetty-util-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/curator-framework-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/junit-3.8.1.jar:/home/dc/storm/storm-0.8.2/lib/clj-time-0.4.1.jar:/home/dc/storm/storm-0.8.2/lib/reflectasm-1.07-shaded.jar:/home/dc/storm/storm-0.8.2/lib/commons-io-1.4.jar:/home/dc/storm/storm-0.8.2/lib/objenesis-1.2.jar:/home/dc/storm/storm-0.8.2/lib/json-simple-1.1.jar:/home/dc/storm/storm-0.8.2/lib/jzmq-2.1.0.jar:/home/dc/storm/storm-0.8.2/lib/jetty-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/guava-13.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-log4j12-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/jgrapht-0.8.3.jar:/home/dc/storm/storm-0.8.2/lib/log4j-1.2.16.jar:/home/dc/storm/storm-0.8.2/lib/tools.logging-0.2.3.jar:/home/dc/storm/storm-0.8.2/lib/httpclient-4.1.1.jar:/home/dc/storm/storm-0.8.2/lib/joda-time-2.0.jar:/home/dc/storm/storm-0.8.2/lib/ring-core-1.1.5.jar:/home/dc/storm/storm-0.8.2/lib/disruptor-2.10.1.jar:/home/dc/storm/storm-0.8.2/log4j:/home/dc/storm/storm-0.8.2/conf
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:java.library.path=/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib:/usr/lib64
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:java.io.tmpdir=/tmp
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:java.compiler=<NA>
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:os.name=Linux
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:os.arch=amd64
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:os.version=2.6.32-279.19.1.el6.x86_64
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:user.name=dc
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:user.home=/home/dc
+2013-02-13 08:31:19 ZooKeeper [INFO] Client environment:user.dir=/home/dc/storm
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:zookeeper.version=3.3.3-1073969, built on 02/23/2011 22:27 GMT
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:host.name=localhost.localdomain
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:java.version=1.6.0_38
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:java.vendor=Sun Microsystems Inc.
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:java.home=/home/dc/jdk1.6.0_38/jre
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:java.class.path=/home/dc/storm/storm-0.8.2/storm-0.8.2.jar:/home/dc/storm/storm-0.8.2/lib/clout-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/tools.macro-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-logging-1.1.1.jar:/home/dc/storm/storm-0.8.2/lib/core.incubator-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-fileupload-1.2.1.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5.jar:/home/dc/storm/storm-0.8.2/lib/snakeyaml-1.9.jar:/home/dc/storm/storm-0.8.2/lib/minlog-1.2.jar:/home/dc/storm/storm-0.8.2/lib/commons-exec-1.1.jar:/home/dc/storm/storm-0.8.2/lib/hiccup-0.3.6.jar:/home/dc/storm/storm-0.8.2/lib/clojure-1.4.0.jar:/home/dc/storm/storm-0.8.2/lib/zookeeper-3.3.3.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5-20081211.jar:/home/dc/storm/storm-0.8.2/lib/compojure-1.1.3.jar:/home/dc/storm/storm-0.8.2/lib/ring-jetty-adapter-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/curator-client-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/ring-servlet-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/carbonite-1.5.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-api-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/kryo-2.17.jar:/home/dc/storm/storm-0.8.2/lib/asm-4.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-codec-1.4.jar:/home/dc/storm/storm-0.8.2/lib/httpcore-4.1.jar:/home/dc/storm/storm-0.8.2/lib/jline-0.9.94.jar:/home/dc/storm/storm-0.8.2/lib/commons-lang-2.5.jar:/home/dc/storm/storm-0.8.2/lib/tools.cli-0.2.2.jar:/home/dc/storm/storm-0.8.2/lib/libthrift7-0.7.0.jar:/home/dc/storm/storm-0.8.2/lib/math.numeric-tower-0.0.1.jar:/home/dc/storm/storm-0.8.2/lib/jetty-util-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/curator-framework-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/junit-3.8.1.jar:/home/dc/storm/storm-0.8.2/lib/clj-time-0.4.1.jar:/home/dc/storm/storm-0.8.2/lib/reflectasm-1.07-shaded.jar:/home/dc/storm/storm-0.8.2/lib/commons-io-1.4.jar:/home/dc/storm/storm-0.8.2/lib/objenesis-1.2.jar:/home/dc/storm/storm-0.8.2/lib/json-simple-1.1.jar:/home/dc/storm/storm-0.8.2/lib/jzmq-2.1.0.jar:/home/dc/storm/storm-0.8.2/lib/jetty-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/guava-13.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-log4j12-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/jgrapht-0.8.3.jar:/home/dc/storm/storm-0.8.2/lib/log4j-1.2.16.jar:/home/dc/storm/storm-0.8.2/lib/tools.logging-0.2.3.jar:/home/dc/storm/storm-0.8.2/lib/httpclient-4.1.1.jar:/home/dc/storm/storm-0.8.2/lib/joda-time-2.0.jar:/home/dc/storm/storm-0.8.2/lib/ring-core-1.1.5.jar:/home/dc/storm/storm-0.8.2/lib/disruptor-2.10.1.jar:/home/dc/storm/storm-0.8.2/log4j:/home/dc/storm/storm-0.8.2/conf
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:java.library.path=/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib:/usr/lib64
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:java.io.tmpdir=/tmp
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:java.compiler=<NA>
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:os.name=Linux
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:os.arch=amd64
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:os.version=2.6.32-279.19.1.el6.x86_64
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:user.name=dc
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:user.home=/home/dc
+2013-02-13 08:31:19 ZooKeeperServer [INFO] Server environment:user.dir=/home/dc/storm
+2013-02-13 08:31:19 supervisor [INFO] Starting Supervisor with conf {"dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.fall.back.on.java.serialization" true, "topology.max.error.report.per.interval" 5, "zmq.linger.millis" 5000, "topology.skip.missing.kryo.registrations" false, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "topology.trident.batch.emit.interval.millis" 500, "nimbus.monitor.freq.secs" 10, "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib:/usr/lib64", "topology.executor.send.buffer.size" 1024, "storm.local.dir" "/home/dc/storm/storm-0.8.2", "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "drpc.worker.threads" 64, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "storm0", "storm.zookeeper.port" 2181, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "supervisor.enable" true, "storm.zookeeper.servers" ["storm0"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" 1, "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "drpc.queue.size" 128, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "topology.error.throttle.interval.secs" 10, "zmq.hwm" 0, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "nimbus.topology.validator" "backtype.storm.nimbus.DefaultTopologyValidator", "supervisor.slots.ports" [6700 6701 6702 6703 6704], "topology.debug" false, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx256m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.acker.tasks" nil, "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "topology.kryo.factory" "backtype.storm.serialization.DefaultKryoFactory", "drpc.invocations.port" 3773, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "distributed", "topology.optimize" true, "topology.max.task.parallelism" nil}
+2013-02-13 08:31:19 CuratorFrameworkImpl [INFO] Starting
+2013-02-13 08:31:19 ZooKeeper [INFO] Initiating client connection, connectString=storm0:2181 sessionTimeout=20000 watcher=com.netflix.curator.ConnectionState@40a0a36
+2013-02-13 08:31:19 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 08:31:19 ClientCnxn [INFO] Socket connection established to storm0/192.168.5.193:2181, initiating session
+2013-02-13 08:31:19 ClientCnxn [INFO] Session establishment complete on server storm0/192.168.5.193:2181, sessionid = 0x13cc41e56d00045, negotiated timeout = 20000
+2013-02-13 08:31:19 zookeeper [INFO] Zookeeper state update: :connected:none
+2013-02-13 08:31:19 ZooKeeper [INFO] Session: 0x13cc41e56d00045 closed
+2013-02-13 08:31:19 ClientCnxn [INFO] EventThread shut down
+2013-02-13 08:31:19 CuratorFrameworkImpl [INFO] Starting
+2013-02-13 08:31:19 ZooKeeper [INFO] Initiating client connection, connectString=storm0:2181/storm sessionTimeout=20000 watcher=com.netflix.curator.ConnectionState@1633c3e6
+2013-02-13 08:31:19 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 08:31:19 ClientCnxn [INFO] Socket connection established to storm0/192.168.5.193:2181, initiating session
+2013-02-13 08:31:19 ClientCnxn [INFO] Session establishment complete on server storm0/192.168.5.193:2181, sessionid = 0x13cc41e56d00046, negotiated timeout = 20000
+2013-02-13 08:31:20 supervisor [INFO] Starting supervisor with id e11ea5e6-f58a-469e-855e-cbcf3b367e58 at host localhost.localdomain
+2013-02-13 08:31:20 supervisor [INFO] Removing code for storm id TestPerf1-2-1360706578
+2013-02-13 08:31:20 supervisor [INFO] Shutting down and clearing state for id 1dcb3a82-869c-419e-bcef-ed0d179d0fd1. Current supervisor time: 1360773080. State: :timed-out, Heartbeat: #backtype.storm.daemon.common.WorkerHeartbeat{:time-secs 1360711453, :storm-id "TestPerf1-2-1360706578", :executors #{[29 31]}, :port 6700}
+2013-02-13 08:31:20 supervisor [INFO] Shutting down e11ea5e6-f58a-469e-855e-cbcf3b367e58:1dcb3a82-869c-419e-bcef-ed0d179d0fd1
+2013-02-13 08:31:20 util [INFO] Error when trying to kill 10747. Process is probably already dead.
+2013-02-13 08:31:20 supervisor [INFO] Shut down e11ea5e6-f58a-469e-855e-cbcf3b367e58:1dcb3a82-869c-419e-bcef-ed0d179d0fd1
+2013-02-13 08:31:20 supervisor [INFO] Shutting down and clearing state for id f9a16f12-9faf-44d6-ae4b-24e689e22d68. Current supervisor time: 1360773080. State: :timed-out, Heartbeat: #backtype.storm.daemon.common.WorkerHeartbeat{:time-secs 1360711453, :storm-id "TestPerf1-2-1360706578", :executors #{[18 20]}, :port 6702}
+2013-02-13 08:31:20 supervisor [INFO] Shutting down e11ea5e6-f58a-469e-855e-cbcf3b367e58:f9a16f12-9faf-44d6-ae4b-24e689e22d68
+2013-02-13 08:31:20 util [INFO] Error when trying to kill 10751. Process is probably already dead.
+2013-02-13 08:31:20 supervisor [INFO] Shut down e11ea5e6-f58a-469e-855e-cbcf3b367e58:f9a16f12-9faf-44d6-ae4b-24e689e22d68
+2013-02-13 08:31:20 supervisor [INFO] Shutting down and clearing state for id 908a161b-6f09-4449-819c-d0926c8c2c01. Current supervisor time: 1360773080. State: :timed-out, Heartbeat: #backtype.storm.daemon.common.WorkerHeartbeat{:time-secs 1360711453, :storm-id "TestPerf1-2-1360706578", :executors #{[35 37] [5 8]}, :port 6704}
+2013-02-13 08:31:20 supervisor [INFO] Shutting down e11ea5e6-f58a-469e-855e-cbcf3b367e58:908a161b-6f09-4449-819c-d0926c8c2c01
+2013-02-13 08:31:20 util [INFO] Error when trying to kill 10775. Process is probably already dead.
+2013-02-13 08:31:20 supervisor [INFO] Shut down e11ea5e6-f58a-469e-855e-cbcf3b367e58:908a161b-6f09-4449-819c-d0926c8c2c01
+2013-02-13 08:31:20 supervisor [INFO] Shutting down and clearing state for id ee3bd934-d3f0-46c3-a690-8f70659b834c. Current supervisor time: 1360773080. State: :timed-out, Heartbeat: #backtype.storm.daemon.common.WorkerHeartbeat{:time-secs 1360711453, :storm-id "TestPerf1-2-1360706578", :executors #{[12 14]}, :port 6703}
+2013-02-13 08:31:20 supervisor [INFO] Shutting down e11ea5e6-f58a-469e-855e-cbcf3b367e58:ee3bd934-d3f0-46c3-a690-8f70659b834c
+2013-02-13 08:31:20 util [INFO] Error when trying to kill 10761. Process is probably already dead.
+2013-02-13 08:31:21 supervisor [INFO] Shut down e11ea5e6-f58a-469e-855e-cbcf3b367e58:ee3bd934-d3f0-46c3-a690-8f70659b834c
+2013-02-13 08:31:21 supervisor [INFO] Shutting down and clearing state for id 8d19691a-79bd-46a7-80e5-5728b1ed5b3f. Current supervisor time: 1360773080. State: :timed-out, Heartbeat: #backtype.storm.daemon.common.WorkerHeartbeat{:time-secs 1360711453, :storm-id "TestPerf1-2-1360706578", :executors #{[25 28]}, :port 6701}
+2013-02-13 08:31:21 supervisor [INFO] Shutting down e11ea5e6-f58a-469e-855e-cbcf3b367e58:8d19691a-79bd-46a7-80e5-5728b1ed5b3f
+2013-02-13 08:31:21 util [INFO] Error when trying to kill 10745. Process is probably already dead.
+2013-02-13 08:31:21 supervisor [INFO] Shut down e11ea5e6-f58a-469e-855e-cbcf3b367e58:8d19691a-79bd-46a7-80e5-5728b1ed5b3f
+2013-02-13 08:31:21 supervisor [INFO] Launching worker with assignment #backtype.storm.daemon.supervisor.LocalAssignment{:storm-id "TestPerf1-2-1360706578", :executors [[25 28]]} for this supervisor e11ea5e6-f58a-469e-855e-cbcf3b367e58 on port 6701 with id ab1f2eaf-fb34-495a-8b00-a0e47ed43378
+2013-02-13 08:31:21 event [ERROR] Error when processing event
+java.io.FileNotFoundException: File '/home/dc/storm/storm-0.8.2/supervisor/stormdist/TestPerf1-2-1360706578/stormconf.ser' does not exist
+	at org.apache.commons.io.FileUtils.openInputStream(FileUtils.java:137)
+	at org.apache.commons.io.FileUtils.readFileToByteArray(FileUtils.java:1135)
+	at backtype.storm.config$read_supervisor_storm_conf.invoke(config.clj:138)
+	at backtype.storm.daemon.supervisor$fn__4793.invoke(supervisor.clj:414)
 	at clojure.lang.MultiFn.invoke(MultiFn.java:177)
 	at backtype.storm.daemon.supervisor$sync_processes$iter__4684__4688$fn__4689.invoke(supervisor.clj:249)
 	at clojure.lang.LazySeq.sval(LazySeq.java:42)
@@ -71,4 +88,283 @@ java.lang.ClassCastException: clojure.lang.PersistentVector cannot be cast to ja
 	at backtype.storm.event$event_manager$fn__2507.invoke(event.clj:24)
 	at clojure.lang.AFn.run(AFn.java:24)
 	at java.lang.Thread.run(Thread.java:662)
-2013-02-07 09:38:14 util [INFO] Halting process: ("Error when processing an event")
+2013-02-13 08:31:21 util [INFO] Halting process: ("Error when processing an event")
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:zookeeper.version=3.3.3-1073969, built on 02/23/2011 22:27 GMT
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:host.name=localhost.localdomain
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:java.version=1.6.0_38
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:java.vendor=Sun Microsystems Inc.
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:java.home=/home/dc/jdk1.6.0_38/jre
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:java.class.path=/home/dc/storm/storm-0.8.2/storm-0.8.2.jar:/home/dc/storm/storm-0.8.2/lib/clout-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/tools.macro-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-logging-1.1.1.jar:/home/dc/storm/storm-0.8.2/lib/core.incubator-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-fileupload-1.2.1.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5.jar:/home/dc/storm/storm-0.8.2/lib/snakeyaml-1.9.jar:/home/dc/storm/storm-0.8.2/lib/minlog-1.2.jar:/home/dc/storm/storm-0.8.2/lib/commons-exec-1.1.jar:/home/dc/storm/storm-0.8.2/lib/hiccup-0.3.6.jar:/home/dc/storm/storm-0.8.2/lib/clojure-1.4.0.jar:/home/dc/storm/storm-0.8.2/lib/zookeeper-3.3.3.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5-20081211.jar:/home/dc/storm/storm-0.8.2/lib/compojure-1.1.3.jar:/home/dc/storm/storm-0.8.2/lib/ring-jetty-adapter-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/curator-client-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/ring-servlet-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/carbonite-1.5.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-api-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/kryo-2.17.jar:/home/dc/storm/storm-0.8.2/lib/asm-4.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-codec-1.4.jar:/home/dc/storm/storm-0.8.2/lib/httpcore-4.1.jar:/home/dc/storm/storm-0.8.2/lib/jline-0.9.94.jar:/home/dc/storm/storm-0.8.2/lib/commons-lang-2.5.jar:/home/dc/storm/storm-0.8.2/lib/tools.cli-0.2.2.jar:/home/dc/storm/storm-0.8.2/lib/libthrift7-0.7.0.jar:/home/dc/storm/storm-0.8.2/lib/math.numeric-tower-0.0.1.jar:/home/dc/storm/storm-0.8.2/lib/jetty-util-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/curator-framework-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/junit-3.8.1.jar:/home/dc/storm/storm-0.8.2/lib/clj-time-0.4.1.jar:/home/dc/storm/storm-0.8.2/lib/reflectasm-1.07-shaded.jar:/home/dc/storm/storm-0.8.2/lib/commons-io-1.4.jar:/home/dc/storm/storm-0.8.2/lib/objenesis-1.2.jar:/home/dc/storm/storm-0.8.2/lib/json-simple-1.1.jar:/home/dc/storm/storm-0.8.2/lib/jzmq-2.1.0.jar:/home/dc/storm/storm-0.8.2/lib/jetty-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/guava-13.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-log4j12-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/jgrapht-0.8.3.jar:/home/dc/storm/storm-0.8.2/lib/log4j-1.2.16.jar:/home/dc/storm/storm-0.8.2/lib/tools.logging-0.2.3.jar:/home/dc/storm/storm-0.8.2/lib/httpclient-4.1.1.jar:/home/dc/storm/storm-0.8.2/lib/joda-time-2.0.jar:/home/dc/storm/storm-0.8.2/lib/ring-core-1.1.5.jar:/home/dc/storm/storm-0.8.2/lib/disruptor-2.10.1.jar:/home/dc/storm/storm-0.8.2/log4j:/home/dc/storm/storm-0.8.2/conf
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:java.library.path=/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib:/usr/lib64
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:java.io.tmpdir=/tmp
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:java.compiler=<NA>
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:os.name=Linux
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:os.arch=amd64
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:os.version=2.6.32-279.19.1.el6.x86_64
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:user.name=dc
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:user.home=/home/dc
+2013-02-13 08:42:33 ZooKeeper [INFO] Client environment:user.dir=/home/dc/storm
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:zookeeper.version=3.3.3-1073969, built on 02/23/2011 22:27 GMT
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:host.name=localhost.localdomain
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:java.version=1.6.0_38
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:java.vendor=Sun Microsystems Inc.
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:java.home=/home/dc/jdk1.6.0_38/jre
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:java.class.path=/home/dc/storm/storm-0.8.2/storm-0.8.2.jar:/home/dc/storm/storm-0.8.2/lib/clout-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/tools.macro-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-logging-1.1.1.jar:/home/dc/storm/storm-0.8.2/lib/core.incubator-0.1.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-fileupload-1.2.1.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5.jar:/home/dc/storm/storm-0.8.2/lib/snakeyaml-1.9.jar:/home/dc/storm/storm-0.8.2/lib/minlog-1.2.jar:/home/dc/storm/storm-0.8.2/lib/commons-exec-1.1.jar:/home/dc/storm/storm-0.8.2/lib/hiccup-0.3.6.jar:/home/dc/storm/storm-0.8.2/lib/clojure-1.4.0.jar:/home/dc/storm/storm-0.8.2/lib/zookeeper-3.3.3.jar:/home/dc/storm/storm-0.8.2/lib/servlet-api-2.5-20081211.jar:/home/dc/storm/storm-0.8.2/lib/compojure-1.1.3.jar:/home/dc/storm/storm-0.8.2/lib/ring-jetty-adapter-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/curator-client-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/ring-servlet-0.3.11.jar:/home/dc/storm/storm-0.8.2/lib/carbonite-1.5.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-api-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/kryo-2.17.jar:/home/dc/storm/storm-0.8.2/lib/asm-4.0.jar:/home/dc/storm/storm-0.8.2/lib/commons-codec-1.4.jar:/home/dc/storm/storm-0.8.2/lib/httpcore-4.1.jar:/home/dc/storm/storm-0.8.2/lib/jline-0.9.94.jar:/home/dc/storm/storm-0.8.2/lib/commons-lang-2.5.jar:/home/dc/storm/storm-0.8.2/lib/tools.cli-0.2.2.jar:/home/dc/storm/storm-0.8.2/lib/libthrift7-0.7.0.jar:/home/dc/storm/storm-0.8.2/lib/math.numeric-tower-0.0.1.jar:/home/dc/storm/storm-0.8.2/lib/jetty-util-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/curator-framework-1.0.1.jar:/home/dc/storm/storm-0.8.2/lib/junit-3.8.1.jar:/home/dc/storm/storm-0.8.2/lib/clj-time-0.4.1.jar:/home/dc/storm/storm-0.8.2/lib/reflectasm-1.07-shaded.jar:/home/dc/storm/storm-0.8.2/lib/commons-io-1.4.jar:/home/dc/storm/storm-0.8.2/lib/objenesis-1.2.jar:/home/dc/storm/storm-0.8.2/lib/json-simple-1.1.jar:/home/dc/storm/storm-0.8.2/lib/jzmq-2.1.0.jar:/home/dc/storm/storm-0.8.2/lib/jetty-6.1.26.jar:/home/dc/storm/storm-0.8.2/lib/guava-13.0.jar:/home/dc/storm/storm-0.8.2/lib/slf4j-log4j12-1.5.8.jar:/home/dc/storm/storm-0.8.2/lib/jgrapht-0.8.3.jar:/home/dc/storm/storm-0.8.2/lib/log4j-1.2.16.jar:/home/dc/storm/storm-0.8.2/lib/tools.logging-0.2.3.jar:/home/dc/storm/storm-0.8.2/lib/httpclient-4.1.1.jar:/home/dc/storm/storm-0.8.2/lib/joda-time-2.0.jar:/home/dc/storm/storm-0.8.2/lib/ring-core-1.1.5.jar:/home/dc/storm/storm-0.8.2/lib/disruptor-2.10.1.jar:/home/dc/storm/storm-0.8.2/log4j:/home/dc/storm/storm-0.8.2/conf
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:java.library.path=/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib:/usr/lib64
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:java.io.tmpdir=/tmp
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:java.compiler=<NA>
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:os.name=Linux
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:os.arch=amd64
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:os.version=2.6.32-279.19.1.el6.x86_64
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:user.name=dc
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:user.home=/home/dc
+2013-02-13 08:42:33 ZooKeeperServer [INFO] Server environment:user.dir=/home/dc/storm
+2013-02-13 08:42:34 supervisor [INFO] Starting Supervisor with conf {"dev.zookeeper.path" "/tmp/dev-storm-zookeeper", "topology.tick.tuple.freq.secs" nil, "topology.fall.back.on.java.serialization" true, "topology.max.error.report.per.interval" 5, "zmq.linger.millis" 5000, "topology.skip.missing.kryo.registrations" false, "ui.childopts" "-Xmx768m", "storm.zookeeper.session.timeout" 20000, "nimbus.reassign" true, "topology.trident.batch.emit.interval.millis" 500, "nimbus.monitor.freq.secs" 10, "java.library.path" "/usr/local/lib:/opt/local/lib:/usr/lib:/home/dc/storm/storm-0.8.2/lib:/usr/lib64", "topology.executor.send.buffer.size" 1024, "storm.local.dir" "/home/dc/storm/storm-0.8.2", "supervisor.worker.start.timeout.secs" 120, "topology.enable.message.timeouts" true, "nimbus.cleanup.inbox.freq.secs" 600, "nimbus.inbox.jar.expiration.secs" 3600, "drpc.worker.threads" 64, "topology.worker.shared.thread.pool.size" 4, "nimbus.host" "storm0", "storm.zookeeper.port" 2181, "transactional.zookeeper.port" nil, "topology.executor.receive.buffer.size" 1024, "transactional.zookeeper.servers" nil, "storm.zookeeper.root" "/storm", "supervisor.enable" true, "storm.zookeeper.servers" ["storm0"], "transactional.zookeeper.root" "/transactional", "topology.acker.executors" 1, "topology.transfer.buffer.size" 1024, "topology.worker.childopts" nil, "drpc.queue.size" 128, "worker.childopts" "-Xmx768m", "supervisor.heartbeat.frequency.secs" 5, "topology.error.throttle.interval.secs" 10, "zmq.hwm" 0, "drpc.port" 3772, "supervisor.monitor.frequency.secs" 3, "topology.receiver.buffer.size" 8, "task.heartbeat.frequency.secs" 3, "topology.tasks" nil, "topology.spout.wait.strategy" "backtype.storm.spout.SleepSpoutWaitStrategy", "topology.max.spout.pending" nil, "storm.zookeeper.retry.interval" 1000, "topology.sleep.spout.wait.strategy.time.ms" 1, "nimbus.topology.validator" "backtype.storm.nimbus.DefaultTopologyValidator", "supervisor.slots.ports" [6700 6701 6702 6703 6704], "topology.debug" false, "nimbus.task.launch.secs" 120, "nimbus.supervisor.timeout.secs" 60, "topology.message.timeout.secs" 30, "task.refresh.poll.secs" 10, "topology.workers" 1, "supervisor.childopts" "-Xmx256m", "nimbus.thrift.port" 6627, "topology.stats.sample.rate" 0.05, "worker.heartbeat.frequency.secs" 1, "topology.acker.tasks" nil, "topology.disruptor.wait.strategy" "com.lmax.disruptor.BlockingWaitStrategy", "nimbus.task.timeout.secs" 30, "storm.zookeeper.connection.timeout" 15000, "topology.kryo.factory" "backtype.storm.serialization.DefaultKryoFactory", "drpc.invocations.port" 3773, "zmq.threads" 1, "storm.zookeeper.retry.times" 5, "topology.state.synchronization.timeout.secs" 60, "supervisor.worker.timeout.secs" 30, "nimbus.file.copy.expiration.secs" 600, "drpc.request.timeout.secs" 600, "storm.local.mode.zmq" false, "ui.port" 8080, "nimbus.childopts" "-Xmx1024m", "storm.cluster.mode" "distributed", "topology.optimize" true, "topology.max.task.parallelism" nil}
+2013-02-13 08:42:34 CuratorFrameworkImpl [INFO] Starting
+2013-02-13 08:42:34 ZooKeeper [INFO] Initiating client connection, connectString=storm0:2181 sessionTimeout=20000 watcher=com.netflix.curator.ConnectionState@546e3e5e
+2013-02-13 08:42:34 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 08:42:34 ClientCnxn [INFO] Socket connection established to storm0/192.168.5.193:2181, initiating session
+2013-02-13 08:42:34 ClientCnxn [INFO] Session establishment complete on server storm0/192.168.5.193:2181, sessionid = 0x13cc41e56d00047, negotiated timeout = 20000
+2013-02-13 08:42:34 zookeeper [INFO] Zookeeper state update: :connected:none
+2013-02-13 08:42:34 ClientCnxn [INFO] EventThread shut down
+2013-02-13 08:42:34 ZooKeeper [INFO] Session: 0x13cc41e56d00047 closed
+2013-02-13 08:42:34 CuratorFrameworkImpl [INFO] Starting
+2013-02-13 08:42:34 ZooKeeper [INFO] Initiating client connection, connectString=storm0:2181/storm sessionTimeout=20000 watcher=com.netflix.curator.ConnectionState@dfeaf06
+2013-02-13 08:42:34 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 08:42:34 ClientCnxn [INFO] Socket connection established to storm0/192.168.5.193:2181, initiating session
+2013-02-13 08:42:34 ClientCnxn [INFO] Session establishment complete on server storm0/192.168.5.193:2181, sessionid = 0x13cc41e56d00048, negotiated timeout = 20000
+2013-02-13 08:42:34 supervisor [INFO] Starting supervisor with id 257b9c14-71de-427a-9605-54fd5540e097 at host localhost.localdomain
+2013-02-13 08:42:35 supervisor [INFO] Shutting down and clearing state for id f99127fd-9e70-457d-ba07-38e16e74635d. Current supervisor time: 1360773755. State: :disallowed, Heartbeat: nil
+2013-02-13 08:42:35 supervisor [INFO] Shutting down 257b9c14-71de-427a-9605-54fd5540e097:f99127fd-9e70-457d-ba07-38e16e74635d
+2013-02-13 08:42:35 supervisor [INFO] Shut down 257b9c14-71de-427a-9605-54fd5540e097:f99127fd-9e70-457d-ba07-38e16e74635d
+2013-02-13 08:42:35 supervisor [INFO] Shutting down and clearing state for id 25f4ecde-1e30-47b0-b273-23ac4a032d74. Current supervisor time: 1360773755. State: :disallowed, Heartbeat: nil
+2013-02-13 08:42:35 supervisor [INFO] Shutting down 257b9c14-71de-427a-9605-54fd5540e097:25f4ecde-1e30-47b0-b273-23ac4a032d74
+2013-02-13 08:42:35 supervisor [INFO] Shut down 257b9c14-71de-427a-9605-54fd5540e097:25f4ecde-1e30-47b0-b273-23ac4a032d74
+2013-02-13 08:42:35 supervisor [INFO] Shutting down and clearing state for id fc6eb784-456c-4877-97d2-46966e651f5d. Current supervisor time: 1360773755. State: :disallowed, Heartbeat: nil
+2013-02-13 08:42:35 supervisor [INFO] Shutting down 257b9c14-71de-427a-9605-54fd5540e097:fc6eb784-456c-4877-97d2-46966e651f5d
+2013-02-13 08:42:35 supervisor [INFO] Shut down 257b9c14-71de-427a-9605-54fd5540e097:fc6eb784-456c-4877-97d2-46966e651f5d
+2013-02-13 08:42:35 supervisor [INFO] Shutting down and clearing state for id 31cb5f56-06fa-41b1-b545-bcacf8716681. Current supervisor time: 1360773755. State: :disallowed, Heartbeat: nil
+2013-02-13 08:42:35 supervisor [INFO] Shutting down 257b9c14-71de-427a-9605-54fd5540e097:31cb5f56-06fa-41b1-b545-bcacf8716681
+2013-02-13 08:42:35 supervisor [INFO] Shut down 257b9c14-71de-427a-9605-54fd5540e097:31cb5f56-06fa-41b1-b545-bcacf8716681
+2013-02-13 08:42:35 supervisor [INFO] Shutting down and clearing state for id ab1f2eaf-fb34-495a-8b00-a0e47ed43378. Current supervisor time: 1360773755. State: :disallowed, Heartbeat: nil
+2013-02-13 08:42:35 supervisor [INFO] Shutting down 257b9c14-71de-427a-9605-54fd5540e097:ab1f2eaf-fb34-495a-8b00-a0e47ed43378
+2013-02-13 08:42:35 supervisor [INFO] Shut down 257b9c14-71de-427a-9605-54fd5540e097:ab1f2eaf-fb34-495a-8b00-a0e47ed43378
+2013-02-13 09:25:53 ClientCnxn [INFO] Client session timed out, have not heard from server in 618018ms for sessionid 0x13cc41e56d00048, closing socket connection and attempting reconnect
+2013-02-13 09:25:53 ConnectionStateManager [INFO] State change: SUSPENDED
+2013-02-13 09:25:53 cluster [WARN] Received event :disconnected::none: with disconnected Zookeeper.
+2013-02-13 09:25:53 ConnectionStateManager [WARN] There are no ConnectionStateListeners registered.
+2013-02-13 09:25:54 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 09:25:54 ClientCnxn [WARN] Session 0x13cc41e56d00048 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable
+	at sun.nio.ch.Net.connect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:532)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1050)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1077)
+2013-02-13 09:25:55 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 09:25:55 ClientCnxn [WARN] Session 0x13cc41e56d00048 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable
+	at sun.nio.ch.Net.connect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:532)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1050)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1077)
+2013-02-13 09:25:57 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 09:25:57 ClientCnxn [WARN] Session 0x13cc41e56d00048 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable
+	at sun.nio.ch.Net.connect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:532)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1050)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1077)
+2013-02-13 09:25:59 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 09:25:59 ClientCnxn [WARN] Session 0x13cc41e56d00048 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable
+	at sun.nio.ch.Net.connect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:532)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1050)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1077)
+2013-02-13 09:26:00 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 09:26:00 ClientCnxn [WARN] Session 0x13cc41e56d00048 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable
+	at sun.nio.ch.Net.connect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:532)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1050)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1077)
+2013-02-13 09:26:01 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 09:26:01 ClientCnxn [WARN] Session 0x13cc41e56d00048 for server null, unexpected error, closing socket connection and attempting reconnect
+java.net.SocketException: Network is unreachable
+	at sun.nio.ch.Net.connect(Native Method)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:532)
+	at org.apache.zookeeper.ClientCnxn$SendThread.startConnect(ClientCnxn.java:1050)
+	at org.apache.zookeeper.ClientCnxn$SendThread.run(ClientCnxn.java:1077)
+2013-02-13 09:26:02 CuratorFrameworkImpl [ERROR] Background operation retry gave up
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at org.apache.zookeeper.KeeperException.create(KeeperException.java:90)
+	at com.netflix.curator.framework.imps.CuratorFrameworkImpl.processBackgroundOperation(CuratorFrameworkImpl.java:380)
+	at com.netflix.curator.framework.imps.BackgroundSyncImpl$1.processResult(BackgroundSyncImpl.java:49)
+	at org.apache.zookeeper.ClientCnxn$EventThread.processEvent(ClientCnxn.java:617)
+	at org.apache.zookeeper.ClientCnxn$EventThread.run(ClientCnxn.java:506)
+2013-02-13 09:26:02 ConnectionStateManager [INFO] State change: LOST
+2013-02-13 09:26:02 ConnectionStateManager [WARN] There are no ConnectionStateListeners registered.
+2013-02-13 09:26:03 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 09:26:09 ConnectionState [ERROR] Connection timed out
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at com.netflix.curator.ConnectionState.getZooKeeper(ConnectionState.java:72)
+	at com.netflix.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:74)
+	at com.netflix.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:353)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:149)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:138)
+	at com.netflix.curator.RetryLoop.callWithRetry(RetryLoop.java:85)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:134)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:125)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:34)
+	at backtype.storm.zookeeper$exists_node_QMARK_.invoke(zookeeper.clj:78)
+	at backtype.storm.zookeeper$mkdirs.invoke(zookeeper.clj:88)
+	at backtype.storm.cluster$mk_distributed_cluster_state$reify__1996.set_ephemeral_node(cluster.clj:54)
+	at backtype.storm.cluster$mk_storm_cluster_state$reify__2415.supervisor_heartbeat_BANG_(cluster.clj:300)
+	at sun.reflect.GeneratedMethodAccessor12.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at clojure.lang.Reflector.invokeMatchingMethod(Reflector.java:93)
+	at clojure.lang.Reflector.invokeInstanceMethod(Reflector.java:28)
+	at backtype.storm.daemon.supervisor$fn__4757$exec_fn__1228__auto____4758$heartbeat_fn__4760.invoke(supervisor.clj:345)
+	at backtype.storm.timer$schedule_recurring$this__1776.invoke(timer.clj:69)
+	at backtype.storm.timer$mk_timer$fn__1759$fn__1760.invoke(timer.clj:33)
+	at backtype.storm.timer$mk_timer$fn__1759.invoke(timer.clj:26)
+	at clojure.lang.AFn.run(AFn.java:24)
+	at java.lang.Thread.run(Thread.java:662)
+2013-02-13 09:26:22 ClientCnxn [INFO] Client session timed out, have not heard from server in 20011ms for sessionid 0x13cc41e56d00048, closing socket connection and attempting reconnect
+2013-02-13 09:26:23 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 09:26:25 ConnectionState [ERROR] Connection timed out
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at com.netflix.curator.ConnectionState.getZooKeeper(ConnectionState.java:72)
+	at com.netflix.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:74)
+	at com.netflix.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:353)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:149)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:138)
+	at com.netflix.curator.RetryLoop.callWithRetry(RetryLoop.java:85)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:134)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:125)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:34)
+	at backtype.storm.zookeeper$exists_node_QMARK_.invoke(zookeeper.clj:78)
+	at backtype.storm.zookeeper$mkdirs.invoke(zookeeper.clj:88)
+	at backtype.storm.cluster$mk_distributed_cluster_state$reify__1996.set_ephemeral_node(cluster.clj:54)
+	at backtype.storm.cluster$mk_storm_cluster_state$reify__2415.supervisor_heartbeat_BANG_(cluster.clj:300)
+	at sun.reflect.GeneratedMethodAccessor12.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at clojure.lang.Reflector.invokeMatchingMethod(Reflector.java:93)
+	at clojure.lang.Reflector.invokeInstanceMethod(Reflector.java:28)
+	at backtype.storm.daemon.supervisor$fn__4757$exec_fn__1228__auto____4758$heartbeat_fn__4760.invoke(supervisor.clj:345)
+	at backtype.storm.timer$schedule_recurring$this__1776.invoke(timer.clj:69)
+	at backtype.storm.timer$mk_timer$fn__1759$fn__1760.invoke(timer.clj:33)
+	at backtype.storm.timer$mk_timer$fn__1759.invoke(timer.clj:26)
+	at clojure.lang.AFn.run(AFn.java:24)
+	at java.lang.Thread.run(Thread.java:662)
+2013-02-13 09:26:41 ConnectionState [ERROR] Connection timed out
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at com.netflix.curator.ConnectionState.getZooKeeper(ConnectionState.java:72)
+	at com.netflix.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:74)
+	at com.netflix.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:353)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:149)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:138)
+	at com.netflix.curator.RetryLoop.callWithRetry(RetryLoop.java:85)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:134)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:125)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:34)
+	at backtype.storm.zookeeper$exists_node_QMARK_.invoke(zookeeper.clj:78)
+	at backtype.storm.zookeeper$mkdirs.invoke(zookeeper.clj:88)
+	at backtype.storm.cluster$mk_distributed_cluster_state$reify__1996.set_ephemeral_node(cluster.clj:54)
+	at backtype.storm.cluster$mk_storm_cluster_state$reify__2415.supervisor_heartbeat_BANG_(cluster.clj:300)
+	at sun.reflect.GeneratedMethodAccessor12.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at clojure.lang.Reflector.invokeMatchingMethod(Reflector.java:93)
+	at clojure.lang.Reflector.invokeInstanceMethod(Reflector.java:28)
+	at backtype.storm.daemon.supervisor$fn__4757$exec_fn__1228__auto____4758$heartbeat_fn__4760.invoke(supervisor.clj:345)
+	at backtype.storm.timer$schedule_recurring$this__1776.invoke(timer.clj:69)
+	at backtype.storm.timer$mk_timer$fn__1759$fn__1760.invoke(timer.clj:33)
+	at backtype.storm.timer$mk_timer$fn__1759.invoke(timer.clj:26)
+	at clojure.lang.AFn.run(AFn.java:24)
+	at java.lang.Thread.run(Thread.java:662)
+2013-02-13 09:26:43 ClientCnxn [INFO] Client session timed out, have not heard from server in 21590ms for sessionid 0x13cc41e56d00048, closing socket connection and attempting reconnect
+2013-02-13 09:26:45 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 09:26:57 ConnectionState [ERROR] Connection timed out
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at com.netflix.curator.ConnectionState.getZooKeeper(ConnectionState.java:72)
+	at com.netflix.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:74)
+	at com.netflix.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:353)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:149)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:138)
+	at com.netflix.curator.RetryLoop.callWithRetry(RetryLoop.java:85)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:134)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:125)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:34)
+	at backtype.storm.zookeeper$exists_node_QMARK_.invoke(zookeeper.clj:78)
+	at backtype.storm.zookeeper$mkdirs.invoke(zookeeper.clj:88)
+	at backtype.storm.cluster$mk_distributed_cluster_state$reify__1996.set_ephemeral_node(cluster.clj:54)
+	at backtype.storm.cluster$mk_storm_cluster_state$reify__2415.supervisor_heartbeat_BANG_(cluster.clj:300)
+	at sun.reflect.GeneratedMethodAccessor12.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at clojure.lang.Reflector.invokeMatchingMethod(Reflector.java:93)
+	at clojure.lang.Reflector.invokeInstanceMethod(Reflector.java:28)
+	at backtype.storm.daemon.supervisor$fn__4757$exec_fn__1228__auto____4758$heartbeat_fn__4760.invoke(supervisor.clj:345)
+	at backtype.storm.timer$schedule_recurring$this__1776.invoke(timer.clj:69)
+	at backtype.storm.timer$mk_timer$fn__1759$fn__1760.invoke(timer.clj:33)
+	at backtype.storm.timer$mk_timer$fn__1759.invoke(timer.clj:26)
+	at clojure.lang.AFn.run(AFn.java:24)
+	at java.lang.Thread.run(Thread.java:662)
+2013-02-13 09:27:05 ClientCnxn [INFO] Client session timed out, have not heard from server in 21666ms for sessionid 0x13cc41e56d00048, closing socket connection and attempting reconnect
+2013-02-13 09:27:07 ClientCnxn [INFO] Opening socket connection to server storm0/192.168.5.193:2181
+2013-02-13 09:27:13 ConnectionState [ERROR] Connection timed out
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at com.netflix.curator.ConnectionState.getZooKeeper(ConnectionState.java:72)
+	at com.netflix.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:74)
+	at com.netflix.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:353)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:149)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:138)
+	at com.netflix.curator.RetryLoop.callWithRetry(RetryLoop.java:85)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:134)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:125)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:34)
+	at backtype.storm.zookeeper$exists_node_QMARK_.invoke(zookeeper.clj:78)
+	at backtype.storm.zookeeper$mkdirs.invoke(zookeeper.clj:88)
+	at backtype.storm.cluster$mk_distributed_cluster_state$reify__1996.set_ephemeral_node(cluster.clj:54)
+	at backtype.storm.cluster$mk_storm_cluster_state$reify__2415.supervisor_heartbeat_BANG_(cluster.clj:300)
+	at sun.reflect.GeneratedMethodAccessor12.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at clojure.lang.Reflector.invokeMatchingMethod(Reflector.java:93)
+	at clojure.lang.Reflector.invokeInstanceMethod(Reflector.java:28)
+	at backtype.storm.daemon.supervisor$fn__4757$exec_fn__1228__auto____4758$heartbeat_fn__4760.invoke(supervisor.clj:345)
+	at backtype.storm.timer$schedule_recurring$this__1776.invoke(timer.clj:69)
+	at backtype.storm.timer$mk_timer$fn__1759$fn__1760.invoke(timer.clj:33)
+	at backtype.storm.timer$mk_timer$fn__1759.invoke(timer.clj:26)
+	at clojure.lang.AFn.run(AFn.java:24)
+	at java.lang.Thread.run(Thread.java:662)
+2013-02-13 09:27:13 supervisor [ERROR] Error when processing event
+org.apache.zookeeper.KeeperException$ConnectionLossException: KeeperErrorCode = ConnectionLoss
+	at com.netflix.curator.ConnectionState.getZooKeeper(ConnectionState.java:72)
+	at com.netflix.curator.CuratorZookeeperClient.getZooKeeper(CuratorZookeeperClient.java:74)
+	at com.netflix.curator.framework.imps.CuratorFrameworkImpl.getZooKeeper(CuratorFrameworkImpl.java:353)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:149)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl$2.call(ExistsBuilderImpl.java:138)
+	at com.netflix.curator.RetryLoop.callWithRetry(RetryLoop.java:85)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.pathInForeground(ExistsBuilderImpl.java:134)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:125)
+	at com.netflix.curator.framework.imps.ExistsBuilderImpl.forPath(ExistsBuilderImpl.java:34)
+	at backtype.storm.zookeeper$exists_node_QMARK_.invoke(zookeeper.clj:78)
+	at backtype.storm.zookeeper$mkdirs.invoke(zookeeper.clj:88)
+	at backtype.storm.cluster$mk_distributed_cluster_state$reify__1996.set_ephemeral_node(cluster.clj:54)
+	at backtype.storm.cluster$mk_storm_cluster_state$reify__2415.supervisor_heartbeat_BANG_(cluster.clj:300)
+	at sun.reflect.GeneratedMethodAccessor12.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:25)
+	at java.lang.reflect.Method.invoke(Method.java:597)
+	at clojure.lang.Reflector.invokeMatchingMethod(Reflector.java:93)
+	at clojure.lang.Reflector.invokeInstanceMethod(Reflector.java:28)
+	at backtype.storm.daemon.supervisor$fn__4757$exec_fn__1228__auto____4758$heartbeat_fn__4760.invoke(supervisor.clj:345)
+	at backtype.storm.timer$schedule_recurring$this__1776.invoke(timer.clj:69)
+	at backtype.storm.timer$mk_timer$fn__1759$fn__1760.invoke(timer.clj:33)
+	at backtype.storm.timer$mk_timer$fn__1759.invoke(timer.clj:26)
+	at clojure.lang.AFn.run(AFn.java:24)
+	at java.lang.Thread.run(Thread.java:662)
+2013-02-13 09:27:13 util [INFO] Halting process: ("Error when processing an event")

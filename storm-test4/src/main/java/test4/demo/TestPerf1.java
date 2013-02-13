@@ -2,6 +2,13 @@ package test4.demo;
 
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+
+import com.esotericsoftware.minlog.Log;
+
+import backtype.storm.Config;
+import backtype.storm.LocalCluster;
+import backtype.storm.StormSubmitter;
 import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.OutputCollector;
 import backtype.storm.task.TopologyContext;
@@ -12,13 +19,34 @@ import backtype.storm.topology.base.BaseRichSpout;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
+import backtype.storm.utils.NimbusClient;
+import backtype.storm.utils.Utils;
+
+//shows increasing parallelism and increase in performance. not really linear in local mode
+
+////00:00  INFO: elapsed time:101 ms
+
+//00:00  INFO: elapsed time:190 ms
+//00:00  INFO: elapsed time:219 ms
+//00:00  INFO: elapsed time:237 ms
+
+// 
+//00:00  INFO: elapsed time:181 ms
+//00:00  INFO: elapsed time:212 ms
+//00:00  INFO: elapsed time:212 ms
+//00:00  INFO: elapsed time:315 ms
+//00:00  INFO: elapsed time:393 ms
+//00:00  INFO: elapsed time:422 ms
 
 public class TestPerf1 {
-
+	Logger LOG = Logger.getLogger(TestPerf1.class);
+	static long startTime;
+	
+	
 	static class TestSpout extends BaseRichSpout {
 		SpoutOutputCollector collector;
 		TopologyContext context;
-		Integer next;
+		Integer next=0;
 
 		@Override
 		public void open(Map conf, TopologyContext context,
@@ -26,19 +54,18 @@ public class TestPerf1 {
 			// TODO Auto-generated method stub
 			this.context = context;
 			this.collector = collector;
-
 		}
 
 		@Override
 		public void nextTuple() {
 			// TODO Auto-generated method stub
-			PerfObject perf = new PerfObject();
-//			perf.setDummyValue(next);
+			if(next<=1000){
+			if(next==0){
+				startTime = System.currentTimeMillis();
+			}
+			collector.emit(new Values(next));
 			next++;
-			perf.setTimestamp(System.currentTimeMillis());
-			Values val = new Values();
-			val.add(perf);
-			collector.emit(val);
+			}
 		}
 
 		@Override
@@ -64,11 +91,13 @@ public class TestPerf1 {
 
 		@Override
 		public void execute(Tuple input) {
-			// TODO Auto-generated method stub
-
-			// how is this serialized/deserialized?
-			// use getBytes()?
-			// collector.emit();
+			// TODO Auto-generated method stub			
+	//		Log.info("num:"+input.getInteger(0).toString());
+			if(input.getInteger(0)==1000){
+				long stopTime = System.currentTimeMillis();
+				Log.info("elapsed time:"+(stopTime-startTime)+" ms");
+			}
+			collector.ack(input);
 		}
 
 		@Override
@@ -82,11 +111,24 @@ public class TestPerf1 {
 	public static void main(String[] args) {
 
 		try {
-
+			
 			TopologyBuilder builder = new TopologyBuilder();
-			builder.setSpout("spout", new TestSpout(), 1);
-			builder.setBolt("bolt", new TestBolt(), 3).shuffleGrouping("spout");
+			builder.setSpout("spout", new TestSpout(), 6);
+			builder.setBolt("bolt", new TestBolt(), 6).shuffleGrouping("spout");
 
+			
+			Config conf = new Config();
+//			LocalCluster cluster = new LocalCluster();
+			conf.setNumAckers(0);
+			conf.setDebug(true);
+			//conf.setNumWorkers(6);
+			conf.setStatsSampleRate(.001);
+			StormSubmitter.submitTopology("TestPerf1", conf, builder.createTopology());
+//			cluster.submitTopology("TestPerf", conf, builder.createTopology());
+//			Utils.sleep(10000);
+//			cluster.killTopology("TestPerf");
+//			cluster.shutdown();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

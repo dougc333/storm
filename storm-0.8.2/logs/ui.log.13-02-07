@@ -1,0 +1,117 @@
+2013-02-07 09:29:28 log [INFO] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2013-02-07 09:29:28 log [INFO] jetty-6.1.26
+2013-02-07 09:29:28 log [INFO] Started SocketConnector@0.0.0.0:8080
+2013-02-07 09:29:33 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 09:29:53 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 09:38:21 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 09:38:23 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 09:38:47 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:18:43 log [INFO] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2013-02-07 15:18:43 log [INFO] jetty-6.1.26
+2013-02-07 15:18:43 log [INFO] Started SocketConnector@0.0.0.0:8080
+2013-02-07 15:19:10 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:19:44 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:23:03 log [INFO] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2013-02-07 15:23:03 log [INFO] jetty-6.1.26
+2013-02-07 15:23:03 log [INFO] Started SocketConnector@0.0.0.0:8080
+2013-02-07 15:23:14 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:23:20 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:23:32 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:23:39 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:24:38 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:24:38 core [INFO] Killing topology 'TestStorm1' with wait time: 0 secs
+2013-02-07 15:24:38 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:24:38 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:24:43 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:25:43 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:25:46 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:26:23 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:26:26 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:26:54 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:40:19 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:40:19 core [INFO] Rebalancing topology 'TestStorm1' with wait time: 3 secs
+2013-02-07 15:40:19 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:40:19 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:40:27 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:41:14 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:41:14 core [INFO] Killing topology 'TestStorm1' with wait time: 0 secs
+2013-02-07 15:41:14 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:41:14 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:41:19 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:43:06 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:43:08 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:56:39 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:56:39 core [INFO] Killing topology 'TestStorm1' with wait time: 0 secs
+2013-02-07 15:56:39 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 15:56:39 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 16:43:04 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 16:43:06 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 16:51:46 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 16:52:07 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 16:52:31 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:00:25 log [INFO] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2013-02-07 17:00:25 log [INFO] jetty-6.1.26
+2013-02-07 17:00:25 log [INFO] Started SocketConnector@0.0.0.0:8080
+2013-02-07 17:00:33 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:00:36 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:06:00 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:08:05 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:10:14 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:10:16 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:24:02 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:24:02 core [INFO] Killing topology 'TestStorm1' with wait time: 0 secs
+2013-02-07 17:24:02 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:24:03 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:24:09 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:24:33 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:25:24 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:25:51 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:26:13 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:26:17 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:26:17 core [INFO] Killing topology 'TestStorm1' with wait time: 0 secs
+2013-02-07 17:26:17 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:26:18 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:26:22 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:26:32 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:29:14 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:29:25 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:29:28 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:29:42 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:29:46 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:29:46 core [INFO] Killing topology 'TestStorm1' with wait time: 0 secs
+2013-02-07 17:29:46 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:29:46 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:29:50 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:30:30 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:30:32 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:30:35 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:30:37 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:30:39 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:30:41 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:30:44 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:35:37 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:35:41 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:35:47 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:35:53 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:36:00 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:36:00 core [INFO] Rebalancing topology 'TestStorm1' with wait time: 0 secs
+2013-02-07 17:36:00 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:36:00 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:36:03 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:36:05 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:36:07 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:36:09 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:40:39 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:41:35 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:41:41 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:42:03 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:42:13 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:42:14 core [INFO] Rebalancing topology 'TestStorm1' with wait time: 0 secs
+2013-02-07 17:42:14 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:42:16 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 17:42:29 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 18:00:56 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 18:01:05 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 18:01:06 core [INFO] Killing topology 'TestStorm1' with wait time: 0 secs
+2013-02-07 18:01:06 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-07 18:01:06 thrift [INFO] Connecting to Nimbus at storm0:6627

@@ -20,7 +20,10 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
-//take multifield output from spout as in TestStorm6 to test field grouping
-//2 bolts, each fieldGrouping by field1, field2
+//test storm parallelism. Looks like the replication occurs at task level. 
+//a new jvm is allocated per supervisor:ports and topology.numWorkers settings. 
+//then there are threads in each JVM. Each thread takes an instantiation of the spout/bolts? 
+//how to test this? set numTasks and verify independent of #workers
+//
 public class TestStorm7 {
 }
