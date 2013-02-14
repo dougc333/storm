@@ -23,4 +23,10 @@ Storm-Search-Engine/
 storm-counts/
 Storm-Search-Engine/
 tweets-analytics/
+storm-0.8.1.zip
+storm-0.8.2-1.el6.x86_64.rpm
+storm-0.8.2.zip
+storm-debuginfo-0.8.2-1.el6.x86_64.rpm
+storm.spec
+stormservice.spec
 *~
