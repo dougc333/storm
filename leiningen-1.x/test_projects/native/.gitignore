@@ -1,7 +1,0 @@
-pom.xml
-*jar
-/lib
-/nnnative
-/classes
-.lein-failures
-.lein-deps-sum
