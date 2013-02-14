@@ -17,6 +17,7 @@ storm-contrib/
 stormsource/
 storm-0.8.0/
 storm-0.8.1/
+storm-0.8.2/
 storm-test1/
 examples-ch04-spouts/
 Storm-Search-Engine/
@@ -29,4 +30,7 @@ storm-0.8.2.zip
 storm-debuginfo-0.8.2-1.el6.x86_64.rpm
 storm.spec
 stormservice.spec
+leiningen-1.x/
+storm-local/
+rpms/
 *~

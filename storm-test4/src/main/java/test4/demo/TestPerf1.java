@@ -119,8 +119,7 @@ public class TestPerf1 {
 			builder.setSpout("spout", new TestSpout(), 6);
 			builder.setBolt("bolt", new TestBolt(), 6).setNumTasks(11).shuffleGrouping("spout");
 
-			
-			
+						
 			Config conf = new Config();
 			conf.setNumWorkers(10);
 //			LocalCluster cluster = new LocalCluster();
