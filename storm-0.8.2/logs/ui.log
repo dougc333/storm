@@ -2,3 +2,25 @@
 2013-02-13 08:31:47 thrift [INFO] Connecting to Nimbus at storm0:6627
 2013-02-13 08:31:51 thrift [INFO] Connecting to Nimbus at storm0:6627
 2013-02-13 08:42:48 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-13 11:42:13 log [INFO] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2013-02-13 11:42:13 log [INFO] jetty-6.1.26
+2013-02-13 11:42:13 log [INFO] Started SocketConnector@0.0.0.0:8080
+2013-02-13 16:07:51 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-13 16:13:45 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-13 08:19:44 log [INFO] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2013-02-13 08:19:44 log [INFO] jetty-6.1.26
+2013-02-13 08:19:44 log [INFO] Started SocketConnector@0.0.0.0:8080
+2013-02-13 08:19:50 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-13 08:20:13 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-13 19:19:19 log [INFO] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2013-02-13 19:19:19 log [INFO] jetty-6.1.26
+2013-02-13 19:19:19 log [INFO] Started SocketConnector@0.0.0.0:8080
+2013-02-13 19:20:24 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-13 19:20:27 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-13 19:20:32 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-13 19:20:32 core [INFO] Killing topology 'TestPerf1' with wait time: 0 secs
+2013-02-13 19:20:32 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-13 19:20:33 thrift [INFO] Connecting to Nimbus at storm0:6627
+2013-02-13 19:44:01 log [INFO] Logging to org.slf4j.impl.Log4jLoggerAdapter(org.mortbay.log) via org.mortbay.log.Slf4jLog
+2013-02-13 19:44:01 log [INFO] jetty-6.1.26
+2013-02-13 19:44:01 log [INFO] Started SocketConnector@0.0.0.0:8080

@@ -111,22 +111,27 @@ public class TestPerf1 {
 	public static void main(String[] args) {
 
 		try {
-			
+		
 			TopologyBuilder builder = new TopologyBuilder();
+			//the total is 12 for the parallelism hint, add the spout and bolts together. 
+			//2 worker processes, 12/2 = 6 threads. Each worker process w/6 threads. 
+			// 16/2=8 threads  
 			builder.setSpout("spout", new TestSpout(), 6);
-			builder.setBolt("bolt", new TestBolt(), 6).shuffleGrouping("spout");
+			builder.setBolt("bolt", new TestBolt(), 6).setNumTasks(11).shuffleGrouping("spout");
 
 			
+			
 			Config conf = new Config();
+			conf.setNumWorkers(10);
 //			LocalCluster cluster = new LocalCluster();
 			conf.setNumAckers(0);
-			conf.setDebug(true);
+			//conf.setDebug(true);
 			//conf.setNumWorkers(6);
-			conf.setStatsSampleRate(.001);
+			//conf.setStatsSampleRate(.001);
 			StormSubmitter.submitTopology("TestPerf1", conf, builder.createTopology());
-//			cluster.submitTopology("TestPerf", conf, builder.createTopology());
+//			cluster.submitTopology("TestPerf1", conf, builder.createTopology());
 //			Utils.sleep(10000);
-//			cluster.killTopology("TestPerf");
+//			cluster.killTopology("TestPerf1");
 //			cluster.shutdown();
 			
 		} catch (Exception e) {
