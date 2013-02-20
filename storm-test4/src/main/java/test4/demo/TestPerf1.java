@@ -116,12 +116,25 @@ public class TestPerf1 {
 			//the total is 12 for the parallelism hint, add the spout and bolts together. 
 			//2 worker processes, 12/2 = 6 threads. Each worker process w/6 threads. 
 			// 16/2=8 threads  
-			builder.setSpout("spout", new TestSpout(), 6);
-			builder.setBolt("bolt", new TestBolt(), 6).setNumTasks(11).shuffleGrouping("spout");
+			builder.setSpout("spout1", new TestSpout(), 20);
+			builder.setSpout("spout2", new TestSpout(), 20);
+			builder.setSpout("spout3", new TestSpout(), 20);
+			builder.setSpout("spout4", new TestSpout(), 20);
+			builder.setSpout("spout5", new TestSpout(), 20);
+			builder.setSpout("spout6", new TestSpout(), 20);
+			builder.setSpout("spout7", new TestSpout(), 20);
+			
+			builder.setBolt("bolt1", new TestBolt(), 20).setNumTasks(1).shuffleGrouping("spout1");
+			builder.setBolt("bolt2", new TestBolt(), 20).setNumTasks(1).shuffleGrouping("spout2");
+			builder.setBolt("bolt3", new TestBolt(), 20).setNumTasks(1).shuffleGrouping("spout3");
+			builder.setBolt("bolt4", new TestBolt(), 20).setNumTasks(1).shuffleGrouping("spout4");
+			builder.setBolt("bolt5", new TestBolt(), 20).setNumTasks(1).shuffleGrouping("spout5");
+			builder.setBolt("bolt6", new TestBolt(), 20).setNumTasks(1).shuffleGrouping("spout6");
+			builder.setBolt("bolt7", new TestBolt(), 20).setNumTasks(1).shuffleGrouping("spout7");
 
 						
 			Config conf = new Config();
-			conf.setNumWorkers(10);
+			conf.setNumWorkers(40);
 //			LocalCluster cluster = new LocalCluster();
 			conf.setNumAckers(0);
 			//conf.setDebug(true);

@@ -32,5 +32,6 @@ storm.spec
 stormservice.spec
 leiningen-1.x/
 storm-local/
+storm-0.9.0-wip15/
 rpms/
 *~

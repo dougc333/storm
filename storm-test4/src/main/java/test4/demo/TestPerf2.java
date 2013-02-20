@@ -61,7 +61,12 @@ public class TestPerf2 {
 		SpoutOutputCollector collector;
 		TopologyContext context;
 		Integer next=0;
-		String data[]={"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa","bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"};
+		String data[]={"aaaaaaaaaa","bbbbbbbbbb"};
+		String databig[];
+		//STRING_SIZE, 10 means 100 byte strings
+		// 100 is 1k byte strings(not 1024)
+		static final int STRING_SIZE=10;
+		
 		@Override
 		public void open(Map conf, TopologyContext context,
 				SpoutOutputCollector collector) {
@@ -69,6 +74,16 @@ public class TestPerf2 {
 			this.context = context;
 			this.collector = collector;
 			LOG.info("size string:"+(data[0].getBytes()).length);
+			databig = new String[2];
+			//
+			StringBuilder buffa = new StringBuilder();
+			StringBuilder buffb = new StringBuilder();
+			for (int i=0;i<STRING_SIZE;i++){
+				buffa.append(data[0]);
+				buffb.append(data[1]);
+			}
+			databig[0] = buffa.toString();
+			databig[1] = buffb.toString();
 		}
 
 		@Override
@@ -78,7 +93,8 @@ public class TestPerf2 {
 			if(next==0){
 				startTime = System.currentTimeMillis();
 			}
-			collector.emit(new Values(data[next%2],next));
+			
+			collector.emit(new Values(databig[next%2],next));
 			next++;
 			}
 		}
@@ -86,7 +102,7 @@ public class TestPerf2 {
 		@Override
 		public void declareOutputFields(OutputFieldsDeclarer declarer) {
 			// TODO Auto-generated method stub
-			declarer.declare(new Fields("perfstring","count"));
+			declarer.declare(new Fields("databig","count"));
 		}
 
 	}
@@ -129,14 +145,13 @@ public class TestPerf2 {
 			builder.setSpout("spout", new TestSpout(), 8).setNumTasks(24);
 			builder.setBolt("bolt", new TestBolt(), 8).setNumTasks(24).shuffleGrouping("spout");
 
-			
 			Config conf = new Config();
 			LocalCluster cluster = new LocalCluster();
 			conf.setNumAckers(0);
 //			conf.setStatsSampleRate(.00001);
-			cluster.submitTopology("TestPerf", conf, builder.createTopology());
+			cluster.submitTopology("TestPerf2", conf, builder.createTopology());
 			Utils.sleep(80000);
-			cluster.killTopology("TestPerf");
+			cluster.killTopology("TestPerf2");
 			cluster.shutdown();
 		}catch(Exception e){
 			e.printStackTrace();
