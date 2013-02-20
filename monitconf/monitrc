@@ -48,7 +48,7 @@ set daemon  60              # check services at 1-minute intervals
 # port 25 - it is possible to override this with the PORT option.
 #
  set mailserver smtp.gmai.com port 587
-	username "dougchang25@gmail.com" password "H1onglam"
+	username "dougchang25@gmail.com" password "xxxxx"
 	using tlsv1
 	with timeout 30 seconds
 
