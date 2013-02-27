@@ -1,4 +1,4 @@
-package src.main.java.test4.demo;
+package test4.demo;
 
 import java.io.*;
 import java.util.Map;

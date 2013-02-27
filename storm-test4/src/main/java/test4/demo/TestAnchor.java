@@ -18,7 +18,8 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
-//how to test Tuple anchor? Replay/ack logic, make a tuple fail w and w/o anchoring;
+//how to test Tuple anchor? 
+//Replay/ack logic, make a tuple fail w and w/o anchoring;
 //an anchor is required for reliable messaging. test nonanchor vs. anchor
 //
 public class TestAnchor {

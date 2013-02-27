@@ -8,7 +8,7 @@ import redis.clients.jedis.Jedis;
 // get to read key out of db.
 // http://code.google.com/p/jedis/
 public class TestJedis {
-	static Logger LOG = Logger.getLogger(FailTest.class);
+	static Logger LOG = Logger.getLogger(TestJedis.class);
 
 	public static void main(String[] args) {
 		try {

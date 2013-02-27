@@ -1,4 +1,4 @@
-package tweets.simple.bolts;
+package test4.demo.bolts.tweets.simple.bolts;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.StringTokenizer;

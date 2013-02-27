@@ -39,7 +39,7 @@ import backtype.storm.utils.Utils;
 //2642 [Thread-24] INFO  test4.demo.TestPerf2  - elapsed time:273 ms
 //2706 [Thread-22] INFO  test4.demo.TestPerf2  - elapsed time:337 ms
 
-//10k bad, more bolts/spouts have dropouts
+//10k bad, more bolts/spouts have dropouts; 
 //3070 [Thread-54] INFO  test4.demo.TestPerf2  - elapsed time:160 ms
 //3123 [Thread-54] INFO  test4.demo.TestPerf2  - elapsed time:213 ms
 //3251 [Thread-22] INFO  test4.demo.TestPerf2  - elapsed time:341 ms
@@ -49,7 +49,7 @@ import backtype.storm.utils.Utils;
 //3436 [Thread-22] INFO  test4.demo.TestPerf2  - elapsed time:526 ms
 //3458 [Thread-16] INFO  test4.demo.TestPerf2  - elapsed time:548 ms
 
-
+//do 6k w/1k string size
 
 public class TestPerf2 {
 
@@ -65,8 +65,11 @@ public class TestPerf2 {
 		String databig[];
 		//STRING_SIZE, 10 means 100 byte strings
 		// 100 is 1k byte strings(not 1024)
+		// 1 is 10 byte string
+		// 150 is 1.5kb, etc...
+//		static final int STRING_SIZE=1;
 		static final int STRING_SIZE=10;
-		
+//		static final int STRING_SIZE=100;
 		@Override
 		public void open(Map conf, TopologyContext context,
 				SpoutOutputCollector collector) {
