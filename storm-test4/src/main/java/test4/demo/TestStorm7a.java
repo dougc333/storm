@@ -7,36 +7,26 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import com.esotericsoftware.minlog.Log;
+import test4.demo.TestStorm7.GetTweeters;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
-import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.OutputCollector;
 import backtype.storm.task.TopologyContext;
 import backtype.storm.topology.BasicOutputCollector;
 import backtype.storm.topology.OutputFieldsDeclarer;
 import backtype.storm.topology.TopologyBuilder;
 import backtype.storm.topology.base.BaseBasicBolt;
-import backtype.storm.topology.base.BaseRichBolt;
-import backtype.storm.topology.base.BaseRichSpout;
 import backtype.storm.tuple.Fields;
 import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
-//test w/no spout, set numparallelism to 4
-//play w/bolt parallelism, you see the 4 bolts being started w/num tasks, 25, which is 4*25=100
-//which is what topology.tasks is set to
-//- Loading executor bolt:[2 26]
-// Loading executor bolt:[52 76]
-//	2348 [Thread-9] INFO  backtype.storm.daemon.executor  - Loading executor bolt:[27 51]
-//	Loading executor bolt:[77 101]
-// if we set numparallelism to 1 we should see 1 bolt w/100 tasks
-//2231 [Thread-6] INFO  backtype.storm.daemon.executor  - Finished loading executor bolt:[2 101]
-//works. we have to set the num tasks & numparallelism hint
-// 
-public class TestStorm7 {
+
+//test numworkers setting and tasks from TestStorm7
+//
+public class TestStorm7a {
+
 	static Logger LOG = Logger.getLogger(TestStorm7.class);
 	
     public static Map<String, List<String>> TWEETERS_DB = new HashMap<String, List<String>>() {{
@@ -87,25 +77,34 @@ public class TestStorm7 {
          }        
      }
 
+	
+	
+	
 	public static void main(String []args){
 		try{
 			TopologyBuilder builder = new TopologyBuilder();
+			//local  mode get 4 threads with 25 tasks each
 //			builder.setBolt("bolt", new GetTweeters(), 4);
+			//local mode get 1 thread w/100 tasks or 99. 
 			builder.setBolt("bolt", new GetTweeters(), 1);
 					
 			Config conf = new Config();
+			//verify can override w/this setting w/200
+//			conf.TOPOLOGY_TASKS="200";
+			//what does setNumWorkers do in local mode if numThreads is set by parallelism hint?
+//			conf.setNumWorkers(2); //2 threads w/50 tasks
 			LocalCluster cluster = new LocalCluster();
 			cluster.submitTopology("TestStorm7", conf,builder.createTopology() );
-			//leave this off, never see prepare method called!!
-			//	cluster.activate();
+			//verify see prepare LOG statement
+			cluster.activate("TestStorm7");
 			Utils.sleep(10000);
 			cluster.deactivate("TestStorm7");
 			cluster.shutdown();
 			
-			
 		}catch(Exception e){
 			e.printStackTrace();
 		}
+		
+		
 	}
-
 }
