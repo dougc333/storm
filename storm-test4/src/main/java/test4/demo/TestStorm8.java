@@ -19,6 +19,7 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
+//storm distributed mode
 //if we send one ack does storm log this? 
 //if we send 1 tuple does storm see it? 
 public class TestStorm8 {
@@ -64,6 +65,8 @@ public class TestStorm8 {
 		public void execute(Tuple tuple) {
 			LOG.info("OneTupleBolt EMIT ONE!!!!!!");
 			collector.emit(new Values(tuple.getInteger(0)));
+			//adding this I get no log entry for the spoutS!!!
+			//collector.ack(tuple);
 		}
 
 		@Override
@@ -71,6 +74,7 @@ public class TestStorm8 {
 			this.conf = conf;
 			this.context = context;
 			this.collector = collector;
+			LOG.info("TESTSTORM8 PREPARE!!!!!!!!!!!!!!!!!!!!!!");
 		}
 
 		@Override
@@ -85,19 +89,20 @@ public class TestStorm8 {
 		try{
 			
 			TopologyBuilder builder = new TopologyBuilder();
-			builder.setSpout("spout", new OneTupleSpout());
-			builder.setBolt("bolt",new OneTupleBolt()).shuffleGrouping("spout");
+			builder.setSpout("spout", new OneTupleSpout(),4);
+			builder.setBolt("bolt",new OneTupleBolt(),4).shuffleGrouping("spout");
 			
 			Config conf = new Config();
-			conf.setDebug(true);
+			//conf.setDebug(true);
+//			conf.setNumWorkers(10);
 			
-			LocalCluster cluster  = new LocalCluster();
-			cluster.submitTopology("TestStorm8", conf, builder.createTopology());
-			Utils.sleep(10000);
-			cluster.deactivate("TestStorm8");
-			cluster.shutdown();
+			//LocalCluster cluster  = new LocalCluster();
+			//cluster.submitTopology("TestStorm8", conf, builder.createTopology());
+			//Utils.sleep(10000);
+			//cluster.deactivate("TestStorm8");
+			//cluster.shutdown();
 			
-			//StormSubmitter.submitTopology("TestStorm8",conf,builder.createTopology());
+			StormSubmitter.submitTopology("TestStorm8",conf,builder.createTopology());
 			
 			
 		}catch(Exception e){

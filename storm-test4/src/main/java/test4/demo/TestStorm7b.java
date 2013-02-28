@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import test4.demo.TestStorm7.GetTweeters;
+import test4.demo.TestStorm7a.GetTweeters;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
@@ -22,12 +22,10 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
+public class TestStorm7b {
 
-//test numworkers setting and tasks from TestStorm7
-//
-public class TestStorm7a {
-
-	static Logger LOG = Logger.getLogger(TestStorm7a.class);
+	
+	static Logger LOG = Logger.getLogger(TestStorm7b.class);
 	
     public static Map<String, List<String>> TWEETERS_DB = new HashMap<String, List<String>>() {{
         put("foo.com/blog/1", Arrays.asList("sally", "bob", "tim", "george", "nathan")); 
@@ -60,6 +58,7 @@ public class TestStorm7a {
     	 
          @Override
          public void execute(Tuple tuple, BasicOutputCollector collector) {
+        	 LOG.info("GETTWEETERS EXECUTE!!!!!!!!!!!!!!!!!!!!!!!!!!!");
              Object id = tuple.getValue(0);
              String url = tuple.getString(1);
              LOG.info("id:"+id);
@@ -79,28 +78,31 @@ public class TestStorm7a {
 
 	
 	
-	
-	public static void main(String []args){
+	public static void main(String args[]){
 		try{
 			TopologyBuilder builder = new TopologyBuilder();
 			builder.setBolt("bolt", new GetTweeters(), 1);
 					
 			Config conf = new Config();
-			//verify can override w/this setting w/200
-			conf.TOPOLOGY_TASKS="200";
-
-			LocalCluster cluster = new LocalCluster();
-			cluster.submitTopology("TestStorm7a", conf,builder.createTopology() );
-			//verify see prepare LOG statement, note we never see the prepare() method being called in the bolt!!
-			cluster.activate("TestStorm7a");
-			Utils.sleep(10000);
-			cluster.deactivate("TestStorm7a");
-			cluster.shutdown();
+			//97-4 w/below enabled
+			//4-103 not enabled
+			//conf.setDebug(true);
+			//do you get 4 threads in local mode or remote mode? 
+			//none of these below make a difference. 
+			//conf.setNumWorkers(10);
+			//conf.setNumAckers(10);
 			
+			LocalCluster cluster = new LocalCluster();
+			cluster.submitTopology("TestStorm7b", conf,builder.createTopology() );
+			//verify see prepare LOG statement, note we never see the prepare() method being called in the bolt!!
+			cluster.activate("TestStorm7b");
+			Utils.sleep(10000);
+			cluster.deactivate("TestStorm7b");
+			cluster.shutdown();
+	
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-		
 		
 	}
 }
