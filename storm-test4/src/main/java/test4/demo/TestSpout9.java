@@ -46,7 +46,7 @@ import backtype.storm.utils.Utils;
 
 
 //test single ack in remote mode. never shows up in UI. 
-//try thrift query 
+//
 //
 public class TestSpout9 {
 		static Logger LOG = Logger.getLogger(TestStorm8.class);
@@ -65,7 +65,7 @@ public class TestSpout9 {
 			@Override
 			public void nextTuple() {
 				// TODO Auto-generated method stub
-				if(next <1000){
+				if(next<10){
 					LOG.info("EMIT ONE!!!!!!!!!!!!!!!!!!!!!!");
 					collector.emit(new Values(1));
 					next++;
@@ -98,7 +98,7 @@ public class TestSpout9 {
 				LOG.info("OneTupleBolt EMIT ONE!!!!!!");
 				collector.emit(new Values(tuple.getInteger(0)));
 				//adding this I get no log entry for the spoutS!!!
-				collector.ack(tuple);
+				//collector.ack(tuple);
 			}
 
 			@Override
@@ -126,144 +126,21 @@ public class TestSpout9 {
 				builder.setBolt("bolt",new OneTupleBolt(),4).shuffleGrouping("spout");
 				
 				Config conf = new Config();
-				//conf.setDebug(true);
 //				conf.setNumWorkers(10);
 				
-				LocalCluster cluster  = new LocalCluster();
-				//cluster.submitTopology("TestStorm9", conf, builder.createTopology());
-				
 				if(LOCAL){
-					ClusterSummary localClusterSummary = cluster.getClusterInfo();
-					
-					List<TopologySummary> localTopos = localClusterSummary.get_topologies();
-					for(TopologySummary ts:localTopos){
-						LOG.info("Topology Name:"+ts.get_name());
-						LOG.info("Topology id:"+ts.get_id());
-						LOG.info("Topology numexecutors:"+ts.get_num_executors());
-						LOG.info("Topology numtasks:"+ts.get_num_tasks());
-						LOG.info("Topology numworkers:"+ts.get_num_workers());
-						LOG.info("Topology status:"+ts.get_status());
-						LOG.info("Topology uptime:"+ts.get_uptime_secs());
-					}
-					
-					List<SupervisorSummary> localListSups = localClusterSummary.get_supervisors();
-					for(SupervisorSummary s: localListSups){
-						LOG.info("supervisor numworkers:"+s.get_num_workers());
-						LOG.info("supervisor host:"+s.get_host());
-						LOG.info("supervisor num used workers:"+s.get_num_used_workers());
-						LOG.info("supervisor uptime seconds:"+s.get_uptime_secs());
-					
-					}
-					LOG.info("nimbus uptime:"+localClusterSummary.get_nimbus_uptime_secs());
-					localClusterSummary.get_supervisors_size();
-					
-					
-					
+					conf.setDebug(true);
+					LocalCluster cluster  = new LocalCluster();
+					cluster.submitTopology("TestStorm9", conf, builder.createTopology());					
 					Utils.sleep(10000);
 					cluster.deactivate("TestStorm9");
-					cluster.shutdown();
-				
+					cluster.shutdown();				
 				}else{
-				StormTopology st = builder.createTopology();
-				StormSubmitter.submitTopology("TestSpout9",conf,st);
-
+					StormTopology st = builder.createTopology();
+					StormSubmitter.submitTopology("TestSpout9",conf,st);
 				
-				//NimbusClient("YOUR_IP").getClient().getTopologyInfo("YOUR_TOPOLOGY_ID").get_executors().get(0).get_stats().get_emitted().get("600").get("__ack_ack"); 
-				
-				NimbusClient nc = new NimbusClient("localhost",6627);
-				Nimbus.Client client = nc.getClient();
-				ClusterSummary cs = client.getClusterInfo();
-				
-				java.util.List<SupervisorSummary> supLis = cs.get_supervisors();
-				LOG.info("-----------------------------------------------");
-				LOG.info("Supervisory Summary");
-				LOG.info("----------------------------------------------");
-				for(SupervisorSummary sum:supLis){
-					LOG.info("numUsedWorkers:"+sum.get_num_used_workers());
-					LOG.info("host:"+sum.get_host());
-					LOG.info("numWorkers:"+sum.get_num_workers());
-					LOG.info("uptime secs:"+sum.get_uptime_secs());
-					LOG.info("numUsedWorkers"+sum.get_num_used_workers());
-					
-				}
-				java.util.List<TopologySummary> topSum = cs.get_topologies();
-				
-				LOG.info("--------------------------------------------------");
-				LOG.info("Topology Summary");
-				LOG.info("--------------------------------------------------");
-				String topologyId = null;
-				for(TopologySummary sum : topSum){
-					LOG.info("topology id:"+sum.get_id());
-					topologyId = sum.get_id();
-					LOG.info("topology name:"+sum.get_name());
-					LOG.info("topology num executors:"+sum.get_num_executors());
-					LOG.info("topology num tasks:"+sum.get_num_tasks());
-					LOG.info("topology num workers:"+sum.get_num_workers());
-					LOG.info("topology id:"+sum.get_status());
-					LOG.info("topology uptime:"+sum.get_uptime_secs());
 				}
 				
-				//from Thrift server, this doesnt exist in local mode which has no thrift server
-				TopologyInfo ti = client.getTopologyInfo(topologyId);
-				LOG.info("topology id:"+topologyId);
-				LOG.info("Topology info Name:"+ti.get_name());
-				LOG.info("Topology info executors size:"+ti.get_executors_size());
-				LOG.info("Topology info status:"+ti.get_status());
-				LOG.info("Topology uptime:"+ti.get_uptime_secs());
-				LOG.info("Topology executors size:"+ti.get_executors().size());
-				
-				java.util.List<ExecutorSummary> execSum = ti.get_executors();
-	//			ExecutorSummary es = execSum.get(0);
-//				LOG.info("asdfasdf:"+es.get_stats().get_emitted().get("600").get("__ack_ack"));
-				LOG.info("+++++++++++++++++++++++++++++++");
-				for(ExecutorSummary e : execSum){
-					LOG.info("Executor component_id:"+e.get_component_id());
-					LOG.info("Executor host:"+e.get_host());
-					LOG.info("Executor port:"+e.get_port());
-					LOG.info("Executor uptime:"+e.get_uptime_secs());
-					ExecutorInfo ei = e.get_executor_info();
-					LOG.info("ExecutorInfo taskStart:"+ei.get_task_start());
-					LOG.info("ExecutorInfo taskEnd:"+ei.get_task_end());
-					
-					//careful there are 2 imports here... one for generated one for the daemon dont know the difference
-					
-					backtype.storm.generated.ExecutorStats es1 = e.get_stats();
-					if(es1!=null){
-					LOG.info("ExecutorStats emittedSize:"+es1.get_emitted_size());
-					LOG.info("ExecutorStats transferredSize:"+es1.get_transferred_size());
-					//what is other map for? 
-					
-					Map<String, Map<String,Long>> stats = es1.get_transferred();
-					Set<String> statKeys = stats.keySet();
-					for(String s:statKeys){
-						Map<String,Long> map = stats.get(s);
-						LOG.info("statKey:"+s+" size more stats:"+map.size() );
-						Set<String> statK = map.keySet();
-						for(String s1:statK){
-							LOG.info("	statK:"+statK+" value:"+map.get(s1));
-						}
-					}
-					}else{
-						LOG.info("STATS NULL!!!!!");
-					}
-//					LOG.info("ExecutorStats emittedSize:"+es.);
-
-				}
-				//print out bolts and spouts from st. 
-				Map<String,Bolt> mapBolts = st.get_bolts();
-				Set<String> keys = mapBolts.keySet();
-				for(String s:keys){
-					LOG.info("bolt:"+s);
-					Bolt b = mapBolts.get(s);
-					
-				}
-				
-				//try teh thrift interface directly. 
-				TProtocol input = client.getInputProtocol();
-				TProtocol output = client.getOutputProtocol();
-				}
-				
-				//System.out.println();
 			}catch(Exception e){
 				e.printStackTrace();
 			}
