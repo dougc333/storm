@@ -19,9 +19,9 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
-//storm distributed mode
-//if we send one ack does storm log this? 
-//if we send 1 tuple does storm see it? 
+//storm local mode 
+//test same as stormtest7 with spout but no bolt
+//I think you need bolt? 
 public class TestStorm8 {
 	static Logger LOG = Logger.getLogger(TestStorm8.class);
 	static Integer next= 0;
@@ -33,7 +33,7 @@ public class TestStorm8 {
 		@Override
 		public void nextTuple() {
 			// TODO Auto-generated method stub
-			if(next ==0){
+			if(next==0){
 				LOG.info("EMIT ONE!!!!!!!!!!!!!!!!!!!!!!");
 				collector.emit(new Values(1));
 				next++;
@@ -66,7 +66,7 @@ public class TestStorm8 {
 			LOG.info("OneTupleBolt EMIT ONE!!!!!!");
 			collector.emit(new Values(tuple.getInteger(0)));
 			//adding this I get no log entry for the spoutS!!!
-			//collector.ack(tuple);
+			collector.ack(tuple);
 		}
 
 		@Override
@@ -87,20 +87,20 @@ public class TestStorm8 {
 	
 	public static void main(String []args){
 		try{
-			
 			TopologyBuilder builder = new TopologyBuilder();
-			builder.setSpout("spout", new OneTupleSpout(),4);
-			builder.setBolt("bolt",new OneTupleBolt(),4).shuffleGrouping("spout");
+			builder.setSpout("spout", new OneTupleSpout(),10);
+			builder.setBolt("bolt",new OneTupleBolt(),1).shuffleGrouping("spout");
 			
 			Config conf = new Config();
 			//conf.setDebug(true);
 //			conf.setNumWorkers(10);
 			
-			//LocalCluster cluster  = new LocalCluster();
-			//cluster.submitTopology("TestStorm8", conf, builder.createTopology());
-			//Utils.sleep(10000);
-			//cluster.deactivate("TestStorm8");
-			//cluster.shutdown();
+			LocalCluster cluster  = new LocalCluster();
+			cluster.submitTopology("TestStorm8", conf, builder.createTopology());
+			Utils.sleep(10000);
+			//doesnt really make a difference if deactivate is here since you are shutting down cluster anyway
+			cluster.deactivate("TestStorm8");
+			cluster.shutdown();
 			
 			StormSubmitter.submitTopology("TestStorm8",conf,builder.createTopology());
 			
