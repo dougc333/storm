@@ -1,5 +1,6 @@
 package test4.demo;
 
+import java.lang.management.ManagementFactory;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -30,6 +31,7 @@ import backtype.storm.utils.Utils;
 // 1) no message id, verify no acks
 // 2) add messageId to spout emit, see acks. no fails
 // 3) add fails for even. 
+// 4) count msgIds to verify parallelism
 // debug: look at logs, takes time to get to steady state. Can't really measure performance w/fixed time
 // notes; most don't know how to use threaads b/c they arent using Utils.Time to do a sleep which calls
 // zookeeper through curator. 
@@ -52,6 +54,8 @@ public class TestAnchor {
 			this.conf = conf;
 			LOG.info("TOPOLOGY CONTEXT IN SPOUT OPEN");
 			printTopologyContext(context);
+			
+			LOG.info("JAVA PROCESS NAME:"+ManagementFactory.getRuntimeMXBean().getName());
 		}
 
 		
@@ -225,15 +229,6 @@ public class TestAnchor {
 
 			StormSubmitter.submitTopology("TestAnchor", config, builder.createTopology());
 			
-			
-//			LocalCluster cluster = new LocalCluster();
-//			cluster.submitTopology("testtop", config, builder.createTopology());
-//			cluster.activate("testtop");
-			//you should see the UI working at this point. 
-//			Utils.sleep(10000);
-
-//			cluster.deactivate("TestAnchor");
-//			cluster.shutdown();
 
 		} catch (Exception e) {
 			e.printStackTrace();
