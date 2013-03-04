@@ -46,10 +46,11 @@ import backtype.storm.utils.Utils;
 
 
 //test single ack in remote mode. never shows up in UI. 
-//
+//test 10 tuples, we see this, one for each bolt/spout pair
+//add msgid  and ack, verify acks
 //
 public class TestSpout9 {
-		static Logger LOG = Logger.getLogger(TestStorm8.class);
+		static Logger LOG = Logger.getLogger(TestSpout9.class);
 		static Integer next= 0;
 		static boolean LOCAL=false;
 		
@@ -88,17 +89,19 @@ public class TestSpout9 {
 			
 		}
 		
+		//baserich bolt acks automatically
 		static class OneTupleBolt extends BaseRichBolt{
 			OutputCollector collector;
 			TopologyContext context;
 			Map conf;
 			
+	
 			@Override
 			public void execute(Tuple tuple) {
-				LOG.info("OneTupleBolt EMIT ONE!!!!!!");
-				collector.emit(new Values(tuple.getInteger(0)));
+				LOG.info("OneTupleBolt EMIT ONE!!!!!!"+tuple.getString(0));
+				collector.emit(new Values(tuple.getString(0)));
 				//adding this I get no log entry for the spoutS!!!
-				//collector.ack(tuple);
+				collector.ack(tuple);
 			}
 
 			@Override
@@ -121,9 +124,11 @@ public class TestSpout9 {
 			try{
 				
 				TopologyBuilder builder = new TopologyBuilder();
-				OneTupleSpout oneTupleSpout = new OneTupleSpout();
-				builder.setSpout("spout", oneTupleSpout,4);
-				builder.setBolt("bolt",new OneTupleBolt(),4).shuffleGrouping("spout");
+//				OneTupleSpout oneTupleSpout = new OneTupleSpout();
+//				builder.setSpout("spoutoutput", new OneTupleSpout(),2);
+				
+				builder.setSpout("spoutoutput", new test4.demo.spouts.ModifiedWordSpout(),4);
+				builder.setBolt("bolt",new OneTupleBolt(),4).shuffleGrouping("spoutoutput");
 				
 				Config conf = new Config();
 //				conf.setNumWorkers(10);
@@ -136,7 +141,10 @@ public class TestSpout9 {
 					cluster.deactivate("TestStorm9");
 					cluster.shutdown();				
 				}else{
+					LOG.info("REMOTE MODE");
 					StormTopology st = builder.createTopology();
+					conf.setNumAckers(1); //removes reliability
+					conf.setNumWorkers(2);
 					StormSubmitter.submitTopology("TestSpout9",conf,st);
 				
 				}

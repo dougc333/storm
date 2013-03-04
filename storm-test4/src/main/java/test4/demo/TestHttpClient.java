@@ -11,6 +11,7 @@ import org.apache.log4j.Logger;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
+import backtype.storm.StormSubmitter;
 import backtype.storm.spout.SpoutOutputCollector;
 import backtype.storm.task.OutputCollector;
 import backtype.storm.task.TopologyContext;
@@ -25,7 +26,8 @@ import backtype.storm.utils.Utils;
 
 public class TestHttpClient {
 	static Logger LOG = Logger.getLogger(TestHttpClient.class);
-
+	static HttpClient httpClient;
+	
 	static class HttpSpout extends BaseRichSpout {
 		HttpClient httpClient;
 		StringBuilder sb;
@@ -35,20 +37,10 @@ public class TestHttpClient {
 		public void open(Map conf, TopologyContext context,
 				SpoutOutputCollector collector) {
 			// TODO Auto-generated method stub
+			this.collector = collector;
+			LOG.info("TestHttpClient SPOUT OPEN!!!!!!!!!!!!!!!!!!");
 			try {
 				httpClient = new DefaultHttpClient();
-				HttpGet getRequest = new HttpGet("http://www.google.com");
-				HttpResponse response = httpClient.execute(getRequest);
-				BufferedReader br = new BufferedReader(new InputStreamReader(
-						response.getEntity().getContent()));
-
-				sb = new StringBuilder();
-				String fileLine = null;
-
-				while ((fileLine = br.readLine()) != null) {
-					sb.append(fileLine);
-				}
-				this.collector = collector;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -57,7 +49,29 @@ public class TestHttpClient {
 		@Override
 		public void nextTuple() {
 			// TODO Auto-generated method stub
+			try{
+			HttpGet getRequest = new HttpGet("http://www.google.com");
+			HttpResponse response = httpClient.execute(getRequest);
+		//	Utils.sleep(4000);
+			BufferedReader br = new BufferedReader(new InputStreamReader(
+					response.getEntity().getContent()));
+
+			sb = new StringBuilder();
+			String fileLine = null;
+
+			while ((fileLine = br.readLine()) != null) {
+				sb.append(fileLine);
+			}
+			LOG.info("+++++++++++++++++++++++++++++++++++++");
+			LOG.info("STRING SIZE:"+sb.toString().length());
+			LOG.info("--------------------------------");
+			LOG.info(sb.toString());
+			LOG.info("--------------------------------");
+			
 			collector.emit(new Values(sb.toString()));
+			}catch(Exception e){
+				e.printStackTrace();
+			}
 		}
 
 		@Override
@@ -76,13 +90,15 @@ public class TestHttpClient {
 				OutputCollector collector) {
 			// TODO Auto-generated method stub
 			this.collector = collector;
-
+			LOG.info("TestHttpClient TEST BOLT!!!!!!!!!!!!!!!!!!!");
 		}
 
 		@Override
 		public void execute(Tuple input) {
 			// TODO Auto-generated method stub
+			LOG.info("TestHttpClient TestBolt EXECUTE!!!!!!!!!!!!!!!!:"+input.getString(0));
 			collector.emit("output", new Values(input.getString(0) + "!!!!!"));
+			collector.ack(input);
 		}
 
 		@Override
@@ -96,18 +112,22 @@ public class TestHttpClient {
 	public static void main(String[] args) {
 		try {
 			TopologyBuilder builder = new TopologyBuilder();
-			builder.setSpout("urloutput", new HttpSpout());
-			builder.setBolt("bolt", new TestBolt(), 1);
+			builder.setSpout("urloutput", new HttpSpout(),4);
+			builder.setBolt("bolt", new TestBolt(), 4).shuffleGrouping("urloutput");
 
 			Config conf = new Config();
-			conf.setDebug(true);
-			LocalCluster cluster = new LocalCluster();
-			cluster.submitTopology("HttpClientTopology", conf,
-					builder.createTopology());
-			Utils.sleep(100000);
-			cluster.deactivate("HttpClientTopology");
-			cluster.shutdown();
+			//conf.setDebug(true);
+			//LocalCluster cluster = new LocalCluster();
+			//cluster.submitTopology("HttpClientTopology", conf,
+			//		builder.createTopology());
+			//Utils.sleep(40000);
+			//cluster.deactivate("HttpClientTopology");
+			//cluster.shutdown();
 
+			StormSubmitter.submitTopology("TestHttpClient", conf, builder.createTopology());
+			
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
