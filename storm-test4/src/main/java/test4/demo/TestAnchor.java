@@ -1,6 +1,7 @@
 package test4.demo;
 
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import org.apache.log4j.Logger;
 
@@ -22,9 +23,16 @@ import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
 //how to test Tuple anchor? 
-//run in dist  mode and verify w/storm  ui?  
+//run in dist  mode and verify w/storm  ui?  Yes and with logs. 
 //will  you see the acks in local mode? No. No thrift, but you can add print statements
 // to to the spout ack/fail method. 
+// 3 steps: 
+// 1) no message id, verify no acks
+// 2) add messageId to spout emit, see acks. no fails
+// 3) add fails for even. 
+// debug: look at logs, takes time to get to steady state. Can't really measure performance w/fixed time
+// notes; most don't know how to use threaads b/c they arent using Utils.Time to do a sleep which calls
+// zookeeper through curator. 
 //https://github.com/nathanmarz/storm/blob/master/src/jvm/backtype/storm/drpc/JoinResult.java
 public class TestAnchor {
 	static Logger LOG = Logger.getLogger(TestAnchor.class);
@@ -33,8 +41,8 @@ public class TestAnchor {
 		SpoutOutputCollector collector;
 		TopologyContext context;
 		Map conf; 
-		Integer next = 0;
-
+		AtomicInteger next = new AtomicInteger(0);
+	
 		@Override
 		public void open(Map conf, TopologyContext context,
 				SpoutOutputCollector collector) {
@@ -51,12 +59,12 @@ public class TestAnchor {
 		public void nextTuple() {
 			// TODO Auto-generated method stub
 			LOG.info("STORM CALLING TESTSPOUT NEXTTUPLE");
-			if (next < 100) {
+			if (next.get() < 100) {
 				//next = 0;
 				LOG.info("SPOUT EMITTING:" + next);
 				
-				collector.emit(new Values(next.toString()),1);
-				next++;				
+				collector.emit(new Values(next.toString()),next);
+				next.getAndIncrement();				
 			}
 			LOG.info("SPOUT nextTuple called no EMIT!!!!!!");
 		}
@@ -68,10 +76,10 @@ public class TestAnchor {
 		}
 
 		public void ack(Object msgId){
-			LOG.info("TEST SPOUT ACK CALLED!!!!!!!!!!!");
+			LOG.info("TEST SPOUT ACK CALLED!!!!!!!!!!! msgId:"+msgId.toString());
 		}
 		public void fail(Object msgId){
-			LOG.info("TEST SPOUT FAIL CALLED!!!!!!!!!!!");			
+			LOG.info("TEST SPOUT FAIL CALLED!!!!!!!!!!! msgId:"+msgId.toString());			
 		}
 		public void activate(){
 			LOG.info("TESTSPOUT ACTIVATE!!!!!!!!!!!!!!!");
@@ -87,8 +95,9 @@ public class TestAnchor {
 	static class TestBolt extends BaseRichBolt {
 		OutputCollector collector;
 		TopologyContext context;
-		Integer numIssued = 0;
-
+		AtomicInteger numIssued = new AtomicInteger(0);
+		AtomicInteger numFailed = new AtomicInteger(0);
+		
 		@Override
 		public void prepare(Map stormConf, TopologyContext context,
 				OutputCollector collector) {
@@ -105,14 +114,17 @@ public class TestAnchor {
 			LOG.info("BOLT EXECUTE :" + input.getString(0) + " numIssued:"
 					+ numIssued.toString());
 			collector.emit(input, new Values());
-			collector.ack(input);
-			//	numIssued++;
-		//	if (numIssued == 5) {
-		//		collector.fail(input);
-		//		LOG.info("BOLT EXECUTE FAIL CALLED!!!!!!!!!!!!!!!!!!!!!!");
-		//	} else {
-		//		collector.ack(input);
-		//	}
+			//test fail by commenting below out and failing once
+			//collector.ack(input);
+			numIssued.getAndIncrement();
+			
+			if (numIssued.get() % 2 ==0) {
+				collector.fail(input);
+				LOG.info("BOLT EXECUTE FAIL CALLED!!!!!!!!!!!!!!!!!!!!!! numFailed:"+numFailed.get());
+				numFailed.getAndIncrement();
+			} else {
+				collector.ack(input);
+			}
 
 		}
 
