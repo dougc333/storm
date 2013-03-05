@@ -1,4 +1,4 @@
-package main;
+
 
 import java.util.List;
 import java.util.Map;
@@ -117,22 +117,8 @@ public class Test {
 				}
 				
 				ExecutorSpecificStats ess = es1.get_specific();
-				SpoutStats spoutStats = ess.get_spout();
-				System.out.println("spout stats:"+spoutStats.toString());
-				System.out.println("spoutStats ackedSize:"+spoutStats.get_acked_size());
-				System.out.println("spoutStats complete_ms_avg_size:"+spoutStats.get_complete_ms_avg_size());
-				System.out.println("spoutStats failedSize:"+spoutStats.get_failed_size());
-				
-				//add rest in maps
-				
-				
-				BoltStats boltStats = ess.get_bolt();
-				System.out.println("boltStats ackedSize:"+boltStats.get_acked_size());
-				System.out.println("boltStats execute ms avg size:"+boltStats.get_execute_ms_avg_size());
-				System.out.println("boltStats executed size:"+boltStats.get_executed_size());
-				System.out.println("boltStats failed size:"+boltStats.get_failed_size());
-				System.out.println("boltStats ms avg size:"+boltStats.get_process_ms_avg_size());
-				System.out.println("boltStats:"+boltStats.toString());
+				//prints out SpoutStats and BoltStats
+				System.out.println("ess:"+ess.toString());
 				
 				
 				
