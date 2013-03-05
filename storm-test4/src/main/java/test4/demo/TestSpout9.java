@@ -45,10 +45,8 @@ import backtype.storm.utils.Utils;
 
 
 
-//test single ack in remote mode. never shows up in UI. 
-//test 10 tuples, we see this, one for each bolt/spout pair
-//add msgid  and ack, verify acks
-//
+//test performance stats. stuck on get_specific from core.clj
+//not at ExecutorSpecificStats yet. 
 public class TestSpout9 {
 		static Logger LOG = Logger.getLogger(TestSpout9.class);
 		static Integer next= 0;
@@ -143,7 +141,7 @@ public class TestSpout9 {
 				}else{
 					LOG.info("REMOTE MODE");
 					StormTopology st = builder.createTopology();
-					conf.setNumAckers(1); //removes reliability
+					conf.setNumAckers(1); 
 					conf.setNumWorkers(2);
 					StormSubmitter.submitTopology("TestSpout9",conf,st);
 				

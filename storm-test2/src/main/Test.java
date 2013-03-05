@@ -3,15 +3,20 @@ package main;
 import java.util.List;
 import java.util.Map;
 
+import backtype.storm.generated.BoltStats;
 import backtype.storm.generated.ClusterSummary;
 import backtype.storm.generated.ExecutorInfo;
+import backtype.storm.generated.ExecutorSpecificStats;
 import backtype.storm.generated.ExecutorSummary;
 import backtype.storm.generated.Nimbus;
+import backtype.storm.generated.SpoutStats;
 import backtype.storm.generated.SupervisorSummary;
 import backtype.storm.generated.TopologyInfo;
 import backtype.storm.generated.TopologySummary;
 import backtype.storm.utils.NimbusClient;
 
+//run this when topology loaded or write separate program to load the topology
+//and run this
 public class Test {
 
 	public static void main(String[] args) {
@@ -19,10 +24,6 @@ public class Test {
 		try{
 			NimbusClient nc = new NimbusClient("localhost",6627);
 			Nimbus.Client client = nc.getClient();
-			System.out.println("client:"+client.toString());
-			
-			System.out.println("client:"+client.toString());
-			System.out.println("client:"+client.toString());
 			System.out.println("client:"+client.toString());
 			
 			ClusterSummary cs = client.getClusterInfo();
@@ -80,7 +81,7 @@ public class Test {
 //				ExecutorSummary es = execSum.get(0);
 //			System.out.println("asdfasdf:"+es.get_stats().get_emitted().get("600").get("__ack_ack"));
 			System.out.println("+++++++++++++++++++++++++++++++");
-
+			
 			System.out.println("+++++++++++++++++++++++++++++++");
 			for(ExecutorSummary e : execSum){
 				System.out.println("ExecutorSummary component_id:"+e.get_component_id());
@@ -114,6 +115,27 @@ public class Test {
 						System.out.println("	statK:"+s1+" value:"+es1.get_transferred());
 					}
 				}
+				
+				ExecutorSpecificStats ess = es1.get_specific();
+				SpoutStats spoutStats = ess.get_spout();
+				System.out.println("spout stats:"+spoutStats.toString());
+				System.out.println("spoutStats ackedSize:"+spoutStats.get_acked_size());
+				System.out.println("spoutStats complete_ms_avg_size:"+spoutStats.get_complete_ms_avg_size());
+				System.out.println("spoutStats failedSize:"+spoutStats.get_failed_size());
+				
+				//add rest in maps
+				
+				
+				BoltStats boltStats = ess.getBolt();
+				System.out.println("boltStats ackedSize:"+boltStats.get_acked_size());
+				System.out.println("boltStats execute ms avg size:"+boltStats.get_execute_ms_avg_size());
+				System.out.println("boltStats executed size:"+boltStats.get_executed_size());
+				System.out.println("boltStats failed size:"+boltStats.get_failed_size());
+				System.out.println("boltStats ms avg size:"+boltStats.get_process_ms_avg_size());
+				System.out.println("boltStats:"+boltStats.toString());
+				
+				
+				
 				}else{
 					System.out.println("STATS NULL!!!!!");
 				}
