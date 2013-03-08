@@ -1,9 +1,13 @@
 storm/
 storm-local/
 zeromq-2.1.7/
+jzmq-2.1.0/
 zeromq-2.1.7.zip
 jzmq/
 temp/
+storm-installer-0.8.2_1.el6.x86_64/
+storm-installer-0.8.2_1.el6.x86_64.zip
+storm-installer/
 pomorig.xml
 storm-test2/.classpath
 storm-test2/.project
