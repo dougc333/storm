@@ -24,6 +24,7 @@ public class Test {
 		try{
 			NimbusClient nc = new NimbusClient("localhost",6627);
 			Nimbus.Client client = nc.getClient();
+			
 			System.out.println("client:"+client.toString());
 			
 			ClusterSummary cs = client.getClusterInfo();

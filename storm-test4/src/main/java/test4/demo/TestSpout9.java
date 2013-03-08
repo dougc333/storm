@@ -64,6 +64,7 @@ public class TestSpout9 {
 			@Override
 			public void nextTuple() {
 				// TODO Auto-generated method stub
+				Utils.sleep(1000);
 				if(next<10){
 					LOG.info("EMIT ONE!!!!!!!!!!!!!!!!!!!!!!");
 					collector.emit(new Values(1));
