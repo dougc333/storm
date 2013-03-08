@@ -123,9 +123,9 @@ public class TestStorm1 {
 
 			Config conf = new Config();
 			conf.setDebug(true);
-			conf.setNumWorkers(10);
-			conf.setNumAckers(10);
-			conf.setMaxSpoutPending(10000);
+//			conf.setNumWorkers();
+//			conf.setNumAckers(10);
+//			conf.setMaxSpoutPending(10000);
 			
 //			LocalCluster cluster = new LocalCluster();
 			StormSubmitter.submitTopology("TestStorm1", conf, builder.createTopology());
