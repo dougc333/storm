@@ -104,11 +104,11 @@ public class TestStorm1 {
 		try {
 			TopologyBuilder builder = new TopologyBuilder();
 
-			builder.setSpout("letter", new TestStorm1Spout(), 1);
+			builder.setSpout("letter", new TestStorm1Spout(), 8).setNumTasks(20);
 			//builder.setSpout("secondletter", new TestStorm1Spout(), 5);
 			//builder.setSpout("thirdletter", new TestStorm1Spout(), 5);
 			
-			builder.setBolt("id1", new TestStorm1Bolt(), 1).shuffleGrouping(
+			builder.setBolt("id1", new TestStorm1Bolt(), 8).setNumTasks(20).shuffleGrouping(
 					"letter");
 			//builder.setBolt("id2", new TestStorm1Bolt(), 10).shuffleGrouping(
 			//		"letter");
@@ -123,7 +123,7 @@ public class TestStorm1 {
 
 			Config conf = new Config();
 			conf.setDebug(true);
-//			conf.setNumWorkers();
+			conf.setNumWorkers(6);
 //			conf.setNumAckers(10);
 //			conf.setMaxSpoutPending(10000);
 			

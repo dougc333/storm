@@ -49,7 +49,6 @@ import backtype.storm.utils.Utils;
 //3436 [Thread-22] INFO  test4.demo.TestPerf2  - elapsed time:526 ms
 //3458 [Thread-16] INFO  test4.demo.TestPerf2  - elapsed time:548 ms
 
-//do 6k w/1k string size
 
 public class TestPerf2 {
 
