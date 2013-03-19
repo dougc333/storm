@@ -9,5 +9,6 @@
 	<classpathentry kind="lib" path="/opt/storm-0.8.2/storm-0.8.2.jar"/>
 	<classpathentry kind="lib" path="/opt/storm-0.8.2/lib/libthrift7-0.7.0.jar"/>
 	<classpathentry kind="lib" path="/opt/storm-0.8.2/lib/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="/home/dc/lib/guava-14.0.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

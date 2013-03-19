@@ -28,7 +28,6 @@ import java.util.List;
 //test design patterns https://github.com/nathanmarz/storm/wiki/Common-patterns
 import org.apache.log4j.*;
 
-import com.esotericsoftware.minlog.Log;
 import com.google.common.base.Joiner;
 
 // we should add a test before this w/o jedis 
@@ -104,11 +103,11 @@ public class TestStorm1 {
 		try {
 			TopologyBuilder builder = new TopologyBuilder();
 
-			builder.setSpout("letter", new TestStorm1Spout(), 8).setNumTasks(5);
+			builder.setSpout("letter", new TestStorm1Spout(), 4).setNumTasks(5);
 			//builder.setSpout("secondletter", new TestStorm1Spout(), 5);
 			//builder.setSpout("thirdletter", new TestStorm1Spout(), 5);
 			
-			builder.setBolt("id1", new TestStorm1Bolt(), 8).setNumTasks(5).shuffleGrouping(
+			builder.setBolt("id1", new TestStorm1Bolt(), 4).setNumTasks(5).shuffleGrouping(
 					"letter");
 			//builder.setBolt("id2", new TestStorm1Bolt(), 10).shuffleGrouping(
 			//		"letter");

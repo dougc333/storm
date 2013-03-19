@@ -99,7 +99,7 @@ public class TestStorm2 {
 		public void open(Map conf, TopologyContext context,
 				SpoutOutputCollector collector) {
 			// TODO Auto-generated method stub
-			LOG.info("CALLING TESTSPOUT OPEN!!!!!!!!!!!!! SAME AS BOLT PREPARE????");
+			LOG.info("CALLING TESTSPOUT OPEN!!!!!!!!!!!!!");
 			this.collector = collector;
 			jedis = new Jedis("localhost");
 			jedis.connect();

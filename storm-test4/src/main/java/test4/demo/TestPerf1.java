@@ -3,9 +3,6 @@ package test4.demo;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-
-import com.esotericsoftware.minlog.Log;
-
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.StormSubmitter;
@@ -39,7 +36,7 @@ import backtype.storm.utils.Utils;
 //00:00  INFO: elapsed time:422 ms
 
 public class TestPerf1 {
-	Logger LOG = Logger.getLogger(TestPerf1.class);
+	static Logger LOG = Logger.getLogger(TestPerf1.class);
 	static long startTime;
 	
 	
@@ -95,7 +92,7 @@ public class TestPerf1 {
 	//		Log.info("num:"+input.getInteger(0).toString());
 			if(input.getInteger(0)==1000){
 				long stopTime = System.currentTimeMillis();
-				Log.info("elapsed time:"+(stopTime-startTime)+" ms");
+				LOG.info("elapsed time:"+(stopTime-startTime)+" ms");
 			}
 			collector.ack(input);
 		}
@@ -134,7 +131,7 @@ public class TestPerf1 {
 
 						
 			Config conf = new Config();
-			conf.setNumWorkers(40);
+//			conf.setNumWorkers(40);
 //			LocalCluster cluster = new LocalCluster();
 			conf.setNumAckers(0);
 			//conf.setDebug(true);
