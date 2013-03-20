@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+#redis bring up down service
+#
+#chkconfig: 345 20 80
+# description: redis
+
+
+/usr/local/bin/redis-server /home/dc/redis-2.6.11/redis.conf 
+ 
+

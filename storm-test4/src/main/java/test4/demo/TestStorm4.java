@@ -15,7 +15,6 @@ import java.util.Set;
 
 import org.apache.log4j.Logger;
 
-import com.esotericsoftware.minlog.Log;
 
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;

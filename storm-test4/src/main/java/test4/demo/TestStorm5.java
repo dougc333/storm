@@ -9,7 +9,6 @@ import java.util.Properties;
 import javax.mail.Session;
 import javax.mail.Store;
 
-import com.esotericsoftware.minlog.Log;
 import com.google.common.base.Splitter;
 
 import backtype.storm.spout.SpoutOutputCollector;

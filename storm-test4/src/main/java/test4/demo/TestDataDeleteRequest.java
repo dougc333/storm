@@ -45,16 +45,15 @@ public class TestDataDeleteRequest {
 		
 		@Override
 		public void nextTuple() {
-			// TODO Auto-generated method stub
-			//check for last request then process....
-			jedis.watch("1","accountID");
+			//this is funny, no while() loop needed!
+			jedis.watch("1000","esn");
 			Transaction trans = jedis.multi();
 			//trans.select(0);
 			trans.set("fool", "bar"); 
 			Response<String> result1 = trans.get("fool");
 			
 			Response<Long> dbSizeResp = trans.dbSize();
-			Response<String> response = trans.hget("1","accountID");
+			Response<String> response = trans.hget("1000","esn");
 			trans.exec();
 			LOG.info("numRecords:"+dbSizeResp.get());
 			LOG.info("RESPONSE:"+result1.get());

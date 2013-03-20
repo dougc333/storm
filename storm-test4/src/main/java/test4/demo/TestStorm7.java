@@ -6,9 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
-
-import com.esotericsoftware.minlog.Log;
-
 import backtype.storm.Config;
 import backtype.storm.LocalCluster;
 import backtype.storm.spout.SpoutOutputCollector;

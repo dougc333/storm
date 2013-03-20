@@ -22,7 +22,6 @@ import backtype.storm.tuple.Tuple;
 import backtype.storm.tuple.Values;
 import backtype.storm.utils.Utils;
 
-import com.esotericsoftware.minlog.Log;
 import com.google.common.base.Joiner;
 import com.google.common.base.Splitter;
 
