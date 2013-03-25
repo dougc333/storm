@@ -10,5 +10,7 @@
 	<classpathentry kind="lib" path="/opt/storm-0.8.2/lib/libthrift7-0.7.0.jar"/>
 	<classpathentry kind="lib" path="/opt/storm-0.8.2/lib/log4j-1.2.16.jar"/>
 	<classpathentry kind="lib" path="/home/dc/lib/guava-14.0.jar"/>
+	<classpathentry kind="lib" path="/home/dc/lib/jedis-master/jedis-2.1.0.jar"/>
+	<classpathentry kind="lib" path="/home/dc/lib/commons-pool-1.6/commons-pool-1.6.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
