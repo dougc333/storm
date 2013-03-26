@@ -25,11 +25,11 @@ import backtype.storm.utils.Utils;
 
 public class TestDataDelete {
 	private static Logger LOG = Logger.getLogger(TestDataDelete.class);
-	private static JedisPool pool = new JedisPool(new JedisPoolConfig(),ServerAddressPort.HOST);
-	private static Jedis jedis;
+	
 	   
 	static class DataDeleteSpout extends BaseRichSpout{
 		SpoutOutputCollector collector;
+		//private static JedisPool pool = new JedisPool(new JedisPoolConfig(),ServerAddressPort.HOST);
 		private static Jedis jedis;
 			
 		@Override
@@ -38,26 +38,23 @@ public class TestDataDelete {
 		    LOG.info("TEST DATADELETE SPOUT NEXT TUPLE!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 		    System.out.println("TEST DATADELETE SPOUT NEXT TUPLE!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
 
-			//String isReady = jedis.get("deviceready");
-			//if(isReady==null){
-			//	System.out.println("SPOUT FIRST READ isReady null");
-			//	LOG.info("SPOUT FIRST READ isReady null");
-			//	
-			//}else{
-			//	System.out.println("SPOUT FIRST READ isReady NOT NULL");
-			//	LOG.info("SPOUT FIRST READ isReady NOT NULL");
-			//	
-			//}
+			String isReady = jedis.get("deviceready");
+			if(isReady==null){
+				System.out.println("SPOUT isReady null isReady:"+isReady);	
+				LOG.info("SPOUT isReady null isReady:"+isReady);	
+			}else{
+				System.out.println("SPOUT isReady NOT NULL isReady:"+isReady);
+				LOG.info("SPOUT isReady NOT NULL isReady:"+isReady);
+				//process ESNs, read the tables using accountID in Redis
+				// get by groupID:
+				//
+			}
+			
 			Long size = jedis.dbSize();
+			System.out.println("db size: "+size);
 			LOG.info("db size: "+size);
-			/**System.out.println("spout called");
-			synchronized (this){
-			while(isReady==null || !isReady.equals("ready")){
-				//Utils.sleep(1000);
-				isReady = jedis.get("deviceready");
-			}
-			}
-			*/
+			
+			
 			LOG.info("SPOUT COMING!!!!!!!!!!!!!!!!!");
 			collector.emit(new  Values("some ESNs in a set? "));
 		}
@@ -67,13 +64,13 @@ public class TestDataDelete {
 				SpoutOutputCollector arg2) {
 			// TODO Auto-generated method stub
 			this.collector = arg2;
-		    jedis = pool.getResource(); //replace w/storm0 or local ip when nto at starbucks
-		    String isReady = jedis.get("devicready");
-		    if(isReady!=null){
-		    	jedis.del("deviceready");
-		    }
+			
 		    LOG.info("OPEN TEST DATADELETE SPOUT!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-		    System.out.println("TestDataDelete Spout open()!!!!!!!!!!!!!!!!!!");
+		    System.out.println("OPEN TEST DATADELETE SPOUT!!!!!!!!!!!!!!!!!!!!!!!!!!!!");			
+			
+		  //  jedis = pool.getResource(); //replace w/storm0 or local ip when nto at starbucks
+			jedis = new Jedis("localhost");
+		
 		}
 
 		@Override
