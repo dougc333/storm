@@ -1,0 +1,21 @@
+The book examples dont work
+
+Build Errors:
+
+following error: 
+Exception in thread "main" java.lang.NoSuchMethodError: backtype.storm.transactional.TransactionalTopologyBuilder.setBolt(Ljava/lang/String;Lbacktype/storm/topology/IBasicBolt;Ljava/lang/Integer;)Lbacktype/storm/topology/BoltDeclarer;
+	at test4.demo.BookTransTop.main(BookTransTop.java:18)
+[dc@localhost storm]$ 
+
+
+The book examples are ok conceptually for data flow. Control doesnt work. 
+
+Code Errors: 
+remove Logger.removeAllAppenders
+remove the int from the setBolt method setBolt("","",int)
+getting the string names from the Tuple doesnt work: 
+	String tweet = input.getStringByField("tweet");
+	String tweetId = input.getStringByField("tweet_id");
+
+
+

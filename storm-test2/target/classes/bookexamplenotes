@@ -1,0 +1,44 @@
+Book example
+
+Spouts Output:
+TweetsTransactionalSpout, declareOutptuFields(new Fields("txid","tweet_id","tweet"))
+TweetsTransactionalSpoutEmitter new Values(tx,""+tweetId,message) where tx=TransactionAttempt, tweetId=coordinatorMetadata.from, message=from RQ
+
+PACKETTRANSSPOUT:
+declarer.declare(new Fields("txid", "packet_id", "packet"));
+PACKETSPOUTEMITTER:
+collector.emit(new Values(tx, "" + packetId, message));
+
+
+Spout Output->Bolt Input. THIS MATCHES SPOUT declareOutputFields:
+UserSplitterBolt(IBasicBolt).execute(Tuple input, BasicOutputCollector collector):
+	String tweet = input.getStringByField("tweet");
+	String tweetId = input.getStringByField("tweet_id");
+HashTagSplitterBolt(IBasicBolt).execute(Tuple input, BasicOutputCollector collector):
+	String tweet = input.getStringByField("tweet");
+	String tweetId = input.getStringByField("tweet_id");
+
+UserSplitterBolt/HashTagSplitter Bolt Output->HashTagJoinBolt and RedisCommitterBolt
+
+UserSplitterBolt:declareStream("users",new Fields("txid","tweet_id","user"))
+collector.emit("users", new Value(tx,tweetId,user))
+
+HashTagSplitterBolt.declareStream("hashtags",new Fields("txid","tweet_id","hashtag"))
+HashTagSplitter.collector.emit("hashtasg",new Values(tx,tweetId,word));
+
+
+PACKETSPLITTER:
+
+declarer.declareStream("packets", new Fields("txid", "packetid",
+				"packet"));
+
+Bolt Output HashTagJoinBolt->RedisCommitterBolt
+execute(Tuple tuple)
+String source=tuple.getSourceStreamID(); "hashtags", "users" are streamIDs from UserSplitterBolt and HashTgSplitter
+String tweetId=tuple.getStringByField("tweet_id")
+
+
+Transaction complete finishBatch():
+HashTagJoinBolt.finishBatch()
+
+

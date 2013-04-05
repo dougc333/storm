@@ -1,0 +1,2 @@
+storm-0.8.0/bin/storm jar storm-test4/target/stormtest4-0.0.1-jar-with-dependencies.jar test4.demo.TestTrans
+

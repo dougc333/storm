@@ -9,6 +9,8 @@ import java.util.Properties;
 import javax.mail.Session;
 import javax.mail.Store;
 
+import org.apache.log4j.Logger;
+
 import com.google.common.base.Splitter;
 
 import backtype.storm.spout.SpoutOutputCollector;
@@ -30,7 +32,7 @@ public class TestStorm5 {
 	private static final String SMTP_AUTH_PWD = "H1onglam";
 
 	static class EmailSpout extends BaseRichSpout {
-
+		Logger Log = Logger.getLogger("EmailSpout.class");
 		@Override
 		public void open(Map conf, TopologyContext context,
 				SpoutOutputCollector collector) {
@@ -57,6 +59,7 @@ public class TestStorm5 {
 		private static Properties props;
 		private static Session session;
 		private static Store store;
+		
 
 		@Override
 		public void prepare(Map stormConf, TopologyContext context,
@@ -99,7 +102,7 @@ public class TestStorm5 {
 	static class FormatBolt extends BaseRichBolt {
 		Integer numFields = 0;
 		OutputCollector collector;
-
+		Logger Log = Logger.getLogger("FormatBolt.class");
 		@Override
 		public void prepare(Map stormConf, TopologyContext context,
 				OutputCollector collector) {

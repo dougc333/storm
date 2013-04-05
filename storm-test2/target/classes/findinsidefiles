@@ -1,0 +1,2 @@
+find "path to search" -type f -exec grep -i "phrase to find" {} \; -print
+

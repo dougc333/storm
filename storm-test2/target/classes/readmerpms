@@ -1,0 +1,31 @@
+to create rpms under storm-installer. This was git cloned from:
+https://github.com/acromusashi/storm-installer
+
+There aren't any instructions on how to create rpms. 
+There are 3 rpms, storm-installer-0.8.1-1.el6.x86_64.rpm, 
+storm-service-0.8.1-1.el6.x64_64.rpm and storm-service-debuginfo-0.8.1-1.el6.x86_64.rpm
+
+cd into the storm-installer directory. 
+copy storm-0.8.1.tgz to your rpm SOURCES directory, mine is at /home/dc/rpmbuild/SOURCES
+rpmbuild -ba SPECS/storm; this creates the storm-0.8.1.rpm
+
+To create the storm-service-0.8.1.rpm:
+
+move directory storm-service to storm-service-0.8.1
+create the tgz file for this directory and copy to /home/dc/rpmbuild/SOURCES
+[dc@localhost storm-installer]$ tar -cvzf  storm-service-0.8.1.tgz storm-service-0.8.1/ 
+
+run rpmbuild -ba filename.spec:
+[dc@localhost storm-installer]$ rpmbuild -ba SPECS/storm-service.spec 
+show rpms under /home/dc/rpmbuild/RPMS
+[dc@localhost storm-installer]$ ls /home/dc/rpmbuild/RPMS/x86_64/
+mongo-10gen-2.2.0-mongodb_1.el6.x86_64.rpm
+mongo-10gen-debuginfo-2.2.0-mongodb_1.el6.x86_64.rpm
+mongo-10gen-server-2.2.0-mongodb_1.el6.x86_64.rpm
+storm-0.8.1-1.el6.x86_64.rpm
+storm-debuginfo-0.8.1-1.el6.x86_64.rpm
+storm-service-0.8.1-1.el6.x86_64.rpm
+storm-service-debuginfo-0.8.1-1.el6.x86_64.rpm
+
+[dc@localhost storm-installer]$
+
