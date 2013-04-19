@@ -17,7 +17,7 @@
 ## Start Monit in the background (run as a daemon):
 #
 set daemon  60              # check services at 1-minute intervals
-   with start delay 120    # optional: delay the first check by 4-minutes (by 
+#   with start delay 120    # optional: delay the first check by 4-minutes (by 
 #                           # default Monit check immediately after Monit start)
 #
 #
@@ -48,7 +48,7 @@ set daemon  60              # check services at 1-minute intervals
 # port 25 - it is possible to override this with the PORT option.
 #
  set mailserver smtp.gmail.com port 587
-	username "dougchang25@gmail.com" password "xxxxx"
+	username "dougchang25@gmail.com" password "H0onglam"
 	using tlsv1
 	with timeout 30 seconds
 
