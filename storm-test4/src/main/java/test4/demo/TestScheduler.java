@@ -17,8 +17,7 @@ public class TestScheduler implements IScheduler{
 	@Override
 	public void schedule(Topologies topologies, Cluster cluster) {
 		// TODO Auto-generated method stub
-		System.out.println("TestScheduler");
-		
+		System.out.println("TestScheduler");		
 		new EvenScheduler().schedule(topologies,cluster);
 	}
 	
