@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
-import redis.clients.jedis.Jedis;
+//import redis.clients.jedis.Jedis;
 
 import backtype.storm.LocalCluster;
 import backtype.storm.spout.SpoutOutputCollector;
@@ -28,7 +28,7 @@ import java.util.List;
 //test design patterns https://github.com/nathanmarz/storm/wiki/Common-patterns
 import org.apache.log4j.*;
 
-import com.google.common.base.Joiner;
+//import com.google.common.base.Joiner;
 
 // we should add a test before this w/o jedis 
 //test jedis in spout
@@ -104,15 +104,15 @@ public class TestStorm1 {
 			TopologyBuilder builder = new TopologyBuilder();
 
 			builder.setSpout("letter", new TestStorm1Spout(), 4).setNumTasks(5);
-			//builder.setSpout("secondletter", new TestStorm1Spout(), 5);
-			//builder.setSpout("thirdletter", new TestStorm1Spout(), 5);
+			//builder.setSpout("secondletter", new TestStorm1Spout(), 1);
+			//builder.setSpout("thirdletter", new TestStorm1Spout(), 1);
 			
 			builder.setBolt("id1", new TestStorm1Bolt(), 4).setNumTasks(5).shuffleGrouping(
 					"letter");
 			//builder.setBolt("id2", new TestStorm1Bolt(), 10).shuffleGrouping(
-			//		"letter");
-			//builder.setBolt("id3", new TestStorm1Bolt(), 10).shuffleGrouping(
 			//		"secondletter");
+			//builder.setBolt("id3", new TestStorm1Bolt(), 10).shuffleGrouping(
+			//		"thirdletter");
 			//builder.setBolt("id4", new TestStorm1Bolt(), 10).shuffleGrouping(
 			//		"secondletter");
 			//builder.setBolt("id5", new TestStorm1Bolt(), 10).shuffleGrouping(
