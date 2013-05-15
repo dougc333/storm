@@ -87,7 +87,7 @@ public class TestStorm1 {
 		public void execute(Tuple input) {
 			// TODO Auto-generated method stub
 			LOG.info("TEST BOLT EXECUTE!!!!!!!!");
-			collector.emit(input,new Values(input.getString(0)));
+			collector.emit(input,new Values(input.getInteger(0)));
 			collector.ack(input);
 		}
 
@@ -126,12 +126,7 @@ public class TestStorm1 {
 //			conf.setNumAckers(10);
 //			conf.setMaxSpoutPending(10000);
 			
-//			LocalCluster cluster = new LocalCluster();
 			StormSubmitter.submitTopology("TestStorm1", conf, builder.createTopology());
-			//cluster.submitTopology("TestStorm1", conf, builder.createTopology());
-			//Utils.sleep(1000000);
-			//cluster.deactivate("TestStorm1");
-			//cluster.shutdown();
 
 		} catch (Exception e) {
 			e.printStackTrace();
