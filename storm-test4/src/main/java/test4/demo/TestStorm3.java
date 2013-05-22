@@ -30,9 +30,6 @@ import java.util.Properties;
 
 import org.apache.log4j.Logger;
 
-//	TEST MULTIFIELDS AND FIELDGROUPING
-// uncomment the fields and shuffle grouping to see the difference
-// between when tuples are sent to the same task
 public class TestStorm3 {
 	static Logger Log = Logger.getLogger(TestStorm7.class);
 
@@ -44,7 +41,6 @@ public class TestStorm3 {
 		@Override
 		public void open(Map conf, TopologyContext context,
 				SpoutOutputCollector collector) {
-			// TODO Auto-generated method stub
 			this.context = context;
 			this.collector = collector;
 
@@ -52,7 +48,6 @@ public class TestStorm3 {
 
 		@Override
 		public void nextTuple() {
-			// TODO Auto-generated method stub
 			if (next > 10) {
 				next = 0;
 			}
@@ -65,7 +60,6 @@ public class TestStorm3 {
 
 		@Override
 		public void declareOutputFields(OutputFieldsDeclarer declarer) {
-			// TODO Auto-generated method stub
 			declarer.declare(new Fields("fields1", "fields2"));
 		}
 
@@ -78,7 +72,6 @@ public class TestStorm3 {
 		@Override
 		public void prepare(Map stormConf, TopologyContext context,
 				OutputCollector collector) {
-			// TODO Auto-generated method stub
 			this.collector = collector;
 			this.context = context;
 		}
@@ -99,18 +92,12 @@ public class TestStorm3 {
 
 	}
 
-	// fields grouping show each field in the same task,
-	// if you uncomment shuffle grouping and comment field grouping you
-	// will see the tuples arent in the same task
 	public static void main(String[] args) {
 		try {
 			TopologyBuilder builder = new TopologyBuilder();
 			builder.setSpout("spoutID", new TestSpout(), 3);
 			builder.setBolt("boltID", new TestBolt(), 3).shuffleGrouping(
 					"spoutID");
-
-			// builder.setBolt("boltID", new TestBolt(), 3).fieldsGrouping(
-			// "spoutID", new Fields("fields1", "fields2"));
 
 			Config config = new Config();
 			config.setDebug(true);

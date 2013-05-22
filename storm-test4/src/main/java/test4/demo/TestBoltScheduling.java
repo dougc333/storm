@@ -59,17 +59,8 @@ public class TestBoltScheduling {
 			TestBolt tb = new TestBolt();
 			builder.setBolt("boltname",tb,3);
 			
-			// we can trigger tb.execute(Tuple input ); manually here
-			// 
-			
 			Config conf = new Config();
 			StormSubmitter.submitTopology("TestBoltScheduling",conf,builder.createTopology());
-			
-			// once it is copied over we will never see it. 
-			// how do we send http requests to a spout/bolt in a topology?  We
-			// can publish the adddress in a log file and see if we can connect to it
-			// using an embedded tomcat/jetty server. How to handle the parallelism with 
-			// multiple addresses? have to configure virtual hosts? will this work? 
 			
 			
 		}catch(Exception e){
