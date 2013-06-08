@@ -1,5 +1,6 @@
 package test4.demo;
 
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -28,7 +29,15 @@ import java.util.List;
 //test design patterns https://github.com/nathanmarz/storm/wiki/Common-patterns
 import org.apache.log4j.*;
 
-public class TestStorm1 {
+//import com.google.common.base.Joiner;
+
+// we should add a test before this w/o jedis 
+//test jedis in spout
+// test tuples from spout to bolt.
+// test writing to jedis, requires ICommitter bolt interface
+// test fields/all grouping how to direct tuples to specific bolt? 
+// test bolt join, important for parallelism
+public class TestStorm1c {
 	static Logger LOG = Logger.getLogger(TestStorm1.class);
 	static String data[] = { "a", "b", "c", "d", "e", "f", "g", "h","i","j","k","l","m","n","o","p","q","r","s","t" };
 
@@ -39,21 +48,27 @@ public class TestStorm1 {
 		@Override
 		public void open(Map conf, TopologyContext context,
 				SpoutOutputCollector collector) {
+			// TODO Auto-generated method stub
 			this.collector = collector;
 		}
 
 		@Override
 		public void nextTuple() {
+			// TODO Auto-generated method stub
 			if (next == 20) {
 				next = 0;
 			}
-			LOG.info("TestStorm1 SPOUT EMITTING:" + data[next] + " !!!!!!!");
+			LOG.info("TestStorm1c SPOUT EMITTING:" + data[next] + " !!!!!!!");
+			LOG.info("TestStorm1c SPOUT next:" + next);
+			//add an ID have to put in. How does this behave?
+			// look at SS code to duplicate
 			collector.emit(new Values(data[next]));
 			next++;
 		}
 
 		@Override
 		public void declareOutputFields(OutputFieldsDeclarer declarer) {
+			// TODO Auto-generated method stub
 			declarer.declare(new Fields("letter"));
 		}
 
@@ -65,9 +80,11 @@ public class TestStorm1 {
 		@Override
 		public void prepare(Map stormConf, TopologyContext context,
 				OutputCollector collector) {
+			// TODO Auto-generated method stub
 			this.collector = collector;
 			this.context=context;
 		}
+
 		
 		private static int fib(int first){
 			if(first<2){
@@ -80,8 +97,9 @@ public class TestStorm1 {
 		
 		@Override
 		public void execute(Tuple input) {
+			// TODO Auto-generated method stub
 			long startTime = System.currentTimeMillis();
-			LOG.info("TEST BOLT EXECUTE!!!!!!!!");
+			LOG.info("TEST BOLT1c EXECUTE!!!!!!!!");
 			//lets try a delay does this show up in our elapsed time?
 			//yes for 100 ms
 //			Utils.sleep(100);
@@ -98,6 +116,7 @@ public class TestStorm1 {
 
 		@Override
 		public void declareOutputFields(OutputFieldsDeclarer declarer) {
+			// TODO Auto-generated method stub
 			declarer.declare(new Fields("bolt1output"));
 		}
 
@@ -107,24 +126,30 @@ public class TestStorm1 {
 		try {
 			TopologyBuilder builder = new TopologyBuilder();
 
-			builder.setSpout("letter", new TestStorm1Spout(), 5);
-			builder.setSpout("secondletter", new TestStorm1Spout(), 5);
-			builder.setSpout("thirdletter", new TestStorm1Spout(), 5);
+			builder.setSpout("letterc", new TestStorm1Spout(), 5);
+			builder.setSpout("secondletterc", new TestStorm1Spout(), 5);
+			builder.setSpout("thirdletterc", new TestStorm1Spout(), 5);
 			
-			builder.setBolt("id1", new TestStorm1Bolt(), 10).setNumTasks(5).shuffleGrouping(
-					"letter");
-			builder.setBolt("id2", new TestStorm1Bolt(), 10).shuffleGrouping(
-					"secondletter");
-			builder.setBolt("id3", new TestStorm1Bolt(), 10).shuffleGrouping(
-					"thirdletter");
-		
+			builder.setBolt("id1c", new TestStorm1Bolt(), 10).setNumTasks(5).shuffleGrouping(
+					"letterc");
+			builder.setBolt("id2c", new TestStorm1Bolt(), 10).shuffleGrouping(
+					"secondletterc");
+			builder.setBolt("id3c", new TestStorm1Bolt(), 10).shuffleGrouping(
+					"thirdletterc");
+			//builder.setBolt("id4", new TestStorm1Bolt(), 10).shuffleGrouping(
+			//		"secondletter");
+			//builder.setBolt("id5", new TestStorm1Bolt(), 10).shuffleGrouping(
+			//		"thirdletter");
+			//builder.setBolt("id6", new TestStorm1Bolt(), 10).shuffleGrouping(
+			//		"thirdletter");
+
 			Config conf = new Config();
 			conf.setDebug(true);
 			conf.setNumWorkers(6);
 //			conf.setNumAckers(10);
 //			conf.setMaxSpoutPending(10000);
 			
-			StormSubmitter.submitTopology("TestStorm1", conf, builder.createTopology());
+			StormSubmitter.submitTopology("TestStorm1c", conf, builder.createTopology());
 
 		} catch (Exception e) {
 			e.printStackTrace();
