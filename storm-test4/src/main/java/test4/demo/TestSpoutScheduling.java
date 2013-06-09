@@ -2,6 +2,7 @@ package test4.demo;
 
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicLong;
 
 import org.apache.log4j.Logger;
 
@@ -29,6 +30,7 @@ public class TestSpoutScheduling {
 		private TopologyContext context;
 		private SpoutOutputCollector collector;
 		private static AtomicInteger num;
+		private static AtomicLong elapsedTime;
 		
 		@Override
 		public void open(Map conf, TopologyContext context,
@@ -43,7 +45,15 @@ public class TestSpoutScheduling {
 
 		@Override
 		public void nextTuple() {
-			// TODO Auto-generated method stub
+			if(elapsedTime==null){
+				System.out.println("Spout Starting no elapsed time yet!!!!!");
+				elapsedTime = new AtomicLong();
+				elapsedTime.set(System.currentTimeMillis());
+			}else{
+				System.out.println("Elapsed Time from Last Spout nextTuple() call:"+(System.currentTimeMillis()-elapsedTime.get())/1000.0+" secs");
+				elapsedTime.set(System.currentTimeMillis());
+			}
+			
 			LOG.info("nextTuple----------------------"+num.get());
 			collector.emit(new Values(num));
 		}

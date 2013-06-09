@@ -16,7 +16,8 @@ storm-test4/.classpath
 storm-test4/.project
 storm-test4/.settings
 storm-test4/target
-storm-test4/bin/*
+storm-test4/bin/
+storm-test4/bin/test4/*
 storm-starter/
 storm-contrib/
 stormsource/
