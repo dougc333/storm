@@ -1,0 +1,409 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta content='Puppet CookBook' name='description'>
+
+    <link href='/css/blueprint/screen.css' type='text/css' rel='stylesheet' media='screen, projection'>
+    <link href='/css/blueprint/print.css'  type='text/css' rel='stylesheet' media='print'>
+    <link href='/css/puppetcookbook.css'   type='text/css' rel='stylesheet' media='screen, projection'>
+    <!--[if lt IE 8]> >%link{:rel=>"stylesheet", :href=>"css/blueprint/ie.css", :type=>"text/css", :media=>"screen, projection"} <![endif]-->
+
+    <link href='/favicon.ico' type='image/x-icon' rel='icon'>
+    <link href='/favicon.ico' type='image/x-icon' rel='shortcut icon'>
+
+    <title>Execute commands from Puppet Manifests</title>
+  </head>
+  <body>
+
+  <div id="logostrip">
+    <div class="container">
+      <div class="span-24 last" id="topheader">
+        <h1><a href='/'>Puppet CookBook</a></h1>
+      </div>
+      <div class="span-2">
+        &nbsp;
+      </div>
+      <div class="span-22 last" id="topsubheader">
+        <h4><em>A collection of task oriented solutions in Puppet</em></h4>
+      </div>
+    </div>
+  </div>
+
+    <div class='last sidebar span-8'>
+  <h2>Topics</h2>
+  <ul>
+    
+      <li><b>Packages</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/install-package.html">Installing Packages</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/latest-package.html">Tracking newer package versions</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/install-multiple-packages.html">Install multiple packages</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/remove-package.html">Removing a package</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/packages-with-different-name-per-distro.html">Per distro package names</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/install-rubygem.html">Installing RubyGems</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/changing-default-package-provider.html">Change Package Providers</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Files</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/creating-a-directory.html">Create a directory</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/creating-a-directory-tree.html">Create a directory tree</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/creating-a-symlink.html">Create a symlink</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/select-a-file-based-on-a-fact.html">Select a file based on a fact</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/only-create-file-if-absent.html">Only manage absent files</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/restart-a-service-when-a-file-changes.html">Restart service when config changes</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/remove-duplicated-file-resource-attributes.html">Reduce Duplicated File Attributes</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Hostfiles</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/adding-a-host-entry.html">Add a host entry</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/removing-a-host-entry.html">Remove a host entry</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/remove-all-unmanaged-host-entries.html">Remove all unmanaged host entries</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/same-rolename-in-each-domain.html">Localise service host entries</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Exec</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/exec-a-command-in-a-manifest.html">Execute commands from Puppet Manifests</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/set-global-exec-path.html">Globally Set Exec Paths</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/nicer-exec-names.html">Nicer Exec Names</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/run-exec-if-file-absent.html">Run exec if file is missing</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/exec-onlyif.html">Control when an exec should run</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/exec-output-logging.html">Control Execs output</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Services</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/ensure-service-is-running.html">Ensure service is running</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/ensure-service-started-on-boot.html">Start service on boot</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/ensure-service-is-running.html">Restart stopped service</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/ensure-service-is-stopped.html">Ensure service is stopped</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/ensure-service-stopped-on-boot.html">Don't start service on boot</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/restart-a-service-when-a-file-changes.html">Restart service when config changes</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Facts</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/list-facter-facts.html">Show all facter facts</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/see-all-client-variables.html">See all client variables</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/lsb-facts.html">Enable LSB facts</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/override-a-facter-fact.html">Override a Facter fact</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/simple-facter-timing.html">Display fact resolution timings</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Users</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/create-home-directory-for-managed-users.html">Create home directories</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/managing-user-password-fails.html">Managing User Password Fails</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Groups</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/add-a-unix-group.html">Add a Unix group</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/remove-a-unix-group.html">Remove a Unix group</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/change-a-unix-groups-id.html">Change a groups group ID</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Debugging</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/simple-debug-messages.html">Adding Debug Messages</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/see-all-client-variables.html">View puppet variables for this client</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/show-puppet-config-setting.html">Show Puppet Config Settings</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/simple-facter-timing.html">Display fact resolution timings</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Misc</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/trailing-commas.html">Why the trailing commas?</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/autosigning-client-certificates.html">Autosigning Client Certificates</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/show-resources-with-ralsh.html">View existing resources</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Commandline</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/simple-adhoc-execution-with-apply-execute.html">Adhoc Puppetry with puppet apply execute</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/simple-syntax-check-manifests.html">Syntax Check Manifests</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/list-puppet-managed-files.html">Which files are puppet managed?</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Testing</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/simple-syntax-check-manifests.html">Test Manifest Syntax</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/override-a-facter-fact.html">Override a Facter fact</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Cron</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/managing-crond-entries.html">Managing /etc/cron.d Entries</a></li>
+            
+          
+        </ul>
+      </li>
+    
+      <li><b>Errors</b></li>
+      <li>
+        <ul class='subnavlist'>
+          
+            
+              <li class='recipe'><a href="/posts/managing-user-password-fails.html">Managing User Password Fails</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/fileserver-in-template-function.html">Fileserver Path Specified In Template call</a></li>
+            
+          
+            
+              <li class='recipe'><a href="/posts/source-without-modules.html">Files found without specifying 'modules'</a></li>
+            
+          
+        </ul>
+      </li>
+    
+  </ul>
+</div>
+
+
+  <div class="container">
+    <div class="span-16 last">
+      &nbsp;
+    </div>
+    <div class="span-15">
+      <div class="span-14 last" id="bodycontent">
+        <h2 id='run_a_command_with_puppet'>Run a command with Puppet</h2>
+
+<h3 id='challenge'>Challenge</h3>
+
+<p>Despite all the types and modelling available sometimes you just want puppet to run a command for you.</p>
+
+<h3 id='solution'>Solution</h3>
+
+<pre><code>exec { &quot;refresh_cache&quot;:
+    command =&gt; &quot;refresh_cache 8600&quot;,
+    path    =&gt; &quot;/usr/local/bin/:/bin/&quot;,
+    # path    =&gt; [ &quot;/usr/local/bin/&quot;, &quot;/bin/&quot; ],  # alternative syntax
+}</code></pre>
+
+<h3 id='explanation'>Explanation</h3>
+
+<p>No matter how far Nix tools evolve sometimes you just need the ease or power of an existing command or script. The exec type provides a simple way to run those commands via puppet (on the puppet client, not the master) and harness them in your modelling, whether as a dependency of another resource, an easy way to accomplish something puppet doesn&#8217;t yet provide or as part of a gradual migration.</p>
+
+<p>In the, very minimal, example above we first give the command a nice, human readable name to ease future manifest reading. We then specify the command itself (and any arguments it should receive) using &#8220;command&#8221;. The last piece of this simple example is to specify the $PATH that this command is located in. It&#8217;s worth mentioning that any commands you run via an exec should be idempotent as they may be invoked multiple times and they must have an exit code of &#8216;0&#8217; for puppet to consider them successful.</p>
+
+<p>Most uses of exec (at least in my manifests) have another option or two specified to restrict when the exec should run. For details on these have a look at the other posts in the exec section.</p>
+
+<p>In general you should carefully consider any execs you add, while they are often the quickest, most familiar solution to a problem they are frequently a sign that your management is a little too coarse grained.</p>
+
+<h4 id='see_also'>See also</h4>
+
+<p><a href='/posts/set-global-exec-path.html'>Set up a global path for exec</a>.</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="footerstrip">
+    <div class="container">
+      <div class="span-24 last" id="footer">
+        Copyright 2010, 2011 <a href="http://www.unixdaemon.net/">Dean Wilson</a>.
+      </div>
+    </div>
+  </div>
+
+  </body>
+</html>
